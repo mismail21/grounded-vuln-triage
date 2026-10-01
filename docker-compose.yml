@@ -1,0 +1,12 @@
+services:
+  triage:
+    build: .
+    ports:
+      - "8000:8000"
+    env_file:
+      - path: .env
+        required: false
+    volumes:
+      - triage-cache:/cache
+volumes:
+  triage-cache:

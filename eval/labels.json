@@ -1,0 +1,21 @@
+{
+  "_comment": "Hand-curated well-known CVEs each case must surface (independent of the pipeline), plus which should be treated as P1 because they are in CISA KEV.",
+  "py01_web_basics": {"must_find": ["CVE-2019-10906", "CVE-2020-28493", "CVE-2018-18074", "CVE-2023-32681"]},
+  "py02_urllib3": {"must_find": ["CVE-2019-11324", "CVE-2019-11236", "CVE-2020-26137", "CVE-2023-43804"]},
+  "py03_flask_app": {"must_find": ["CVE-2020-1747", "CVE-2020-14343", "CVE-2018-1000656", "CVE-2023-30861"]},
+  "py04_ray_kev": {"must_find": ["CVE-2025-62593"]},
+  "py05_ssh_crypto": {"must_find": ["CVE-2023-48795", "CVE-2023-50782"]},
+  "py06_werkzeug_setuptools": {"must_find": ["CVE-2023-25577", "CVE-2023-46136", "CVE-2022-40897", "CVE-2024-6345"]},
+  "py07_clean": {"must_find": []},
+  "py08_unpinned_mix": {"must_find": ["CVE-2020-14343"], "must_flag_unresolved": ["flask", "numpy"]},
+  "py09_fake_package": {"must_find": ["CVE-2022-40897"]},
+  "py10_salt_stress": {"must_find": ["CVE-2020-11651", "CVE-2020-11652"]},
+  "npm01_lodash": {"must_find": ["CVE-2019-10744", "CVE-2020-8203", "CVE-2021-23337", "CVE-2018-16487"]},
+  "npm02_jquery_kev": {"must_find": ["CVE-2020-11022", "CVE-2020-11023", "CVE-2022-24785", "CVE-2022-31129"]},
+  "npm03_express": {"must_find": ["CVE-2024-29041", "CVE-2024-45590", "CVE-2024-47764"]},
+  "npm04_utils": {"must_find": ["CVE-2022-0235", "CVE-2020-15168", "CVE-2021-44906", "CVE-2020-7598", "CVE-2022-25883"]},
+  "npm05_sysinfo_kev": {"must_find": ["CVE-2021-21315", "CVE-2021-32640"]},
+  "npm06_mongo_express_kev": {"must_find": ["CVE-2019-10758", "CVE-2019-19919"]},
+  "npm07_ranges": {"must_find": ["CVE-2020-8203", "CVE-2021-23337"], "must_flag_unresolved": ["express", "mylib"]},
+  "npm08_clean": {"must_find": []}
+}

@@ -1,0 +1,4 @@
+{
+  "name": "npm01",
+  "dependencies": {"lodash": "4.17.4"}
+}

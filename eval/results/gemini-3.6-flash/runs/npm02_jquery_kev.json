@@ -1,0 +1,583 @@
+{
+  "model": "gemini-3.6-flash",
+  "turns": 4,
+  "seconds": 172.1,
+  "usage": {
+    "input": 15281,
+    "output": 9543,
+    "cache_read": 0,
+    "cache_write": 0
+  },
+  "cost_usd": 0.0,
+  "trace": [
+    {
+      "tool": "osv_lookup",
+      "input": {
+        "packages": [
+          {
+            "name": "jquery",
+            "version": "3.4.0"
+          },
+          {
+            "name": "moment",
+            "version": "2.29.1"
+          }
+        ]
+      },
+      "seconds": 0.01,
+      "is_error": false
+    },
+    {
+      "tool": "nvd_lookup",
+      "input": {
+        "cve_ids": [
+          "CVE-2020-11022",
+          "CVE-2020-11023",
+          "CVE-2022-24785",
+          "CVE-2022-31129"
+        ]
+      },
+      "seconds": 0.0,
+      "is_error": false
+    },
+    {
+      "tool": "kev_lookup",
+      "input": {
+        "cve_ids": [
+          "CVE-2020-11022",
+          "CVE-2020-11023",
+          "CVE-2022-24785",
+          "CVE-2022-31129"
+        ]
+      },
+      "seconds": 0.0,
+      "is_error": false
+    },
+    {
+      "tool": "epss_lookup",
+      "input": {
+        "cve_ids": [
+          "CVE-2020-11022",
+          "CVE-2020-11023",
+          "CVE-2022-24785",
+          "CVE-2022-31129"
+        ]
+      },
+      "seconds": 0.0,
+      "is_error": false
+    },
+    {
+      "tool": "check_upgrade",
+      "input": {
+        "package": "jquery",
+        "version": "3.5.0"
+      },
+      "seconds": 0.0,
+      "is_error": false
+    },
+    {
+      "tool": "check_upgrade",
+      "input": {
+        "package": "moment",
+        "version": "2.29.4"
+      },
+      "seconds": 0.0,
+      "is_error": false
+    },
+    {
+      "tool": "check_upgrade",
+      "input": {
+        "version": "2.30.1",
+        "package": "moment"
+      },
+      "seconds": 0.52,
+      "is_error": false
+    },
+    {
+      "tool": "submit_report",
+      "input": {
+        "findings": 4,
+        "remediations": 2
+      },
+      "seconds": 0.0,
+      "is_error": false
+    }
+  ],
+  "error": null,
+  "raw_report": {
+    "findings": [
+      {
+        "package": "jquery",
+        "installed_version": "3.4.0",
+        "vuln_id": "CVE-2020-11022",
+        "claims": {
+          "summary": {
+            "value": "Potential XSS vulnerability in jQuery",
+            "source_url": "https://osv.dev/vulnerability/GHSA-gxr4-xjj5-5px2"
+          },
+          "fixed_versions": {
+            "value": [
+              "3.5.0"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-gxr4-xjj5-5px2"
+          },
+          "cvss_score": {
+            "value": 6.1,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-11022"
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-11022"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.99215,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2020-11022"
+          }
+        },
+        "priority": "P1",
+        "priority_basis": [
+          "epss"
+        ],
+        "rationale": "EPSS score of 0.99215 is >= 0.50, placing this finding at P1 priority."
+      },
+      {
+        "package": "jquery",
+        "installed_version": "3.4.0",
+        "vuln_id": "CVE-2020-11023",
+        "claims": {
+          "summary": {
+            "value": "Potential XSS vulnerability in jQuery",
+            "source_url": "https://osv.dev/vulnerability/GHSA-jpcq-cgw6-v4j6"
+          },
+          "fixed_versions": {
+            "value": [
+              "3.5.0"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-jpcq-cgw6-v4j6"
+          },
+          "cvss_score": {
+            "value": 6.1,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-11023"
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-11023"
+          },
+          "in_kev": {
+            "value": true,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.84887,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2020-11023"
+          }
+        },
+        "priority": "P1",
+        "priority_basis": [
+          "in_kev",
+          "epss"
+        ],
+        "rationale": "Listed in CISA KEV and has an EPSS score of 0.84887 (>= 0.50), meeting P1 priority criteria."
+      },
+      {
+        "package": "moment",
+        "installed_version": "2.29.1",
+        "vuln_id": "CVE-2022-24785",
+        "claims": {
+          "summary": {
+            "value": "Path Traversal: 'dir/../../filename' in moment.locale",
+            "source_url": "https://osv.dev/vulnerability/GHSA-8hfj-j24r-96c4"
+          },
+          "fixed_versions": {
+            "value": [
+              "2.29.2"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-8hfj-j24r-96c4"
+          },
+          "cvss_score": {
+            "value": 7.5,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2022-24785"
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2022-24785"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.13904,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2022-24785"
+          }
+        },
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score",
+          "epss"
+        ],
+        "rationale": "CVSS score is 7.5 (>= 7.0) and EPSS score is 0.13904 (>= 0.10), qualifying for P2 priority."
+      },
+      {
+        "package": "moment",
+        "installed_version": "2.29.1",
+        "vuln_id": "CVE-2022-31129",
+        "claims": {
+          "summary": {
+            "value": "Moment.js vulnerable to Inefficient Regular Expression Complexity",
+            "source_url": "https://osv.dev/vulnerability/GHSA-wc69-rhjr-hc9g"
+          },
+          "fixed_versions": {
+            "value": [
+              "2.29.4"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-wc69-rhjr-hc9g"
+          },
+          "cvss_score": {
+            "value": 7.5,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2022-31129"
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2022-31129"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.05551,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2022-31129"
+          }
+        },
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "CVSS score is 7.5 (>= 7.0), qualifying for P2 priority."
+      }
+    ],
+    "remediations": [
+      {
+        "package": "jquery",
+        "current_version": "3.4.0",
+        "recommended_version": "3.5.0",
+        "resolves": [
+          "CVE-2020-11022",
+          "CVE-2020-11023"
+        ],
+        "note": "Upgrading jquery to 3.5.0 resolves all known vulnerabilities."
+      },
+      {
+        "package": "moment",
+        "current_version": "2.29.1",
+        "recommended_version": "2.29.4",
+        "resolves": [
+          "CVE-2022-24785",
+          "CVE-2022-31129"
+        ],
+        "note": "Upgrading moment to 2.29.4 resolves CVE-2022-24785 and CVE-2022-31129. Note that check_upgrade indicates moment 2.29.4 remains affected by CVE-2026-17495."
+      }
+    ],
+    "review_notes": [
+      "Upgrading moment to version 2.29.4 resolves both reported vulnerabilities (CVE-2022-24785 and CVE-2022-31129); however, check_upgrade indicates moment 2.29.4 is still affected by CVE-2026-17495."
+    ]
+  },
+  "checked": {
+    "findings": [
+      {
+        "package": "jquery",
+        "installed_version": "3.4.0",
+        "vuln_id": "CVE-2020-11022",
+        "aliases": [
+          "BIT-drupal-2020-11022",
+          "GHSA-gxr4-xjj5-5px2"
+        ],
+        "priority": "P1",
+        "priority_basis": [
+          "epss"
+        ],
+        "reference_priority": "P1",
+        "priority_agrees": true,
+        "rationale": "EPSS score of 0.99215 is >= 0.50, placing this finding at P1 priority.",
+        "claims": {
+          "summary": {
+            "value": "Potential XSS vulnerability in jQuery",
+            "source_url": "https://osv.dev/vulnerability/GHSA-gxr4-xjj5-5px2",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "3.5.0"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-gxr4-xjj5-5px2",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 6.1,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-11022",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-11022",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.99215,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2020-11022",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "jquery",
+        "installed_version": "3.4.0",
+        "vuln_id": "CVE-2020-11023",
+        "aliases": [
+          "BIT-drupal-2020-11023",
+          "GHSA-jpcq-cgw6-v4j6"
+        ],
+        "priority": "P1",
+        "priority_basis": [
+          "in_kev",
+          "epss"
+        ],
+        "reference_priority": "P1",
+        "priority_agrees": true,
+        "rationale": "Listed in CISA KEV and has an EPSS score of 0.84887 (>= 0.50), meeting P1 priority criteria.",
+        "claims": {
+          "summary": {
+            "value": "Potential XSS vulnerability in jQuery",
+            "source_url": "https://osv.dev/vulnerability/GHSA-jpcq-cgw6-v4j6",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "3.5.0"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-jpcq-cgw6-v4j6",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 6.1,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-11023",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-11023",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": true,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.84887,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2020-11023",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "moment",
+        "installed_version": "2.29.1",
+        "vuln_id": "CVE-2022-24785",
+        "aliases": [
+          "GHSA-8hfj-j24r-96c4"
+        ],
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score",
+          "epss"
+        ],
+        "reference_priority": "P2",
+        "priority_agrees": true,
+        "rationale": "CVSS score is 7.5 (>= 7.0) and EPSS score is 0.13904 (>= 0.10), qualifying for P2 priority.",
+        "claims": {
+          "summary": {
+            "value": "Path Traversal: 'dir/../../filename' in moment.locale",
+            "source_url": "https://osv.dev/vulnerability/GHSA-8hfj-j24r-96c4",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "2.29.2"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-8hfj-j24r-96c4",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 7.5,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2022-24785",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2022-24785",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.13904,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2022-24785",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "moment",
+        "installed_version": "2.29.1",
+        "vuln_id": "CVE-2022-31129",
+        "aliases": [
+          "GHSA-wc69-rhjr-hc9g"
+        ],
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P2",
+        "priority_agrees": true,
+        "rationale": "CVSS score is 7.5 (>= 7.0), qualifying for P2 priority.",
+        "claims": {
+          "summary": {
+            "value": "Moment.js vulnerable to Inefficient Regular Expression Complexity",
+            "source_url": "https://osv.dev/vulnerability/GHSA-wc69-rhjr-hc9g",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "2.29.4"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-wc69-rhjr-hc9g",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 7.5,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2022-31129",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2022-31129",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.05551,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2022-31129",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      }
+    ],
+    "rejected_findings": [],
+    "omitted": [],
+    "remediations": [
+      {
+        "package": "jquery",
+        "current_version": "3.4.0",
+        "recommended_version": "3.5.0",
+        "resolves": [
+          "CVE-2020-11022",
+          "CVE-2020-11023"
+        ],
+        "note": "Upgrading jquery to 3.5.0 resolves all known vulnerabilities.",
+        "status": "verified",
+        "reason": "",
+        "still_affected_by": [],
+        "remaining_known_vulns": [],
+        "verification_url": "https://osv.dev/list?ecosystem=npm&q=jquery"
+      },
+      {
+        "package": "moment",
+        "current_version": "2.29.1",
+        "recommended_version": "2.29.4",
+        "resolves": [
+          "CVE-2022-24785",
+          "CVE-2022-31129"
+        ],
+        "note": "Upgrading moment to 2.29.4 resolves CVE-2022-24785 and CVE-2022-31129. Note that check_upgrade indicates moment 2.29.4 remains affected by CVE-2026-17495.",
+        "status": "verified",
+        "reason": "",
+        "still_affected_by": [],
+        "remaining_known_vulns": [
+          "CVE-2026-17495"
+        ],
+        "verification_url": "https://osv.dev/list?ecosystem=npm&q=moment"
+      }
+    ],
+    "unresolved_dependencies": [],
+    "unqueried_dependencies": [],
+    "review_notes": [
+      "Upgrading moment to version 2.29.4 resolves both reported vulnerabilities (CVE-2022-24785 and CVE-2022-31129); however, check_upgrade indicates moment 2.29.4 is still affected by CVE-2026-17495."
+    ],
+    "errors": [],
+    "stats": {
+      "claims_total": 24,
+      "verified": 24,
+      "unknown": 0,
+      "unsourced": 0,
+      "ungrounded": 0,
+      "mismatch": 0,
+      "findings_reported": 4,
+      "findings_accepted": 4,
+      "findings_rejected": 0,
+      "findings_needing_review": 0,
+      "omitted": 0,
+      "unsupported_claim_rate": 0.0,
+      "unsupported_claims_in_final_report": 0
+    }
+  }
+}

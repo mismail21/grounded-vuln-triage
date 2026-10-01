@@ -1,0 +1,1042 @@
+{
+  "model": "gemini-3.6-flash",
+  "turns": 3,
+  "seconds": 60.6,
+  "usage": {
+    "input": 12535,
+    "output": 10406,
+    "cache_read": 0,
+    "cache_write": 0
+  },
+  "cost_usd": 0.0,
+  "trace": [
+    {
+      "tool": "osv_lookup",
+      "input": {
+        "packages": [
+          {
+            "version": "2.6.0",
+            "name": "node-fetch"
+          },
+          {
+            "version": "1.2.0",
+            "name": "minimist"
+          },
+          {
+            "version": "8.5.1",
+            "name": "jsonwebtoken"
+          },
+          {
+            "name": "semver",
+            "version": "5.7.1"
+          }
+        ]
+      },
+      "seconds": 0.0,
+      "is_error": false
+    },
+    {
+      "tool": "nvd_lookup",
+      "input": {
+        "cve_ids": [
+          "CVE-2020-15168",
+          "CVE-2022-0235",
+          "CVE-2020-7598",
+          "CVE-2021-44906",
+          "CVE-2022-23539",
+          "CVE-2022-23540",
+          "CVE-2022-23541",
+          "CVE-2022-25883"
+        ]
+      },
+      "seconds": 0.01,
+      "is_error": false
+    },
+    {
+      "tool": "kev_lookup",
+      "input": {
+        "cve_ids": [
+          "CVE-2020-15168",
+          "CVE-2022-0235",
+          "CVE-2020-7598",
+          "CVE-2021-44906",
+          "CVE-2022-23539",
+          "CVE-2022-23540",
+          "CVE-2022-23541",
+          "CVE-2022-25883"
+        ]
+      },
+      "seconds": 0.0,
+      "is_error": false
+    },
+    {
+      "tool": "epss_lookup",
+      "input": {
+        "cve_ids": [
+          "CVE-2020-15168",
+          "CVE-2022-0235",
+          "CVE-2020-7598",
+          "CVE-2021-44906",
+          "CVE-2022-23539",
+          "CVE-2022-23540",
+          "CVE-2022-23541",
+          "CVE-2022-25883"
+        ]
+      },
+      "seconds": 0.23,
+      "is_error": false
+    },
+    {
+      "tool": "check_upgrade",
+      "input": {
+        "version": "2.6.7",
+        "package": "node-fetch"
+      },
+      "seconds": 0.0,
+      "is_error": false
+    },
+    {
+      "tool": "check_upgrade",
+      "input": {
+        "version": "1.2.6",
+        "package": "minimist"
+      },
+      "seconds": 0.0,
+      "is_error": false
+    },
+    {
+      "tool": "check_upgrade",
+      "input": {
+        "version": "9.0.0",
+        "package": "jsonwebtoken"
+      },
+      "seconds": 0.0,
+      "is_error": false
+    },
+    {
+      "tool": "check_upgrade",
+      "input": {
+        "version": "5.7.2",
+        "package": "semver"
+      },
+      "seconds": 0.0,
+      "is_error": false
+    },
+    {
+      "tool": "submit_report",
+      "input": {
+        "findings": 8,
+        "remediations": 4
+      },
+      "seconds": 0.0,
+      "is_error": false
+    }
+  ],
+  "error": null,
+  "raw_report": {
+    "findings": [
+      {
+        "package": "node-fetch",
+        "installed_version": "2.6.0",
+        "vuln_id": "CVE-2020-15168",
+        "claims": {
+          "summary": {
+            "value": "The `size` option isn't honored after following a redirect in node-fetch",
+            "source_url": "https://osv.dev/vulnerability/GHSA-w7rc-rwvf-8q5r"
+          },
+          "fixed_versions": {
+            "value": [
+              "2.6.1",
+              "3.0.0-beta.9"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-w7rc-rwvf-8q5r"
+          },
+          "cvss_score": {
+            "value": 5.3,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-15168"
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-15168"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.01692,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2020-15168"
+          }
+        },
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "CVSS score is 5.3 (>= 4.0), placing it in P3. EPSS score is low and it is not in CISA KEV."
+      },
+      {
+        "package": "node-fetch",
+        "installed_version": "2.6.0",
+        "vuln_id": "CVE-2022-0235",
+        "claims": {
+          "summary": {
+            "value": "node-fetch forwards secure headers to untrusted sites",
+            "source_url": "https://osv.dev/vulnerability/GHSA-r683-j2x4-v87g"
+          },
+          "fixed_versions": {
+            "value": [
+              "3.1.1",
+              "2.6.7"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-r683-j2x4-v87g"
+          },
+          "cvss_score": {
+            "value": 6.1,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2022-0235"
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2022-0235"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.01653,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2022-0235"
+          }
+        },
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "CVSS score is 6.1 (>= 4.0), placing it in P3. EPSS score is low and it is not in CISA KEV."
+      },
+      {
+        "package": "minimist",
+        "installed_version": "1.2.0",
+        "vuln_id": "CVE-2020-7598",
+        "claims": {
+          "summary": {
+            "value": "Prototype Pollution in minimist",
+            "source_url": "https://osv.dev/vulnerability/GHSA-vh95-rmgr-6w4m"
+          },
+          "fixed_versions": {
+            "value": [
+              "0.2.1",
+              "1.2.3"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-vh95-rmgr-6w4m"
+          },
+          "cvss_score": {
+            "value": 5.6,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-7598"
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-7598"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.01931,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2020-7598"
+          }
+        },
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "CVSS score is 5.6 (>= 4.0), placing it in P3. EPSS score is low and it is not in CISA KEV."
+      },
+      {
+        "package": "minimist",
+        "installed_version": "1.2.0",
+        "vuln_id": "CVE-2021-44906",
+        "claims": {
+          "summary": {
+            "value": "Prototype Pollution in minimist",
+            "source_url": "https://osv.dev/vulnerability/GHSA-xvch-5gv4-984h"
+          },
+          "fixed_versions": {
+            "value": [
+              "1.2.6",
+              "0.2.4"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-xvch-5gv4-984h"
+          },
+          "cvss_score": {
+            "value": 9.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-44906"
+          },
+          "cvss_severity": {
+            "value": "CRITICAL",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-44906"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.04581,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2021-44906"
+          }
+        },
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "CVSS score is 9.8 (>= 7.0), placing it in P2. It does not meet P1 criteria because EPSS is below 0.10 (0.04581) and it is not in CISA KEV."
+      },
+      {
+        "package": "jsonwebtoken",
+        "installed_version": "8.5.1",
+        "vuln_id": "CVE-2022-23539",
+        "claims": {
+          "summary": {
+            "value": "jsonwebtoken unrestricted key type could lead to legacy keys usage",
+            "source_url": "https://osv.dev/vulnerability/GHSA-8cf7-32gw-wr33"
+          },
+          "fixed_versions": {
+            "value": [
+              "9.0.0"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-8cf7-32gw-wr33"
+          },
+          "cvss_score": {
+            "value": 8.1,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2022-23539"
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2022-23539"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.00479,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2022-23539"
+          }
+        },
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "CVSS score is 8.1 (>= 7.0), placing it in P2. EPSS score is low and it is not in CISA KEV."
+      },
+      {
+        "package": "jsonwebtoken",
+        "installed_version": "8.5.1",
+        "vuln_id": "CVE-2022-23540",
+        "claims": {
+          "summary": {
+            "value": "jsonwebtoken vulnerable to signature validation bypass due to insecure default algorithm in jwt.verify()",
+            "source_url": "https://osv.dev/vulnerability/GHSA-qwph-4952-7xr6"
+          },
+          "fixed_versions": {
+            "value": [
+              "9.0.0"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-qwph-4952-7xr6"
+          },
+          "cvss_score": {
+            "value": 7.6,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2022-23540"
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2022-23540"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.00532,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2022-23540"
+          }
+        },
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "CVSS score is 7.6 (>= 7.0), placing it in P2. EPSS score is low and it is not in CISA KEV."
+      },
+      {
+        "package": "jsonwebtoken",
+        "installed_version": "8.5.1",
+        "vuln_id": "CVE-2022-23541",
+        "claims": {
+          "summary": {
+            "value": "jsonwebtoken's insecure implementation of key retrieval function could lead to Forgeable Public/Private Tokens from RSA to HMAC",
+            "source_url": "https://osv.dev/vulnerability/GHSA-hjrf-2m68-5959"
+          },
+          "fixed_versions": {
+            "value": [
+              "9.0.0"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-hjrf-2m68-5959"
+          },
+          "cvss_score": {
+            "value": 6.3,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2022-23541"
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2022-23541"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.00753,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2022-23541"
+          }
+        },
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "CVSS score is 6.3 (>= 4.0), placing it in P3. EPSS score is low and it is not in CISA KEV."
+      },
+      {
+        "package": "semver",
+        "installed_version": "5.7.1",
+        "vuln_id": "CVE-2022-25883",
+        "claims": {
+          "summary": {
+            "value": "semver vulnerable to Regular Expression Denial of Service",
+            "source_url": "https://osv.dev/vulnerability/GHSA-c2qf-rxjj-qqgw"
+          },
+          "fixed_versions": {
+            "value": [
+              "7.5.2",
+              "6.3.1",
+              "5.7.2"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-c2qf-rxjj-qqgw"
+          },
+          "cvss_score": {
+            "value": 7.5,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2022-25883"
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2022-25883"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.02761,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2022-25883"
+          }
+        },
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "CVSS score is 7.5 (>= 7.0), placing it in P2. EPSS score is low and it is not in CISA KEV."
+      }
+    ],
+    "remediations": [
+      {
+        "package": "node-fetch",
+        "current_version": "2.6.0",
+        "recommended_version": "2.6.7",
+        "resolves": [
+          "CVE-2020-15168",
+          "CVE-2022-0235"
+        ],
+        "note": "Upgrading node-fetch to 2.6.7 resolves both CVE-2020-15168 and CVE-2022-0235 while preserving 2.x API compatibility."
+      },
+      {
+        "package": "minimist",
+        "current_version": "1.2.0",
+        "recommended_version": "1.2.6",
+        "resolves": [
+          "CVE-2020-7598",
+          "CVE-2021-44906"
+        ],
+        "note": "Upgrading minimist to 1.2.6 resolves both prototype pollution vulnerabilities (CVE-2020-7598 and CVE-2021-44906)."
+      },
+      {
+        "package": "jsonwebtoken",
+        "current_version": "8.5.1",
+        "recommended_version": "9.0.0",
+        "resolves": [
+          "CVE-2022-23539",
+          "CVE-2022-23540",
+          "CVE-2022-23541"
+        ],
+        "note": "Upgrading jsonwebtoken to 9.0.0 resolves all three vulnerabilities (CVE-2022-23539, CVE-2022-23540, and CVE-2022-23541). Note that v9.0.0 is a major version bump."
+      },
+      {
+        "package": "semver",
+        "current_version": "5.7.1",
+        "recommended_version": "5.7.2",
+        "resolves": [
+          "CVE-2022-25883"
+        ],
+        "note": "Upgrading semver to 5.7.2 resolves CVE-2022-25883 while preserving 5.x API compatibility."
+      }
+    ],
+    "review_notes": []
+  },
+  "checked": {
+    "findings": [
+      {
+        "package": "minimist",
+        "installed_version": "1.2.0",
+        "vuln_id": "CVE-2021-44906",
+        "aliases": [
+          "GHSA-xvch-5gv4-984h"
+        ],
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P2",
+        "priority_agrees": true,
+        "rationale": "CVSS score is 9.8 (>= 7.0), placing it in P2. It does not meet P1 criteria because EPSS is below 0.10 (0.04581) and it is not in CISA KEV.",
+        "claims": {
+          "summary": {
+            "value": "Prototype Pollution in minimist",
+            "source_url": "https://osv.dev/vulnerability/GHSA-xvch-5gv4-984h",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "1.2.6",
+              "0.2.4"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-xvch-5gv4-984h",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 9.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-44906",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "CRITICAL",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-44906",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.04581,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2021-44906",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "jsonwebtoken",
+        "installed_version": "8.5.1",
+        "vuln_id": "CVE-2022-23539",
+        "aliases": [
+          "GHSA-8cf7-32gw-wr33"
+        ],
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P2",
+        "priority_agrees": true,
+        "rationale": "CVSS score is 8.1 (>= 7.0), placing it in P2. EPSS score is low and it is not in CISA KEV.",
+        "claims": {
+          "summary": {
+            "value": "jsonwebtoken unrestricted key type could lead to legacy keys usage",
+            "source_url": "https://osv.dev/vulnerability/GHSA-8cf7-32gw-wr33",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "9.0.0"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-8cf7-32gw-wr33",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 8.1,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2022-23539",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2022-23539",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.00479,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2022-23539",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "jsonwebtoken",
+        "installed_version": "8.5.1",
+        "vuln_id": "CVE-2022-23540",
+        "aliases": [
+          "GHSA-qwph-4952-7xr6"
+        ],
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P2",
+        "priority_agrees": true,
+        "rationale": "CVSS score is 7.6 (>= 7.0), placing it in P2. EPSS score is low and it is not in CISA KEV.",
+        "claims": {
+          "summary": {
+            "value": "jsonwebtoken vulnerable to signature validation bypass due to insecure default algorithm in jwt.verify()",
+            "source_url": "https://osv.dev/vulnerability/GHSA-qwph-4952-7xr6",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "9.0.0"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-qwph-4952-7xr6",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 7.6,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2022-23540",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2022-23540",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.00532,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2022-23540",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "semver",
+        "installed_version": "5.7.1",
+        "vuln_id": "CVE-2022-25883",
+        "aliases": [
+          "GHSA-c2qf-rxjj-qqgw"
+        ],
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P2",
+        "priority_agrees": true,
+        "rationale": "CVSS score is 7.5 (>= 7.0), placing it in P2. EPSS score is low and it is not in CISA KEV.",
+        "claims": {
+          "summary": {
+            "value": "semver vulnerable to Regular Expression Denial of Service",
+            "source_url": "https://osv.dev/vulnerability/GHSA-c2qf-rxjj-qqgw",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "7.5.2",
+              "6.3.1",
+              "5.7.2"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-c2qf-rxjj-qqgw",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 7.5,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2022-25883",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2022-25883",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.02761,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2022-25883",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "jsonwebtoken",
+        "installed_version": "8.5.1",
+        "vuln_id": "CVE-2022-23541",
+        "aliases": [
+          "GHSA-hjrf-2m68-5959"
+        ],
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P3",
+        "priority_agrees": true,
+        "rationale": "CVSS score is 6.3 (>= 4.0), placing it in P3. EPSS score is low and it is not in CISA KEV.",
+        "claims": {
+          "summary": {
+            "value": "jsonwebtoken's insecure implementation of key retrieval function could lead to Forgeable Public/Private Tokens from RSA to HMAC",
+            "source_url": "https://osv.dev/vulnerability/GHSA-hjrf-2m68-5959",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "9.0.0"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-hjrf-2m68-5959",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 6.3,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2022-23541",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2022-23541",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.00753,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2022-23541",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "node-fetch",
+        "installed_version": "2.6.0",
+        "vuln_id": "CVE-2022-0235",
+        "aliases": [
+          "GHSA-r683-j2x4-v87g"
+        ],
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P3",
+        "priority_agrees": true,
+        "rationale": "CVSS score is 6.1 (>= 4.0), placing it in P3. EPSS score is low and it is not in CISA KEV.",
+        "claims": {
+          "summary": {
+            "value": "node-fetch forwards secure headers to untrusted sites",
+            "source_url": "https://osv.dev/vulnerability/GHSA-r683-j2x4-v87g",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "3.1.1",
+              "2.6.7"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-r683-j2x4-v87g",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 6.1,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2022-0235",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2022-0235",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.01653,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2022-0235",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "minimist",
+        "installed_version": "1.2.0",
+        "vuln_id": "CVE-2020-7598",
+        "aliases": [
+          "GHSA-vh95-rmgr-6w4m"
+        ],
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P3",
+        "priority_agrees": true,
+        "rationale": "CVSS score is 5.6 (>= 4.0), placing it in P3. EPSS score is low and it is not in CISA KEV.",
+        "claims": {
+          "summary": {
+            "value": "Prototype Pollution in minimist",
+            "source_url": "https://osv.dev/vulnerability/GHSA-vh95-rmgr-6w4m",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "0.2.1",
+              "1.2.3"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-vh95-rmgr-6w4m",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 5.6,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-7598",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-7598",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.01931,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2020-7598",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "node-fetch",
+        "installed_version": "2.6.0",
+        "vuln_id": "CVE-2020-15168",
+        "aliases": [
+          "GHSA-w7rc-rwvf-8q5r"
+        ],
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P3",
+        "priority_agrees": true,
+        "rationale": "CVSS score is 5.3 (>= 4.0), placing it in P3. EPSS score is low and it is not in CISA KEV.",
+        "claims": {
+          "summary": {
+            "value": "The `size` option isn't honored after following a redirect in node-fetch",
+            "source_url": "https://osv.dev/vulnerability/GHSA-w7rc-rwvf-8q5r",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "2.6.1",
+              "3.0.0-beta.9"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-w7rc-rwvf-8q5r",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 5.3,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-15168",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-15168",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.01692,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2020-15168",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      }
+    ],
+    "rejected_findings": [],
+    "omitted": [],
+    "remediations": [
+      {
+        "package": "node-fetch",
+        "current_version": "2.6.0",
+        "recommended_version": "2.6.7",
+        "resolves": [
+          "CVE-2020-15168",
+          "CVE-2022-0235"
+        ],
+        "note": "Upgrading node-fetch to 2.6.7 resolves both CVE-2020-15168 and CVE-2022-0235 while preserving 2.x API compatibility.",
+        "status": "verified",
+        "reason": "",
+        "still_affected_by": [],
+        "remaining_known_vulns": [],
+        "verification_url": "https://osv.dev/list?ecosystem=npm&q=node-fetch"
+      },
+      {
+        "package": "minimist",
+        "current_version": "1.2.0",
+        "recommended_version": "1.2.6",
+        "resolves": [
+          "CVE-2020-7598",
+          "CVE-2021-44906"
+        ],
+        "note": "Upgrading minimist to 1.2.6 resolves both prototype pollution vulnerabilities (CVE-2020-7598 and CVE-2021-44906).",
+        "status": "verified",
+        "reason": "",
+        "still_affected_by": [],
+        "remaining_known_vulns": [],
+        "verification_url": "https://osv.dev/list?ecosystem=npm&q=minimist"
+      },
+      {
+        "package": "jsonwebtoken",
+        "current_version": "8.5.1",
+        "recommended_version": "9.0.0",
+        "resolves": [
+          "CVE-2022-23539",
+          "CVE-2022-23540",
+          "CVE-2022-23541"
+        ],
+        "note": "Upgrading jsonwebtoken to 9.0.0 resolves all three vulnerabilities (CVE-2022-23539, CVE-2022-23540, and CVE-2022-23541). Note that v9.0.0 is a major version bump.",
+        "status": "verified",
+        "reason": "",
+        "still_affected_by": [],
+        "remaining_known_vulns": [],
+        "verification_url": "https://osv.dev/list?ecosystem=npm&q=jsonwebtoken"
+      },
+      {
+        "package": "semver",
+        "current_version": "5.7.1",
+        "recommended_version": "5.7.2",
+        "resolves": [
+          "CVE-2022-25883"
+        ],
+        "note": "Upgrading semver to 5.7.2 resolves CVE-2022-25883 while preserving 5.x API compatibility.",
+        "status": "verified",
+        "reason": "",
+        "still_affected_by": [],
+        "remaining_known_vulns": [],
+        "verification_url": "https://osv.dev/list?ecosystem=npm&q=semver"
+      }
+    ],
+    "unresolved_dependencies": [],
+    "unqueried_dependencies": [],
+    "review_notes": [],
+    "errors": [],
+    "stats": {
+      "claims_total": 48,
+      "verified": 48,
+      "unknown": 0,
+      "unsourced": 0,
+      "ungrounded": 0,
+      "mismatch": 0,
+      "findings_reported": 8,
+      "findings_accepted": 8,
+      "findings_rejected": 0,
+      "findings_needing_review": 0,
+      "omitted": 0,
+      "unsupported_claim_rate": 0.0,
+      "unsupported_claims_in_final_report": 0
+    }
+  }
+}

@@ -1,0 +1,4 @@
+{
+  "name": "npm04",
+  "dependencies": {"node-fetch": "2.6.0", "minimist": "1.2.0", "jsonwebtoken": "8.5.1", "semver": "5.7.1"}
+}

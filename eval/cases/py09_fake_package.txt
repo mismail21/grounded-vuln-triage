@@ -1,0 +1,2 @@
+definitely-not-a-real-pkg-xyz==1.0.0
+setuptools==65.5.0

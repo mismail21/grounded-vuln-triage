@@ -1,0 +1,4 @@
+{
+  "name": "npm05",
+  "dependencies": {"systeminformation": "5.0.0", "ws": "7.4.5"}
+}

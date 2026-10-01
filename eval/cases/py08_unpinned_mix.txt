@@ -1,0 +1,4 @@
+flask>=2.0
+numpy
+idna==3.10
+pyyaml==5.1

@@ -1,0 +1,4 @@
+{
+  "name": "npm03",
+  "dependencies": {"express": "4.17.1", "body-parser": "1.19.0", "cookie": "0.4.0"}
+}

@@ -1,0 +1,4 @@
+# Flask app pinned in 2018
+Flask==0.12.2
+PyYAML==5.1
+gunicorn==20.0.4
