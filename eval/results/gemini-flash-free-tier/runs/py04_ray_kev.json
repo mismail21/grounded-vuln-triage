@@ -1,0 +1,887 @@
+{
+  "model": "gemini-3.5-flash-lite",
+  "turns": 3,
+  "seconds": 9.2,
+  "usage": {
+    "input": 12304,
+    "output": 3377,
+    "cache_read": 0,
+    "cache_write": 0
+  },
+  "cost_usd": 0.0,
+  "trace": [
+    {
+      "tool": "osv_lookup",
+      "input": {
+        "packages": [
+          {
+            "name": "ray",
+            "version": "2.9.0"
+          },
+          {
+            "version": "1.16.0",
+            "name": "six"
+          }
+        ]
+      },
+      "seconds": 0.0,
+      "is_error": false
+    },
+    {
+      "tool": "check_upgrade",
+      "input": {
+        "package": "ray",
+        "version": "2.43.0"
+      },
+      "seconds": 0.0,
+      "is_error": false
+    },
+    {
+      "tool": "check_upgrade",
+      "input": {
+        "package": "ray",
+        "version": "2.52.0"
+      },
+      "seconds": 0.0,
+      "is_error": false
+    },
+    {
+      "tool": "check_upgrade",
+      "input": {
+        "package": "ray",
+        "version": "2.54.0"
+      },
+      "seconds": 0.0,
+      "is_error": false
+    },
+    {
+      "tool": "check_upgrade",
+      "input": {
+        "package": "ray",
+        "version": "2.56.0"
+      },
+      "seconds": 0.0,
+      "is_error": false
+    },
+    {
+      "tool": "nvd_lookup",
+      "input": {
+        "cve_ids": [
+          "CVE-2023-48022",
+          "CVE-2025-1979",
+          "CVE-2025-34351",
+          "CVE-2025-62593",
+          "CVE-2026-27482",
+          "CVE-2026-41486",
+          "CVE-2026-57516"
+        ]
+      },
+      "seconds": 0.0,
+      "is_error": false
+    },
+    {
+      "tool": "kev_lookup",
+      "input": {
+        "cve_ids": [
+          "CVE-2023-48022",
+          "CVE-2025-1979",
+          "CVE-2025-34351",
+          "CVE-2025-62593",
+          "CVE-2026-27482",
+          "CVE-2026-41486",
+          "CVE-2026-57516"
+        ]
+      },
+      "seconds": 0.0,
+      "is_error": false
+    },
+    {
+      "tool": "epss_lookup",
+      "input": {
+        "cve_ids": [
+          "CVE-2023-48022",
+          "CVE-2025-1979",
+          "CVE-2025-34351",
+          "CVE-2025-62593",
+          "CVE-2026-27482",
+          "CVE-2026-41486",
+          "CVE-2026-57516"
+        ]
+      },
+      "seconds": 0.16,
+      "is_error": false
+    },
+    {
+      "tool": "submit_report",
+      "input": {
+        "findings": 7,
+        "remediations": 1
+      },
+      "seconds": 0.0,
+      "is_error": false
+    }
+  ],
+  "error": null,
+  "raw_report": {
+    "findings": [
+      {
+        "package": "ray",
+        "installed_version": "2.9.0",
+        "vuln_id": "CVE-2023-48022",
+        "claims": {
+          "summary": {
+            "value": "Ray has arbitrary code execution via jobs submission API",
+            "source_url": "https://osv.dev/vulnerability/GHSA-6wgj-66m2-xxp2"
+          },
+          "fixed_versions": {
+            "value": null,
+            "source_url": "https://osv.dev/vulnerability/GHSA-6wgj-66m2-xxp2"
+          },
+          "cvss_score": {
+            "value": 9.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-48022"
+          },
+          "cvss_severity": {
+            "value": "CRITICAL",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-48022"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.83942,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2023-48022"
+          }
+        },
+        "priority": "P1",
+        "priority_basis": [
+          "cvss_score",
+          "cvss_severity",
+          "epss"
+        ],
+        "rationale": "Critical remote code execution vulnerability with high CVSS score and EPSS >= 0.50."
+      },
+      {
+        "package": "ray",
+        "installed_version": "2.9.0",
+        "vuln_id": "CVE-2025-1979",
+        "claims": {
+          "summary": {
+            "value": "ray vulnerable to Insertion of Sensitive Information into Log File",
+            "source_url": "https://osv.dev/vulnerability/GHSA-w4rh-fgx7-q63m"
+          },
+          "fixed_versions": {
+            "value": [
+              "2.43.0"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-w4rh-fgx7-q63m"
+          },
+          "cvss_score": {
+            "value": 6.4,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-1979"
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-1979"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.00196,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2025-1979"
+          }
+        },
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score",
+          "cvss_severity"
+        ],
+        "rationale": "Medium severity vulnerability with CVSS score between 4.0 and 6.9."
+      },
+      {
+        "package": "ray",
+        "installed_version": "2.9.0",
+        "vuln_id": "CVE-2025-34351",
+        "claims": {
+          "summary": {
+            "value": "Ray's New Token Authentication is Disabled By Default",
+            "source_url": "https://osv.dev/vulnerability/GHSA-gx77-xgc2-4888"
+          },
+          "fixed_versions": {
+            "value": null,
+            "source_url": "https://osv.dev/vulnerability/GHSA-gx77-xgc2-4888"
+          },
+          "cvss_score": {
+            "value": null,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-34351"
+          },
+          "cvss_severity": {
+            "value": null,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-34351"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": null,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2025-34351"
+          }
+        },
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score",
+          "cvss_severity"
+        ],
+        "rationale": "CVSS and EPSS are not available; assigned P3 based on judgment for review since it involves default authentication settings."
+      },
+      {
+        "package": "ray",
+        "installed_version": "2.9.0",
+        "vuln_id": "CVE-2025-62593",
+        "claims": {
+          "summary": {
+            "value": "Ray is vulnerable to Critical RCE via Safari & Firefox Browsers through DNS Rebinding Attack",
+            "source_url": "https://osv.dev/vulnerability/GHSA-q279-jhrf-cc6v"
+          },
+          "fixed_versions": {
+            "value": [
+              "2.52.0"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-q279-jhrf-cc6v"
+          },
+          "cvss_score": {
+            "value": 8.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-62593"
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-62593"
+          },
+          "in_kev": {
+            "value": true,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.62459,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2025-62593"
+          }
+        },
+        "priority": "P1",
+        "priority_basis": [
+          "in_kev",
+          "epss",
+          "cvss_score",
+          "cvss_severity"
+        ],
+        "rationale": "Listed in CISA KEV and has EPSS >= 0.50 with a high CVSS score."
+      },
+      {
+        "package": "ray",
+        "installed_version": "2.9.0",
+        "vuln_id": "CVE-2026-27482",
+        "claims": {
+          "summary": {
+            "value": "Ray dashboard DELETE endpoints allow unauthenticated browser-triggered DoS (Serve shutdown / job deletion)",
+            "source_url": "https://osv.dev/vulnerability/GHSA-q5fh-2hc8-f6rq"
+          },
+          "fixed_versions": {
+            "value": [
+              "2.54.0"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-q5fh-2hc8-f6rq"
+          },
+          "cvss_score": {
+            "value": 6.5,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-27482"
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-27482"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.00397,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2026-27482"
+          }
+        },
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score",
+          "cvss_severity"
+        ],
+        "rationale": "Medium severity vulnerability with CVSS score between 4.0 and 6.9."
+      },
+      {
+        "package": "ray",
+        "installed_version": "2.9.0",
+        "vuln_id": "CVE-2026-41486",
+        "claims": {
+          "summary": {
+            "value": "Ray is an AI compute engine. From version 2.54.0 to before version 2.55.0, Ray Data registers custom Arrow extension types (ray.data.arrow_tensor, ray.data.arrow_tensor_v2, ray.data.arrow_variable_sha",
+            "source_url": "https://osv.dev/vulnerability/PYSEC-2026-2272"
+          },
+          "fixed_versions": {
+            "value": [],
+            "source_url": "https://osv.dev/vulnerability/PYSEC-2026-2272"
+          },
+          "cvss_score": {
+            "value": 8.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-41486"
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-41486"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.00704,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2026-41486"
+          }
+        },
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score",
+          "cvss_severity"
+        ],
+        "rationale": "High severity vulnerability with CVSS score >= 7.0."
+      },
+      {
+        "package": "ray",
+        "installed_version": "2.9.0",
+        "vuln_id": "CVE-2026-57516",
+        "claims": {
+          "summary": {
+            "value": "Ray: Arbitrary code execution via ray.data.read_webdataset default decoder: pickle.loads(value) and torch.load(weights_only=False)",
+            "source_url": "https://osv.dev/vulnerability/GHSA-hhrp-gw25-jr43"
+          },
+          "fixed_versions": {
+            "value": [
+              "2.56.0"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-hhrp-gw25-jr43"
+          },
+          "cvss_score": {
+            "value": 8.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-57516"
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-57516"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.00858,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2026-57516"
+          }
+        },
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score",
+          "cvss_severity"
+        ],
+        "rationale": "High severity vulnerability with CVSS score >= 7.0."
+      }
+    ],
+    "remediations": [
+      {
+        "package": "ray",
+        "current_version": "2.9.0",
+        "recommended_version": "2.56.0",
+        "resolves": [
+          "CVE-2023-48022",
+          "CVE-2025-1979",
+          "CVE-2025-34351",
+          "CVE-2025-62593",
+          "CVE-2026-27482",
+          "CVE-2026-41486",
+          "CVE-2026-57516"
+        ],
+        "note": "Upgrading to version 2.56.0 clears all known vulnerabilities for ray according to check_upgrade."
+      }
+    ],
+    "review_notes": [
+      "CVE-2025-34351 did not have a CVSS score or EPSS data available in NVD / EPSS APIs; its severity values are reported as null."
+    ]
+  },
+  "checked": {
+    "findings": [
+      {
+        "package": "ray",
+        "installed_version": "2.9.0",
+        "vuln_id": "CVE-2023-48022",
+        "aliases": [
+          "GHSA-6wgj-66m2-xxp2",
+          "PYSEC-2026-517"
+        ],
+        "priority": "P1",
+        "priority_basis": [
+          "cvss_score",
+          "cvss_severity",
+          "epss"
+        ],
+        "reference_priority": "P1",
+        "priority_agrees": true,
+        "rationale": "Critical remote code execution vulnerability with high CVSS score and EPSS >= 0.50.",
+        "claims": {
+          "summary": {
+            "value": "Ray has arbitrary code execution via jobs submission API",
+            "source_url": "https://osv.dev/vulnerability/GHSA-6wgj-66m2-xxp2",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": null,
+            "source_url": "https://osv.dev/vulnerability/GHSA-6wgj-66m2-xxp2",
+            "status": "unknown",
+            "reason": "agent could not determine this from any source"
+          },
+          "cvss_score": {
+            "value": 9.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-48022",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "CRITICAL",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-48022",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.83942,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2023-48022",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "needs_review",
+        "review_reasons": [
+          "fixed_versions: unknown - agent could not determine this from any source"
+        ]
+      },
+      {
+        "package": "ray",
+        "installed_version": "2.9.0",
+        "vuln_id": "CVE-2025-62593",
+        "aliases": [
+          "GHSA-q279-jhrf-cc6v",
+          "PYSEC-2026-520"
+        ],
+        "priority": "P1",
+        "priority_basis": [
+          "in_kev",
+          "epss",
+          "cvss_score",
+          "cvss_severity"
+        ],
+        "reference_priority": "P1",
+        "priority_agrees": true,
+        "rationale": "Listed in CISA KEV and has EPSS >= 0.50 with a high CVSS score.",
+        "claims": {
+          "summary": {
+            "value": "Ray is vulnerable to Critical RCE via Safari & Firefox Browsers through DNS Rebinding Attack",
+            "source_url": "https://osv.dev/vulnerability/GHSA-q279-jhrf-cc6v",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "2.52.0"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-q279-jhrf-cc6v",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 8.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-62593",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-62593",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": true,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.62459,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2025-62593",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "ray",
+        "installed_version": "2.9.0",
+        "vuln_id": "CVE-2026-41486",
+        "aliases": [
+          "GHSA-mw35-8rx3-xf9r",
+          "PYSEC-2026-2272",
+          "PYSEC-2026-2296"
+        ],
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score",
+          "cvss_severity"
+        ],
+        "reference_priority": "P2",
+        "priority_agrees": true,
+        "rationale": "High severity vulnerability with CVSS score >= 7.0.",
+        "claims": {
+          "summary": {
+            "value": "Ray is an AI compute engine. From version 2.54.0 to before version 2.55.0, Ray Data registers custom Arrow extension types (ray.data.arrow_tensor, ray.data.arrow_tensor_v2, ray.data.arrow_variable_sha",
+            "source_url": "https://osv.dev/vulnerability/PYSEC-2026-2272",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [],
+            "source_url": "https://osv.dev/vulnerability/PYSEC-2026-2272",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 8.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-41486",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-41486",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.00704,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2026-41486",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "ray",
+        "installed_version": "2.9.0",
+        "vuln_id": "CVE-2026-57516",
+        "aliases": [
+          "GHSA-hhrp-gw25-jr43",
+          "PYSEC-2026-2273"
+        ],
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score",
+          "cvss_severity"
+        ],
+        "reference_priority": "P2",
+        "priority_agrees": true,
+        "rationale": "High severity vulnerability with CVSS score >= 7.0.",
+        "claims": {
+          "summary": {
+            "value": "Ray: Arbitrary code execution via ray.data.read_webdataset default decoder: pickle.loads(value) and torch.load(weights_only=False)",
+            "source_url": "https://osv.dev/vulnerability/GHSA-hhrp-gw25-jr43",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "2.56.0"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-hhrp-gw25-jr43",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 8.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-57516",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-57516",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.00858,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2026-57516",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "ray",
+        "installed_version": "2.9.0",
+        "vuln_id": "CVE-2026-27482",
+        "aliases": [
+          "GHSA-q5fh-2hc8-f6rq",
+          "PYSEC-2026-2271"
+        ],
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score",
+          "cvss_severity"
+        ],
+        "reference_priority": "P3",
+        "priority_agrees": true,
+        "rationale": "Medium severity vulnerability with CVSS score between 4.0 and 6.9.",
+        "claims": {
+          "summary": {
+            "value": "Ray dashboard DELETE endpoints allow unauthenticated browser-triggered DoS (Serve shutdown / job deletion)",
+            "source_url": "https://osv.dev/vulnerability/GHSA-q5fh-2hc8-f6rq",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "2.54.0"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-q5fh-2hc8-f6rq",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 6.5,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-27482",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-27482",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.00397,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2026-27482",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "ray",
+        "installed_version": "2.9.0",
+        "vuln_id": "CVE-2025-1979",
+        "aliases": [
+          "GHSA-w4rh-fgx7-q63m",
+          "PYSEC-2025-23"
+        ],
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score",
+          "cvss_severity"
+        ],
+        "reference_priority": "P3",
+        "priority_agrees": true,
+        "rationale": "Medium severity vulnerability with CVSS score between 4.0 and 6.9.",
+        "claims": {
+          "summary": {
+            "value": "ray vulnerable to Insertion of Sensitive Information into Log File",
+            "source_url": "https://osv.dev/vulnerability/GHSA-w4rh-fgx7-q63m",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "2.43.0"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-w4rh-fgx7-q63m",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 6.4,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-1979",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-1979",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.00196,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2025-1979",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "ray",
+        "installed_version": "2.9.0",
+        "vuln_id": "CVE-2025-34351",
+        "aliases": [
+          "GHSA-gx77-xgc2-4888",
+          "PYSEC-2026-518"
+        ],
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score",
+          "cvss_severity"
+        ],
+        "reference_priority": null,
+        "priority_agrees": false,
+        "rationale": "CVSS and EPSS are not available; assigned P3 based on judgment for review since it involves default authentication settings.",
+        "claims": {
+          "summary": {
+            "value": "Ray's New Token Authentication is Disabled By Default",
+            "source_url": "https://osv.dev/vulnerability/GHSA-gx77-xgc2-4888",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": null,
+            "source_url": "https://osv.dev/vulnerability/GHSA-gx77-xgc2-4888",
+            "status": "unknown",
+            "reason": "agent could not determine this from any source"
+          },
+          "cvss_score": {
+            "value": null,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-34351",
+            "status": "unknown",
+            "reason": "agent could not determine this from any source"
+          },
+          "cvss_severity": {
+            "value": null,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-34351",
+            "status": "unknown",
+            "reason": "agent could not determine this from any source"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": null,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2025-34351",
+            "status": "unknown",
+            "reason": "agent could not determine this from any source"
+          }
+        },
+        "status": "needs_review",
+        "review_reasons": [
+          "fixed_versions: unknown - agent could not determine this from any source",
+          "cvss_score: unknown - agent could not determine this from any source",
+          "cvss_severity: unknown - agent could not determine this from any source",
+          "epss: unknown - agent could not determine this from any source",
+          "priority rests on unverified claims: cvss_score, cvss_severity"
+        ]
+      }
+    ],
+    "rejected_findings": [],
+    "omitted": [],
+    "remediations": [
+      {
+        "package": "ray",
+        "current_version": "2.9.0",
+        "recommended_version": "2.56.0",
+        "resolves": [
+          "CVE-2023-48022",
+          "CVE-2025-1979",
+          "CVE-2025-34351",
+          "CVE-2025-62593",
+          "CVE-2026-27482",
+          "CVE-2026-41486",
+          "CVE-2026-57516"
+        ],
+        "note": "Upgrading to version 2.56.0 clears all known vulnerabilities for ray according to check_upgrade.",
+        "status": "verified",
+        "reason": "",
+        "still_affected_by": [],
+        "remaining_known_vulns": [],
+        "verification_url": "https://osv.dev/list?ecosystem=PyPI&q=ray"
+      }
+    ],
+    "unresolved_dependencies": [],
+    "unqueried_dependencies": [],
+    "review_notes": [
+      "CVE-2025-34351 did not have a CVSS score or EPSS data available in NVD / EPSS APIs; its severity values are reported as null."
+    ],
+    "errors": [],
+    "stats": {
+      "claims_total": 42,
+      "verified": 37,
+      "unknown": 5,
+      "unsourced": 0,
+      "ungrounded": 0,
+      "mismatch": 0,
+      "findings_reported": 7,
+      "findings_accepted": 7,
+      "findings_rejected": 0,
+      "findings_needing_review": 2,
+      "omitted": 0,
+      "unsupported_claim_rate": 0.0,
+      "unsupported_claims_in_final_report": 0
+    }
+  }
+}

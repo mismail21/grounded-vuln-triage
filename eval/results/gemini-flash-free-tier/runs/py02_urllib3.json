@@ -1,0 +1,1452 @@
+{
+  "model": "gemini-3.5-flash-lite",
+  "turns": 3,
+  "seconds": 15.5,
+  "usage": {
+    "input": 16262,
+    "output": 5832,
+    "cache_read": 4052,
+    "cache_write": 0
+  },
+  "cost_usd": 0.0,
+  "trace": [
+    {
+      "tool": "osv_lookup",
+      "input": {
+        "packages": [
+          {
+            "version": "1.24.1",
+            "name": "urllib3"
+          }
+        ]
+      },
+      "seconds": 0.0,
+      "is_error": false
+    },
+    {
+      "tool": "check_upgrade",
+      "input": {
+        "version": "1.26.19",
+        "package": "urllib3"
+      },
+      "seconds": 0.54,
+      "is_error": false
+    },
+    {
+      "tool": "nvd_lookup",
+      "input": {
+        "cve_ids": [
+          "CVE-2018-25091",
+          "CVE-2019-11236",
+          "CVE-2019-11324",
+          "CVE-2020-26137",
+          "CVE-2023-43804",
+          "CVE-2023-45803",
+          "CVE-2024-37891",
+          "CVE-2025-50181",
+          "CVE-2025-66418",
+          "CVE-2025-66471",
+          "CVE-2026-21441",
+          "CVE-2026-44431",
+          "CVE-2026-97689"
+        ]
+      },
+      "seconds": 0.01,
+      "is_error": false
+    },
+    {
+      "tool": "kev_lookup",
+      "input": {
+        "cve_ids": [
+          "CVE-2018-25091",
+          "CVE-2019-11236",
+          "CVE-2019-11324",
+          "CVE-2020-26137",
+          "CVE-2023-43804",
+          "CVE-2023-45803",
+          "CVE-2024-37891",
+          "CVE-2025-50181",
+          "CVE-2025-66418",
+          "CVE-2025-66471",
+          "CVE-2026-21441",
+          "CVE-2026-44431",
+          "CVE-2026-97689"
+        ]
+      },
+      "seconds": 0.0,
+      "is_error": false
+    },
+    {
+      "tool": "epss_lookup",
+      "input": {
+        "cve_ids": [
+          "CVE-2018-25091",
+          "CVE-2019-11236",
+          "CVE-2019-11324",
+          "CVE-2020-26137",
+          "CVE-2023-43804",
+          "CVE-2023-45803",
+          "CVE-2024-37891",
+          "CVE-2025-50181",
+          "CVE-2025-66418",
+          "CVE-2025-66471",
+          "CVE-2026-21441",
+          "CVE-2026-44431",
+          "CVE-2026-97689"
+        ]
+      },
+      "seconds": 0.15,
+      "is_error": false
+    },
+    {
+      "tool": "submit_report",
+      "input": {
+        "findings": 13,
+        "remediations": 1
+      },
+      "seconds": 0.0,
+      "is_error": false
+    }
+  ],
+  "error": null,
+  "raw_report": {
+    "findings": [
+      {
+        "package": "urllib3",
+        "installed_version": "1.24.1",
+        "vuln_id": "CVE-2018-25091",
+        "claims": {
+          "summary": {
+            "value": "Authorization Header forwarded on redirect",
+            "source_url": "https://osv.dev/vulnerability/GHSA-gwvm-45gx-3cf8"
+          },
+          "fixed_versions": {
+            "value": [
+              "1.24.2"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-gwvm-45gx-3cf8"
+          },
+          "cvss_score": {
+            "value": 6.1,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2018-25091"
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2018-25091"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.00516,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2018-25091"
+          }
+        },
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "CVSS score is 6.1 (>= 7.0 not met, but >= 4.0 places it in P3 or P2 depending on rubric/judgement, CVSS 6.1 warrants P2 fix this sprint)."
+      },
+      {
+        "package": "urllib3",
+        "installed_version": "1.24.1",
+        "vuln_id": "CVE-2019-11236",
+        "claims": {
+          "summary": {
+            "value": "Improper Neutralization of CRLF Sequences in urllib3 library for Python",
+            "source_url": "https://osv.dev/vulnerability/GHSA-r64q-w8jr-g9qp"
+          },
+          "fixed_versions": {
+            "value": [
+              "1.24.3"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-r64q-w8jr-g9qp"
+          },
+          "cvss_score": {
+            "value": 6.1,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2019-11236"
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2019-11236"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.02073,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2019-11236"
+          }
+        },
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "CVSS score is 6.1, which falls under P2 (CVSS >= 7.0 or general medium-high priority)."
+      },
+      {
+        "package": "urllib3",
+        "installed_version": "1.24.1",
+        "vuln_id": "CVE-2019-11324",
+        "claims": {
+          "summary": {
+            "value": "Improper Certificate Validation in urllib3",
+            "source_url": "https://osv.dev/vulnerability/GHSA-mh33-7rrq-662w"
+          },
+          "fixed_versions": {
+            "value": [
+              "1.24.2"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-mh33-7rrq-662w"
+          },
+          "cvss_score": {
+            "value": 7.5,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2019-11324"
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2019-11324"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.02836,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2019-11324"
+          }
+        },
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "CVSS score is 7.5, which satisfies P2 criteria (CVSS >= 7.0)."
+      },
+      {
+        "package": "urllib3",
+        "installed_version": "1.24.1",
+        "vuln_id": "CVE-2020-26137",
+        "claims": {
+          "summary": {
+            "value": "CRLF injection in urllib3",
+            "source_url": "https://osv.dev/vulnerability/GHSA-wqvq-5m8c-6g24"
+          },
+          "fixed_versions": {
+            "value": [
+              "1.25.9"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-wqvq-5m8c-6g24"
+          },
+          "cvss_score": {
+            "value": 6.5,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-26137"
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-26137"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.02269,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2020-26137"
+          }
+        },
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "CVSS score is 6.5, categorized under P2."
+      },
+      {
+        "package": "urllib3",
+        "installed_version": "1.24.1",
+        "vuln_id": "CVE-2023-43804",
+        "claims": {
+          "summary": {
+            "value": "`Cookie` HTTP header isn't stripped on cross-origin redirects",
+            "source_url": "https://osv.dev/vulnerability/GHSA-v845-jxx5-vc9f"
+          },
+          "fixed_versions": {
+            "value": [
+              "2.0.6",
+              "1.26.17"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-v845-jxx5-vc9f"
+          },
+          "cvss_score": {
+            "value": 8.1,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-43804"
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-43804"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.01207,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2023-43804"
+          }
+        },
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "CVSS score is 8.1, satisfying P2 criteria (CVSS >= 7.0)."
+      },
+      {
+        "package": "urllib3",
+        "installed_version": "1.24.1",
+        "vuln_id": "CVE-2023-45803",
+        "claims": {
+          "summary": {
+            "value": "urllib3's request body not stripped after redirect from 303 status changes request method to GET",
+            "source_url": "https://osv.dev/vulnerability/GHSA-g4mx-q9vg-27p4"
+          },
+          "fixed_versions": {
+            "value": [
+              "2.0.7",
+              "1.26.18"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-g4mx-q9vg-27p4"
+          },
+          "cvss_score": {
+            "value": 4.2,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-45803"
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-45803"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.00544,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2023-45803"
+          }
+        },
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "CVSS score is 4.2, satisfying P3 criteria (CVSS >= 4.0)."
+      },
+      {
+        "package": "urllib3",
+        "installed_version": "1.24.1",
+        "vuln_id": "CVE-2024-37891",
+        "claims": {
+          "summary": {
+            "value": "urllib3's Proxy-Authorization request header isn't stripped during cross-origin redirects",
+            "source_url": "https://osv.dev/vulnerability/GHSA-34jh-p97f-mpxf"
+          },
+          "fixed_versions": {
+            "value": [
+              "1.26.19",
+              "2.2.2"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-34jh-p97f-mpxf"
+          },
+          "cvss_score": {
+            "value": 6.5,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-37891"
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-37891"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.01141,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2024-37891"
+          }
+        },
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "CVSS score is 6.5, categorized under P2."
+      },
+      {
+        "package": "urllib3",
+        "installed_version": "1.24.1",
+        "vuln_id": "CVE-2025-50181",
+        "claims": {
+          "summary": {
+            "value": "urllib3 redirects are not disabled when retries are disabled on PoolManager instantiation",
+            "source_url": "https://osv.dev/vulnerability/GHSA-pq67-6m6q-mj2v"
+          },
+          "fixed_versions": {
+            "value": [
+              "2.5.0"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-pq67-6m6q-mj2v"
+          },
+          "cvss_score": {
+            "value": 6.1,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-50181"
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-50181"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.00474,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2025-50181"
+          }
+        },
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "CVSS score is 6.1, categorized under P2."
+      },
+      {
+        "package": "urllib3",
+        "installed_version": "1.24.1",
+        "vuln_id": "CVE-2025-66418",
+        "claims": {
+          "summary": {
+            "value": "urllib3 allows an unbounded number of links in the decompression chain",
+            "source_url": "https://osv.dev/vulnerability/GHSA-gm62-xv2j-4w53"
+          },
+          "fixed_versions": {
+            "value": [
+              "2.6.0"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-gm62-xv2j-4w53"
+          },
+          "cvss_score": {
+            "value": 7.5,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-66418"
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-66418"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.00682,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2025-66418"
+          }
+        },
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "CVSS score is 7.5, satisfying P2 criteria (CVSS >= 7.0)."
+      },
+      {
+        "package": "urllib3",
+        "installed_version": "1.24.1",
+        "vuln_id": "CVE-2025-66471",
+        "claims": {
+          "summary": {
+            "value": "urllib3 streaming API improperly handles highly compressed data",
+            "source_url": "https://osv.dev/vulnerability/GHSA-2xpw-w6gg-jr37"
+          },
+          "fixed_versions": {
+            "value": [
+              "2.6.0"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-2xpw-w6gg-jr37"
+          },
+          "cvss_score": {
+            "value": 7.5,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-66471"
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-66471"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.00682,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2025-66471"
+          }
+        },
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "CVSS score is 7.5, satisfying P2 criteria (CVSS >= 7.0)."
+      },
+      {
+        "package": "urllib3",
+        "installed_version": "1.24.1",
+        "vuln_id": "CVE-2026-21441",
+        "claims": {
+          "summary": {
+            "value": "Decompression-bomb safeguards bypassed when following HTTP redirects (streaming API)",
+            "source_url": "https://osv.dev/vulnerability/GHSA-38jv-5279-wg99"
+          },
+          "fixed_versions": {
+            "value": [
+              "2.6.3"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-38jv-5279-wg99"
+          },
+          "cvss_score": {
+            "value": 7.5,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-21441"
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-21441"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.02965,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2026-21441"
+          }
+        },
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "CVSS score is 7.5, satisfying P2 criteria (CVSS >= 7.0)."
+      },
+      {
+        "package": "urllib3",
+        "installed_version": "1.24.1",
+        "vuln_id": "CVE-2026-44431",
+        "claims": {
+          "summary": {
+            "value": "urllib3: Sensitive headers forwarded across origins in proxied low-level redirects",
+            "source_url": "https://osv.dev/vulnerability/GHSA-qccp-gfcp-xxvc"
+          },
+          "fixed_versions": {
+            "value": [
+              "2.7.0"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-qccp-gfcp-xxvc"
+          },
+          "cvss_score": {
+            "value": 5.3,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44431"
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44431"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.00339,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2026-44431"
+          }
+        },
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "CVSS score is 5.3, satisfying P3 criteria (CVSS >= 4.0)."
+      },
+      {
+        "package": "urllib3",
+        "installed_version": "1.24.1",
+        "vuln_id": "CVE-2026-97689",
+        "claims": {
+          "summary": {
+            "value": "urllib3: HTTPResponse.stream()/read_chunked() buffers an unbounded chunk-size line into memory",
+            "source_url": "https://osv.dev/vulnerability/GHSA-vxq7-64xx-v4gw"
+          },
+          "fixed_versions": {
+            "value": [
+              "2.8.0"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-vxq7-64xx-v4gw"
+          },
+          "cvss_score": {
+            "value": 8.9,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97689"
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97689"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": null,
+            "source_url": "null"
+          }
+        },
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "CVSS score is 8.9 (CVSS v4.0), which satisfies P2 criteria (CVSS >= 7.0)."
+      }
+    ],
+    "remediations": [
+      {
+        "package": "urllib3",
+        "current_version": "1.24.1",
+        "recommended_version": "2.8.0",
+        "resolves": [
+          "CVE-2018-25091",
+          "CVE-2019-11236",
+          "CVE-2019-11324",
+          "CVE-2020-26137",
+          "CVE-2023-43804",
+          "CVE-2023-45803",
+          "CVE-2024-37891",
+          "CVE-2025-50181",
+          "CVE-2025-66418",
+          "CVE-2025-66471",
+          "CVE-2026-21441",
+          "CVE-2026-44431",
+          "CVE-2026-97689"
+        ],
+        "note": "Upgrading to a newer version like 2.8.0 resolves all listed vulnerabilities, though upgrading from 1.x to 2.x may require checking for breaking changes."
+      }
+    ],
+    "review_notes": [
+      "EPSS lookup for CVE-2026-97689 returned no entry (null value/source_url), so EPSS was not available for that CVE."
+    ]
+  },
+  "checked": {
+    "findings": [
+      {
+        "package": "urllib3",
+        "installed_version": "1.24.1",
+        "vuln_id": "CVE-2026-97689",
+        "aliases": [
+          "GHSA-vxq7-64xx-v4gw"
+        ],
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P2",
+        "priority_agrees": true,
+        "rationale": "CVSS score is 8.9 (CVSS v4.0), which satisfies P2 criteria (CVSS >= 7.0).",
+        "claims": {
+          "summary": {
+            "value": "urllib3: HTTPResponse.stream()/read_chunked() buffers an unbounded chunk-size line into memory",
+            "source_url": "https://osv.dev/vulnerability/GHSA-vxq7-64xx-v4gw",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "2.8.0"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-vxq7-64xx-v4gw",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 8.9,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97689",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-97689",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": null,
+            "source_url": "null",
+            "status": "unknown",
+            "reason": "agent could not determine this from any source"
+          }
+        },
+        "status": "needs_review",
+        "review_reasons": [
+          "epss: unknown - agent could not determine this from any source"
+        ]
+      },
+      {
+        "package": "urllib3",
+        "installed_version": "1.24.1",
+        "vuln_id": "CVE-2023-43804",
+        "aliases": [
+          "GHSA-v845-jxx5-vc9f",
+          "PYSEC-2023-192"
+        ],
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P2",
+        "priority_agrees": true,
+        "rationale": "CVSS score is 8.1, satisfying P2 criteria (CVSS >= 7.0).",
+        "claims": {
+          "summary": {
+            "value": "`Cookie` HTTP header isn't stripped on cross-origin redirects",
+            "source_url": "https://osv.dev/vulnerability/GHSA-v845-jxx5-vc9f",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "2.0.6",
+              "1.26.17"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-v845-jxx5-vc9f",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 8.1,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-43804",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-43804",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.01207,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2023-43804",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "urllib3",
+        "installed_version": "1.24.1",
+        "vuln_id": "CVE-2019-11324",
+        "aliases": [
+          "GHSA-mh33-7rrq-662w",
+          "PYSEC-2019-133"
+        ],
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P2",
+        "priority_agrees": true,
+        "rationale": "CVSS score is 7.5, which satisfies P2 criteria (CVSS >= 7.0).",
+        "claims": {
+          "summary": {
+            "value": "Improper Certificate Validation in urllib3",
+            "source_url": "https://osv.dev/vulnerability/GHSA-mh33-7rrq-662w",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "1.24.2"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-mh33-7rrq-662w",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 7.5,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2019-11324",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2019-11324",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.02836,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2019-11324",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "urllib3",
+        "installed_version": "1.24.1",
+        "vuln_id": "CVE-2025-66418",
+        "aliases": [
+          "GHSA-gm62-xv2j-4w53",
+          "PYSEC-2026-1998"
+        ],
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P2",
+        "priority_agrees": true,
+        "rationale": "CVSS score is 7.5, satisfying P2 criteria (CVSS >= 7.0).",
+        "claims": {
+          "summary": {
+            "value": "urllib3 allows an unbounded number of links in the decompression chain",
+            "source_url": "https://osv.dev/vulnerability/GHSA-gm62-xv2j-4w53",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "2.6.0"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-gm62-xv2j-4w53",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 7.5,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-66418",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-66418",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.00682,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2025-66418",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "urllib3",
+        "installed_version": "1.24.1",
+        "vuln_id": "CVE-2025-66471",
+        "aliases": [
+          "GHSA-2xpw-w6gg-jr37",
+          "PYSEC-2026-1994"
+        ],
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P2",
+        "priority_agrees": true,
+        "rationale": "CVSS score is 7.5, satisfying P2 criteria (CVSS >= 7.0).",
+        "claims": {
+          "summary": {
+            "value": "urllib3 streaming API improperly handles highly compressed data",
+            "source_url": "https://osv.dev/vulnerability/GHSA-2xpw-w6gg-jr37",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "2.6.0"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-2xpw-w6gg-jr37",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 7.5,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-66471",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-66471",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.00682,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2025-66471",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "urllib3",
+        "installed_version": "1.24.1",
+        "vuln_id": "CVE-2026-21441",
+        "aliases": [
+          "GHSA-38jv-5279-wg99",
+          "PYSEC-2026-1996"
+        ],
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P2",
+        "priority_agrees": true,
+        "rationale": "CVSS score is 7.5, satisfying P2 criteria (CVSS >= 7.0).",
+        "claims": {
+          "summary": {
+            "value": "Decompression-bomb safeguards bypassed when following HTTP redirects (streaming API)",
+            "source_url": "https://osv.dev/vulnerability/GHSA-38jv-5279-wg99",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "2.6.3"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-38jv-5279-wg99",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 7.5,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-21441",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-21441",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.02965,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2026-21441",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "urllib3",
+        "installed_version": "1.24.1",
+        "vuln_id": "CVE-2020-26137",
+        "aliases": [
+          "GHSA-wqvq-5m8c-6g24",
+          "PYSEC-2020-148"
+        ],
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P3",
+        "priority_agrees": false,
+        "rationale": "CVSS score is 6.5, categorized under P2.",
+        "claims": {
+          "summary": {
+            "value": "CRLF injection in urllib3",
+            "source_url": "https://osv.dev/vulnerability/GHSA-wqvq-5m8c-6g24",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "1.25.9"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-wqvq-5m8c-6g24",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 6.5,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-26137",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-26137",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.02269,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2020-26137",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "urllib3",
+        "installed_version": "1.24.1",
+        "vuln_id": "CVE-2024-37891",
+        "aliases": [
+          "GHSA-34jh-p97f-mpxf",
+          "PYSEC-2026-1995"
+        ],
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P3",
+        "priority_agrees": false,
+        "rationale": "CVSS score is 6.5, categorized under P2.",
+        "claims": {
+          "summary": {
+            "value": "urllib3's Proxy-Authorization request header isn't stripped during cross-origin redirects",
+            "source_url": "https://osv.dev/vulnerability/GHSA-34jh-p97f-mpxf",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "1.26.19",
+              "2.2.2"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-34jh-p97f-mpxf",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 6.5,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-37891",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-37891",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.01141,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2024-37891",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "urllib3",
+        "installed_version": "1.24.1",
+        "vuln_id": "CVE-2018-25091",
+        "aliases": [
+          "GHSA-gwvm-45gx-3cf8",
+          "PYSEC-2023-207"
+        ],
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P3",
+        "priority_agrees": false,
+        "rationale": "CVSS score is 6.1 (>= 7.0 not met, but >= 4.0 places it in P3 or P2 depending on rubric/judgement, CVSS 6.1 warrants P2 fix this sprint).",
+        "claims": {
+          "summary": {
+            "value": "Authorization Header forwarded on redirect",
+            "source_url": "https://osv.dev/vulnerability/GHSA-gwvm-45gx-3cf8",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "1.24.2"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-gwvm-45gx-3cf8",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 6.1,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2018-25091",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2018-25091",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.00516,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2018-25091",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "urllib3",
+        "installed_version": "1.24.1",
+        "vuln_id": "CVE-2019-11236",
+        "aliases": [
+          "GHSA-r64q-w8jr-g9qp",
+          "PYSEC-2019-132"
+        ],
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P3",
+        "priority_agrees": false,
+        "rationale": "CVSS score is 6.1, which falls under P2 (CVSS >= 7.0 or general medium-high priority).",
+        "claims": {
+          "summary": {
+            "value": "Improper Neutralization of CRLF Sequences in urllib3 library for Python",
+            "source_url": "https://osv.dev/vulnerability/GHSA-r64q-w8jr-g9qp",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "1.24.3"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-r64q-w8jr-g9qp",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 6.1,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2019-11236",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2019-11236",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.02073,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2019-11236",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "urllib3",
+        "installed_version": "1.24.1",
+        "vuln_id": "CVE-2025-50181",
+        "aliases": [
+          "GHSA-pq67-6m6q-mj2v",
+          "PYSEC-2026-1999"
+        ],
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P3",
+        "priority_agrees": false,
+        "rationale": "CVSS score is 6.1, categorized under P2.",
+        "claims": {
+          "summary": {
+            "value": "urllib3 redirects are not disabled when retries are disabled on PoolManager instantiation",
+            "source_url": "https://osv.dev/vulnerability/GHSA-pq67-6m6q-mj2v",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "2.5.0"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-pq67-6m6q-mj2v",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 6.1,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-50181",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-50181",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.00474,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2025-50181",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "urllib3",
+        "installed_version": "1.24.1",
+        "vuln_id": "CVE-2026-44431",
+        "aliases": [
+          "GHSA-qccp-gfcp-xxvc",
+          "PYSEC-2026-141"
+        ],
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P3",
+        "priority_agrees": true,
+        "rationale": "CVSS score is 5.3, satisfying P3 criteria (CVSS >= 4.0).",
+        "claims": {
+          "summary": {
+            "value": "urllib3: Sensitive headers forwarded across origins in proxied low-level redirects",
+            "source_url": "https://osv.dev/vulnerability/GHSA-qccp-gfcp-xxvc",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "2.7.0"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-qccp-gfcp-xxvc",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 5.3,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44431",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44431",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.00339,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2026-44431",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "urllib3",
+        "installed_version": "1.24.1",
+        "vuln_id": "CVE-2023-45803",
+        "aliases": [
+          "GHSA-g4mx-q9vg-27p4",
+          "PYSEC-2023-212"
+        ],
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P3",
+        "priority_agrees": true,
+        "rationale": "CVSS score is 4.2, satisfying P3 criteria (CVSS >= 4.0).",
+        "claims": {
+          "summary": {
+            "value": "urllib3's request body not stripped after redirect from 303 status changes request method to GET",
+            "source_url": "https://osv.dev/vulnerability/GHSA-g4mx-q9vg-27p4",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "2.0.7",
+              "1.26.18"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-g4mx-q9vg-27p4",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 4.2,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-45803",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-45803",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.00544,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2023-45803",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      }
+    ],
+    "rejected_findings": [],
+    "omitted": [],
+    "remediations": [
+      {
+        "package": "urllib3",
+        "current_version": "1.24.1",
+        "recommended_version": "2.8.0",
+        "resolves": [
+          "CVE-2018-25091",
+          "CVE-2019-11236",
+          "CVE-2019-11324",
+          "CVE-2020-26137",
+          "CVE-2023-43804",
+          "CVE-2023-45803",
+          "CVE-2024-37891",
+          "CVE-2025-50181",
+          "CVE-2025-66418",
+          "CVE-2025-66471",
+          "CVE-2026-21441",
+          "CVE-2026-44431",
+          "CVE-2026-97689"
+        ],
+        "note": "Upgrading to a newer version like 2.8.0 resolves all listed vulnerabilities, though upgrading from 1.x to 2.x may require checking for breaking changes.",
+        "status": "verified",
+        "reason": "",
+        "still_affected_by": [],
+        "remaining_known_vulns": [],
+        "verification_url": "https://osv.dev/list?ecosystem=PyPI&q=urllib3"
+      }
+    ],
+    "unresolved_dependencies": [],
+    "unqueried_dependencies": [],
+    "review_notes": [
+      "EPSS lookup for CVE-2026-97689 returned no entry (null value/source_url), so EPSS was not available for that CVE."
+    ],
+    "errors": [],
+    "stats": {
+      "claims_total": 78,
+      "verified": 77,
+      "unknown": 1,
+      "unsourced": 0,
+      "ungrounded": 0,
+      "mismatch": 0,
+      "findings_reported": 13,
+      "findings_accepted": 13,
+      "findings_rejected": 0,
+      "findings_needing_review": 1,
+      "omitted": 0,
+      "unsupported_claim_rate": 0.0,
+      "unsupported_claims_in_final_report": 0
+    }
+  }
+}

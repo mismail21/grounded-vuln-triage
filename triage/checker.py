@@ -152,6 +152,9 @@ def check_report(report: dict[str, Any], ledger: Ledger, deps: ParseResult) -> d
 
         v = {k: (c["value"] if c["status"] == "verified" else None) for k, c in claims.items()}
         ref = reference_priority(v["cvss_score"], v["in_kev"], v["epss"])
+        if ref and f.get("priority") != ref:
+            # Judgement calls are allowed, but a human should see every departure from the rubric.
+            review.append(f"priority {f.get('priority')} differs from rubric ({ref}); check the rationale")
         findings.append(
             {
                 "package": ledger.pkg_key(pkg, ver).rsplit("@", 1)[0],

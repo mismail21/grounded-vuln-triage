@@ -1,0 +1,1131 @@
+{
+  "model": "gemini-3.5-flash-lite",
+  "turns": 3,
+  "seconds": 11.1,
+  "usage": {
+    "input": 13069,
+    "output": 4374,
+    "cache_read": 0,
+    "cache_write": 0
+  },
+  "cost_usd": 0.0,
+  "trace": [
+    {
+      "tool": "osv_lookup",
+      "input": {
+        "packages": [
+          {
+            "version": "0.12.2",
+            "name": "flask"
+          },
+          {
+            "version": "5.1",
+            "name": "pyyaml"
+          },
+          {
+            "name": "gunicorn",
+            "version": "20.0.4"
+          }
+        ]
+      },
+      "seconds": 0.0,
+      "is_error": false
+    },
+    {
+      "tool": "nvd_lookup",
+      "input": {
+        "cve_ids": [
+          "CVE-2018-1000656",
+          "CVE-2019-1010083",
+          "CVE-2023-30861",
+          "CVE-2026-27205",
+          "CVE-2019-20477",
+          "CVE-2020-14343",
+          "CVE-2020-1747",
+          "CVE-2024-1135",
+          "CVE-2024-6827"
+        ]
+      },
+      "seconds": 0.01,
+      "is_error": false
+    },
+    {
+      "tool": "kev_lookup",
+      "input": {
+        "cve_ids": [
+          "CVE-2018-1000656",
+          "CVE-2019-1010083",
+          "CVE-2023-30861",
+          "CVE-2026-27205",
+          "CVE-2019-20477",
+          "CVE-2020-14343",
+          "CVE-2020-1747",
+          "CVE-2024-1135",
+          "CVE-2024-6827"
+        ]
+      },
+      "seconds": 0.0,
+      "is_error": false
+    },
+    {
+      "tool": "epss_lookup",
+      "input": {
+        "cve_ids": [
+          "CVE-2018-1000656",
+          "CVE-2019-1010083",
+          "CVE-2023-30861",
+          "CVE-2026-27205",
+          "CVE-2019-20477",
+          "CVE-2020-14343",
+          "CVE-2020-1747",
+          "CVE-2024-1135",
+          "CVE-2024-6827"
+        ]
+      },
+      "seconds": 0.28,
+      "is_error": false
+    },
+    {
+      "tool": "check_upgrade",
+      "input": {
+        "version": "3.1.3",
+        "package": "flask"
+      },
+      "seconds": 0.0,
+      "is_error": false
+    },
+    {
+      "tool": "check_upgrade",
+      "input": {
+        "version": "5.4",
+        "package": "pyyaml"
+      },
+      "seconds": 0.0,
+      "is_error": false
+    },
+    {
+      "tool": "check_upgrade",
+      "input": {
+        "version": "22.0.0",
+        "package": "gunicorn"
+      },
+      "seconds": 0.0,
+      "is_error": false
+    },
+    {
+      "tool": "submit_report",
+      "input": {
+        "findings": 9,
+        "remediations": 3
+      },
+      "seconds": 0.0,
+      "is_error": false
+    }
+  ],
+  "error": null,
+  "raw_report": {
+    "findings": [
+      {
+        "package": "flask",
+        "installed_version": "0.12.2",
+        "vuln_id": "CVE-2018-1000656",
+        "claims": {
+          "summary": {
+            "value": "Flask is vulnerable to Denial of Service via incorrect encoding of JSON data",
+            "source_url": "https://osv.dev/vulnerability/GHSA-562c-5r94-xh97"
+          },
+          "fixed_versions": {
+            "value": [
+              "0.12.3"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-562c-5r94-xh97"
+          },
+          "cvss_score": {
+            "value": 7.5,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2018-1000656"
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2018-1000656"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.03855,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2018-1000656"
+          }
+        },
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score",
+          "cvss_severity"
+        ],
+        "rationale": "CVSS score is 7.5 (HIGH), placing it in the P2 range (CVSS >= 7.0)."
+      },
+      {
+        "package": "flask",
+        "installed_version": "0.12.2",
+        "vuln_id": "CVE-2019-1010083",
+        "claims": {
+          "summary": {
+            "value": "Pallets Project Flask is vulnerable to Denial of Service via Unexpected memory usage",
+            "source_url": "https://osv.dev/vulnerability/GHSA-5wv5-4vpf-pj6m"
+          },
+          "fixed_versions": {
+            "value": [
+              "1.0"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-5wv5-4vpf-pj6m"
+          },
+          "cvss_score": {
+            "value": 7.5,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2019-1010083"
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2019-1010083"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.01884,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2019-1010083"
+          }
+        },
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score",
+          "cvss_severity"
+        ],
+        "rationale": "CVSS score is 7.5 (HIGH), placing it in the P2 range (CVSS >= 7.0)."
+      },
+      {
+        "package": "flask",
+        "installed_version": "0.12.2",
+        "vuln_id": "CVE-2023-30861",
+        "claims": {
+          "summary": {
+            "value": "Flask vulnerable to possible disclosure of permanent session cookie due to missing Vary: Cookie header",
+            "source_url": "https://osv.dev/vulnerability/GHSA-m2qf-hxjv-5gpq"
+          },
+          "fixed_versions": {
+            "value": [
+              "2.2.5",
+              "2.3.2"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-m2qf-hxjv-5gpq"
+          },
+          "cvss_score": {
+            "value": 7.5,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-30861"
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-30861"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.01261,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2023-30861"
+          }
+        },
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score",
+          "cvss_severity"
+        ],
+        "rationale": "CVSS score is 7.5 (HIGH), placing it in the P2 range (CVSS >= 7.0)."
+      },
+      {
+        "package": "flask",
+        "installed_version": "0.12.2",
+        "vuln_id": "CVE-2026-27205",
+        "claims": {
+          "summary": {
+            "value": "Flask session does not add `Vary: Cookie` header when accessed in some ways",
+            "source_url": "https://osv.dev/vulnerability/GHSA-68rp-wp8r-4726"
+          },
+          "fixed_versions": {
+            "value": [
+              "3.1.3"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-68rp-wp8r-4726"
+          },
+          "cvss_score": {
+            "value": 4.3,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-27205"
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-27205"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.00423,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2026-27205"
+          }
+        },
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score",
+          "cvss_severity"
+        ],
+        "rationale": "CVSS score is 4.3 (MEDIUM), placing it in the P3 range (CVSS >= 4.0)."
+      },
+      {
+        "package": "pyyaml",
+        "installed_version": "5.1",
+        "vuln_id": "CVE-2019-20477",
+        "claims": {
+          "summary": {
+            "value": "Deserialization of Untrusted Data in PyYAML",
+            "source_url": "https://osv.dev/vulnerability/GHSA-3pqx-4fqf-j49f"
+          },
+          "fixed_versions": {
+            "value": [
+              "5.2b1",
+              "5.2"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-3pqx-4fqf-j49f"
+          },
+          "cvss_score": {
+            "value": 9.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2019-20477"
+          },
+          "cvss_severity": {
+            "value": "CRITICAL",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2019-20477"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.05114,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2019-20477"
+          }
+        },
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score",
+          "cvss_severity"
+        ],
+        "rationale": "CVSS score is 9.8 (CRITICAL), placing it in the P2 range (CVSS >= 7.0)."
+      },
+      {
+        "package": "pyyaml",
+        "installed_version": "5.1",
+        "vuln_id": "CVE-2020-14343",
+        "claims": {
+          "summary": {
+            "value": "Improper Input Validation in PyYAML",
+            "source_url": "https://osv.dev/vulnerability/GHSA-8q59-q68h-6hv4"
+          },
+          "fixed_versions": {
+            "value": [
+              "5.4"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-8q59-q68h-6hv4"
+          },
+          "cvss_score": {
+            "value": 9.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-14343"
+          },
+          "cvss_severity": {
+            "value": "CRITICAL",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-14343"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.05984,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2020-14343"
+          }
+        },
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score",
+          "cvss_severity"
+        ],
+        "rationale": "CVSS score is 9.8 (CRITICAL), placing it in the P2 range (CVSS >= 7.0)."
+      },
+      {
+        "package": "pyyaml",
+        "installed_version": "5.1",
+        "vuln_id": "CVE-2020-1747",
+        "claims": {
+          "summary": {
+            "value": "Improper Input Validation in PyYAML",
+            "source_url": "https://osv.dev/vulnerability/GHSA-6757-jp84-gxfx"
+          },
+          "fixed_versions": {
+            "value": [
+              "5.3.1"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-6757-jp84-gxfx"
+          },
+          "cvss_score": {
+            "value": 9.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-1747"
+          },
+          "cvss_severity": {
+            "value": "CRITICAL",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-1747"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.05442,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2020-1747"
+          }
+        },
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score",
+          "cvss_severity"
+        ],
+        "rationale": "CVSS score is 9.8 (CRITICAL), placing it in the P2 range (CVSS >= 7.0)."
+      },
+      {
+        "package": "gunicorn",
+        "installed_version": "20.0.4",
+        "vuln_id": "CVE-2024-1135",
+        "claims": {
+          "summary": {
+            "value": "Request smuggling leading to endpoint restriction bypass in Gunicorn",
+            "source_url": "https://osv.dev/vulnerability/GHSA-w3h3-4rj7-4ph4"
+          },
+          "fixed_versions": {
+            "value": [
+              "22.0.0"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-w3h3-4rj7-4ph4"
+          },
+          "cvss_score": {
+            "value": 7.5,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-1135"
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-1135"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.02996,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2024-1135"
+          }
+        },
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score",
+          "cvss_severity"
+        ],
+        "rationale": "CVSS score is 7.5 (HIGH), placing it in the P2 range (CVSS >= 7.0)."
+      },
+      {
+        "package": "gunicorn",
+        "installed_version": "20.0.4",
+        "vuln_id": "CVE-2024-6827",
+        "claims": {
+          "summary": {
+            "value": "Gunicorn HTTP Request/Response Smuggling vulnerability",
+            "source_url": "https://osv.dev/vulnerability/GHSA-hc5x-x2vx-497g"
+          },
+          "fixed_versions": {
+            "value": [
+              "22.0.0"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-hc5x-x2vx-497g"
+          },
+          "cvss_score": {
+            "value": 7.5,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-6827"
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-6827"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.0079,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2024-6827"
+          }
+        },
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score",
+          "cvss_severity"
+        ],
+        "rationale": "CVSS score is 7.5 (HIGH), placing it in the P2 range (CVSS >= 7.0)."
+      }
+    ],
+    "remediations": [
+      {
+        "package": "flask",
+        "current_version": "0.12.2",
+        "recommended_version": "3.1.3",
+        "resolves": [
+          "CVE-2018-1000656",
+          "CVE-2019-1010083",
+          "CVE-2023-30861",
+          "CVE-2026-27205"
+        ],
+        "note": "Upgrade flask to version 3.1.3 to resolve all listed vulnerabilities."
+      },
+      {
+        "package": "pyyaml",
+        "current_version": "5.1",
+        "recommended_version": "5.4",
+        "resolves": [
+          "CVE-2019-20477",
+          "CVE-2020-14343",
+          "CVE-2020-1747"
+        ],
+        "note": "Upgrade pyyaml to version 5.4 to resolve all listed vulnerabilities."
+      },
+      {
+        "package": "gunicorn",
+        "current_version": "20.0.4",
+        "recommended_version": "22.0.0",
+        "resolves": [
+          "CVE-2024-1135",
+          "CVE-2024-6827"
+        ],
+        "note": "Upgrade gunicorn to version 22.0.0 to resolve all listed vulnerabilities."
+      }
+    ],
+    "review_notes": [
+      "All identified vulnerabilities were successfully mapped to CVE records, NVD CVSS scores, EPSS, and KEV catalog data. Check upgrade verified that the recommended target versions resolve all OSV-listed vulnerabilities."
+    ]
+  },
+  "checked": {
+    "findings": [
+      {
+        "package": "pyyaml",
+        "installed_version": "5.1",
+        "vuln_id": "CVE-2019-20477",
+        "aliases": [
+          "GHSA-3pqx-4fqf-j49f",
+          "PYSEC-2020-176"
+        ],
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score",
+          "cvss_severity"
+        ],
+        "reference_priority": "P2",
+        "priority_agrees": true,
+        "rationale": "CVSS score is 9.8 (CRITICAL), placing it in the P2 range (CVSS >= 7.0).",
+        "claims": {
+          "summary": {
+            "value": "Deserialization of Untrusted Data in PyYAML",
+            "source_url": "https://osv.dev/vulnerability/GHSA-3pqx-4fqf-j49f",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "5.2b1",
+              "5.2"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-3pqx-4fqf-j49f",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 9.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2019-20477",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "CRITICAL",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2019-20477",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.05114,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2019-20477",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "pyyaml",
+        "installed_version": "5.1",
+        "vuln_id": "CVE-2020-14343",
+        "aliases": [
+          "GHSA-8q59-q68h-6hv4",
+          "PYSEC-2021-142"
+        ],
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score",
+          "cvss_severity"
+        ],
+        "reference_priority": "P2",
+        "priority_agrees": true,
+        "rationale": "CVSS score is 9.8 (CRITICAL), placing it in the P2 range (CVSS >= 7.0).",
+        "claims": {
+          "summary": {
+            "value": "Improper Input Validation in PyYAML",
+            "source_url": "https://osv.dev/vulnerability/GHSA-8q59-q68h-6hv4",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "5.4"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-8q59-q68h-6hv4",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 9.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-14343",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "CRITICAL",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-14343",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.05984,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2020-14343",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "pyyaml",
+        "installed_version": "5.1",
+        "vuln_id": "CVE-2020-1747",
+        "aliases": [
+          "GHSA-6757-jp84-gxfx",
+          "PYSEC-2020-96"
+        ],
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score",
+          "cvss_severity"
+        ],
+        "reference_priority": "P2",
+        "priority_agrees": true,
+        "rationale": "CVSS score is 9.8 (CRITICAL), placing it in the P2 range (CVSS >= 7.0).",
+        "claims": {
+          "summary": {
+            "value": "Improper Input Validation in PyYAML",
+            "source_url": "https://osv.dev/vulnerability/GHSA-6757-jp84-gxfx",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "5.3.1"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-6757-jp84-gxfx",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 9.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-1747",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "CRITICAL",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-1747",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.05442,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2020-1747",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "flask",
+        "installed_version": "0.12.2",
+        "vuln_id": "CVE-2018-1000656",
+        "aliases": [
+          "GHSA-562c-5r94-xh97",
+          "PYSEC-2018-66"
+        ],
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score",
+          "cvss_severity"
+        ],
+        "reference_priority": "P2",
+        "priority_agrees": true,
+        "rationale": "CVSS score is 7.5 (HIGH), placing it in the P2 range (CVSS >= 7.0).",
+        "claims": {
+          "summary": {
+            "value": "Flask is vulnerable to Denial of Service via incorrect encoding of JSON data",
+            "source_url": "https://osv.dev/vulnerability/GHSA-562c-5r94-xh97",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "0.12.3"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-562c-5r94-xh97",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 7.5,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2018-1000656",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2018-1000656",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.03855,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2018-1000656",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "flask",
+        "installed_version": "0.12.2",
+        "vuln_id": "CVE-2019-1010083",
+        "aliases": [
+          "GHSA-5wv5-4vpf-pj6m",
+          "PYSEC-2019-179"
+        ],
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score",
+          "cvss_severity"
+        ],
+        "reference_priority": "P2",
+        "priority_agrees": true,
+        "rationale": "CVSS score is 7.5 (HIGH), placing it in the P2 range (CVSS >= 7.0).",
+        "claims": {
+          "summary": {
+            "value": "Pallets Project Flask is vulnerable to Denial of Service via Unexpected memory usage",
+            "source_url": "https://osv.dev/vulnerability/GHSA-5wv5-4vpf-pj6m",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "1.0"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-5wv5-4vpf-pj6m",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 7.5,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2019-1010083",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2019-1010083",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.01884,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2019-1010083",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "flask",
+        "installed_version": "0.12.2",
+        "vuln_id": "CVE-2023-30861",
+        "aliases": [
+          "GHSA-m2qf-hxjv-5gpq",
+          "PYSEC-2023-62"
+        ],
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score",
+          "cvss_severity"
+        ],
+        "reference_priority": "P2",
+        "priority_agrees": true,
+        "rationale": "CVSS score is 7.5 (HIGH), placing it in the P2 range (CVSS >= 7.0).",
+        "claims": {
+          "summary": {
+            "value": "Flask vulnerable to possible disclosure of permanent session cookie due to missing Vary: Cookie header",
+            "source_url": "https://osv.dev/vulnerability/GHSA-m2qf-hxjv-5gpq",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "2.2.5",
+              "2.3.2"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-m2qf-hxjv-5gpq",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 7.5,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-30861",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-30861",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.01261,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2023-30861",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "gunicorn",
+        "installed_version": "20.0.4",
+        "vuln_id": "CVE-2024-1135",
+        "aliases": [
+          "GHSA-w3h3-4rj7-4ph4",
+          "PYSEC-2026-1434"
+        ],
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score",
+          "cvss_severity"
+        ],
+        "reference_priority": "P2",
+        "priority_agrees": true,
+        "rationale": "CVSS score is 7.5 (HIGH), placing it in the P2 range (CVSS >= 7.0).",
+        "claims": {
+          "summary": {
+            "value": "Request smuggling leading to endpoint restriction bypass in Gunicorn",
+            "source_url": "https://osv.dev/vulnerability/GHSA-w3h3-4rj7-4ph4",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "22.0.0"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-w3h3-4rj7-4ph4",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 7.5,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-1135",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-1135",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.02996,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2024-1135",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "gunicorn",
+        "installed_version": "20.0.4",
+        "vuln_id": "CVE-2024-6827",
+        "aliases": [
+          "GHSA-hc5x-x2vx-497g",
+          "PYSEC-2026-1433"
+        ],
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score",
+          "cvss_severity"
+        ],
+        "reference_priority": "P2",
+        "priority_agrees": true,
+        "rationale": "CVSS score is 7.5 (HIGH), placing it in the P2 range (CVSS >= 7.0).",
+        "claims": {
+          "summary": {
+            "value": "Gunicorn HTTP Request/Response Smuggling vulnerability",
+            "source_url": "https://osv.dev/vulnerability/GHSA-hc5x-x2vx-497g",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "22.0.0"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-hc5x-x2vx-497g",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 7.5,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-6827",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-6827",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.0079,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2024-6827",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "flask",
+        "installed_version": "0.12.2",
+        "vuln_id": "CVE-2026-27205",
+        "aliases": [
+          "GHSA-68rp-wp8r-4726",
+          "PYSEC-2026-2151"
+        ],
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score",
+          "cvss_severity"
+        ],
+        "reference_priority": "P3",
+        "priority_agrees": true,
+        "rationale": "CVSS score is 4.3 (MEDIUM), placing it in the P3 range (CVSS >= 4.0).",
+        "claims": {
+          "summary": {
+            "value": "Flask session does not add `Vary: Cookie` header when accessed in some ways",
+            "source_url": "https://osv.dev/vulnerability/GHSA-68rp-wp8r-4726",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "3.1.3"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-68rp-wp8r-4726",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 4.3,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-27205",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-27205",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.00423,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2026-27205",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      }
+    ],
+    "rejected_findings": [],
+    "omitted": [],
+    "remediations": [
+      {
+        "package": "flask",
+        "current_version": "0.12.2",
+        "recommended_version": "3.1.3",
+        "resolves": [
+          "CVE-2018-1000656",
+          "CVE-2019-1010083",
+          "CVE-2023-30861",
+          "CVE-2026-27205"
+        ],
+        "note": "Upgrade flask to version 3.1.3 to resolve all listed vulnerabilities.",
+        "status": "verified",
+        "reason": "",
+        "still_affected_by": [],
+        "remaining_known_vulns": [],
+        "verification_url": "https://osv.dev/list?ecosystem=PyPI&q=flask"
+      },
+      {
+        "package": "pyyaml",
+        "current_version": "5.1",
+        "recommended_version": "5.4",
+        "resolves": [
+          "CVE-2019-20477",
+          "CVE-2020-14343",
+          "CVE-2020-1747"
+        ],
+        "note": "Upgrade pyyaml to version 5.4 to resolve all listed vulnerabilities.",
+        "status": "verified",
+        "reason": "",
+        "still_affected_by": [],
+        "remaining_known_vulns": [],
+        "verification_url": "https://osv.dev/list?ecosystem=PyPI&q=pyyaml"
+      },
+      {
+        "package": "gunicorn",
+        "current_version": "20.0.4",
+        "recommended_version": "22.0.0",
+        "resolves": [
+          "CVE-2024-1135",
+          "CVE-2024-6827"
+        ],
+        "note": "Upgrade gunicorn to version 22.0.0 to resolve all listed vulnerabilities.",
+        "status": "verified",
+        "reason": "",
+        "still_affected_by": [],
+        "remaining_known_vulns": [],
+        "verification_url": "https://osv.dev/list?ecosystem=PyPI&q=gunicorn"
+      }
+    ],
+    "unresolved_dependencies": [],
+    "unqueried_dependencies": [],
+    "review_notes": [
+      "All identified vulnerabilities were successfully mapped to CVE records, NVD CVSS scores, EPSS, and KEV catalog data. Check upgrade verified that the recommended target versions resolve all OSV-listed vulnerabilities."
+    ],
+    "errors": [],
+    "stats": {
+      "claims_total": 54,
+      "verified": 54,
+      "unknown": 0,
+      "unsourced": 0,
+      "ungrounded": 0,
+      "mismatch": 0,
+      "findings_reported": 9,
+      "findings_accepted": 9,
+      "findings_rejected": 0,
+      "findings_needing_review": 0,
+      "omitted": 0,
+      "unsupported_claim_rate": 0.0,
+      "unsupported_claims_in_final_report": 0
+    }
+  }
+}

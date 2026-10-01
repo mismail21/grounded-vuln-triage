@@ -1,0 +1,83 @@
+{
+  "model": "gemini-3.5-flash-lite",
+  "turns": 2,
+  "seconds": 1.7,
+  "usage": {
+    "input": 4016,
+    "output": 161,
+    "cache_read": 0,
+    "cache_write": 0
+  },
+  "cost_usd": 0.0,
+  "trace": [
+    {
+      "tool": "osv_lookup",
+      "input": {
+        "packages": [
+          {
+            "name": "six",
+            "version": "1.16.0"
+          },
+          {
+            "version": "24.2.0",
+            "name": "attrs"
+          },
+          {
+            "name": "certifi",
+            "version": "2025.8.3"
+          },
+          {
+            "version": "1.3.0",
+            "name": "sqlalchemy"
+          }
+        ]
+      },
+      "seconds": 0.0,
+      "is_error": false
+    },
+    {
+      "tool": "submit_report",
+      "input": {
+        "findings": 0,
+        "remediations": 0
+      },
+      "seconds": 0.0,
+      "is_error": false
+    }
+  ],
+  "error": null,
+  "raw_report": {
+    "findings": [],
+    "remediations": [],
+    "review_notes": [
+      "No vulnerabilities were returned by osv_lookup for any of the dependencies (six 1.16.0, attrs 24.2.0, certifi 2025.8.3, sqlalchemy 1.3.0)."
+    ]
+  },
+  "checked": {
+    "findings": [],
+    "rejected_findings": [],
+    "omitted": [],
+    "remediations": [],
+    "unresolved_dependencies": [],
+    "unqueried_dependencies": [],
+    "review_notes": [
+      "No vulnerabilities were returned by osv_lookup for any of the dependencies (six 1.16.0, attrs 24.2.0, certifi 2025.8.3, sqlalchemy 1.3.0)."
+    ],
+    "errors": [],
+    "stats": {
+      "claims_total": 0,
+      "verified": 0,
+      "unknown": 0,
+      "unsourced": 0,
+      "ungrounded": 0,
+      "mismatch": 0,
+      "findings_reported": 0,
+      "findings_accepted": 0,
+      "findings_rejected": 0,
+      "findings_needing_review": 0,
+      "omitted": 0,
+      "unsupported_claim_rate": 0.0,
+      "unsupported_claims_in_final_report": 0
+    }
+  }
+}

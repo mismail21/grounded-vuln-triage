@@ -51,28 +51,39 @@ Priority uses a published rubric (`triage/rubric.py`). The agent may deviate wit
 Evaluated on 18 dependency files in [`eval/cases`](eval/cases) (10 PyPI, 8 npm). They include old versions with known CVEs, 4 files with actively exploited (KEV) vulnerabilities, 2 fully up-to-date files where any finding is a false alarm, a made-up package name, files with unpinned versions, and a 31-vulnerability stress test. Ground truth comes from the no-AI baseline, plus a hand-labeled list of well-known CVEs each file must surface ([`eval/labels.json`](eval/labels.json)).
 
 <!-- RESULTS:START -->
-Model: `gemini-3.6-flash` (Google Gemini free tier). **Progress: 5 of 18 cases evaluated so far** - the free tier allows ~20 requests per model per day, so the remaining cases run as the quota resets (`python -m eval.run_eval --resume`).
+Models: `gemini-3.5-flash-lite`, `gemini-3.6-flash`, `gemini-3.7-flash`, `gemini-3.8-flash` (Google Gemini free tier, $0 total).
 
-Generated 2026-09-30 21:16 over 5 test manifests.
+Generated 2026-09-30 21:42 over 18 test manifests.
 
 | Metric | Result |
 |---|---|
-| Recall vs. OSV ground truth | **100.0%** (37/37) |
-| Recall on hand-labelled must-find CVEs | **100.0%** (18/18) |
+| Recall vs. OSV ground truth | **100.0%** (171/171) |
+| Recall on hand-labelled must-find CVEs | **100.0%** (45/45) |
 | False alarms (vulns not affecting that version) | **0** |
-| Unsupported claims submitted by the model | **0** of 222 (0.0%) |
+| Unsupported claims submitted by the model | **1** of 1026 (0.1%) |
 | Unsupported claims in the final report | **0** (removed by the checker) |
-| Claims honestly marked unknown | 0 (of which evidence existed: 0) |
-| Actively exploited (KEV) items ranked P1 | 2/2 |
-| Priority agreement with rubric | 100.0% |
-| Upgrade recommendations confirmed by OSV | 12/12 |
+| Claims honestly marked unknown | 46 (of which evidence existed: 2) |
+| Actively exploited (KEV) items ranked P1 | 7/7 |
+| Priority agreement with rubric | 87.5% |
+| Upgrade recommendations confirmed by OSV | 28/30 |
 | Runs that errored | 0 |
-| Total cost / avg time per manifest | $0.00 / 70.1s |
+| Total cost / avg time per manifest | $0.00 / 74.0s |
 
-Per-case breakdown: [`eval/results/gemini-3.6-flash/RESULTS.md`](eval/results/gemini-3.6-flash/RESULTS.md). Full agent traces and checked reports: [`eval/results/gemini-3.6-flash/runs/`](eval/results/gemini-3.6-flash/runs/).
+Per-case breakdown: [`eval/results/gemini-flash-free-tier/RESULTS.md`](eval/results/gemini-flash-free-tier/RESULTS.md). Full agent traces and checked reports: [`eval/results/gemini-flash-free-tier/runs/`](eval/results/gemini-flash-free-tier/runs/).
 <!-- RESULTS:END -->
 
-**How to read this:** "Unsupported claims submitted by the model" is the raw hallucination rate *before* the checker. The checker removes all of them, so the final report contains **zero** unsupported claims by construction. That's the point: the model doesn't need to be perfect, because nothing unchecked reaches the reader.
+### What the results show
+
+- **Finding vulnerabilities is the easy part.** 171/171 vulnerabilities and 45/45 hand-labeled CVEs were found, with zero false alarms. That includes the made-up package and the two fully up-to-date files.
+- **The model still makes things up, and the checker catches it.** In `py06`, the model said a setuptools vulnerability (CVE-2026-59890) was fixed in **3.1.5**, apparently borrowing a Werkzeug version number. The OSV record it cited says **83.0.0**. The checker removed the value and sent the finding to review. That's 1 unsupported claim in 1,026 submitted, and **0 reached the final report**.
+- **"Unknown" is an honest answer, not a failure.** 46 claims were marked unknown, mostly GHSA-only advisories with no CVE id, which NVD, KEV, and EPSS can't look up. Only 2 of those had evidence the model could have found.
+- **Every actively exploited (KEV) vulnerability was ranked P1** (7/7).
+- **Judgment is where models differ.** Rubric agreement was 87.5%, and the disagreements fall into two groups. In `npm06`, the model deliberately downgraded `handlebars` because it's a devDependency that doesn't ship to production, a reasonable call that it explained in each rationale. In `py02`, the smaller `flash-lite` model mislabeled CVSS 6.1–6.5 items as P2 instead of P3. The checker now sends **every** departure from the rubric to human review, with the rubric's answer next to the model's.
+- **Upgrade advice is verified, not trusted.** In 2 of 30 recommendations, OSV showed the suggested version still had a known issue. Those were marked "partial" instead of "fixed".
+
+The model doesn't have to be perfect, because nothing unchecked reaches the reader.
+
+_Note on models: Gemini's free tier allows ~20 requests per model per day, so the 18 cases were spread across four Gemini Flash models (shown per case in the breakdown). `eval/run_eval.py --models a b c` falls back to the next model when one's daily quota runs out, and `--resume` skips finished cases._
 
 ## Run it
 
@@ -106,11 +117,11 @@ docker compose up --build    # http://localhost:8000
 
 The agent runs on **Claude** (`ANTHROPIC_API_KEY`, default `claude-opus-5-5`, with adaptive thinking, strict tool schemas, prompt caching, and server-side refusal fallback) or **Google Gemini** (`GEMINI_API_KEY`, default `gemini-3.5-flash`, which works on the free tier). Both share the same tools, prompt, ledger, and checker. Set `TRIAGE_PROVIDER` to choose when both keys are present.
 
-Gemini's free tier allows about 20 requests per model per day, and one file takes about 6. `eval/run_eval.py --resume` saves each finished case so a full run can span several days at no cost.
+Gemini's free tier allows about 20 requests per model per day, and one file takes about 3. `eval/run_eval.py --resume` saves each finished case, and `--models` falls back across models, so a full run costs nothing.
 
 ## Tests
 
-`pytest` runs 25 offline tests, no network or API calls. They include adversarial checker tests that submit fabricated reports (wrong CVSS, URLs never fetched, a real URL about a *different* CVE, invented CVE ids, wrong installed version, fake fixed versions, unfixable upgrade recommendations) and confirm that each is caught. The agent loop is tested with a scripted fake model client.
+`pytest` runs 26 offline tests, no network or API calls. They include adversarial checker tests that submit fabricated reports (wrong CVSS, URLs never fetched, a real URL about a *different* CVE, invented CVE ids, wrong installed version, fake fixed versions, unfixable upgrade recommendations, priorities that ignore the rubric) and confirm that each is caught. The agent loop is tested with a scripted fake model client.
 
 ## Project layout
 

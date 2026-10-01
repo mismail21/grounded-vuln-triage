@@ -85,6 +85,7 @@ def evaluate_case(path: Path, provider: str | None, model: str | None, effort: s
     unsupported = s["unsourced"] + s["ungrounded"] + s["mismatch"]
     return {
         "case": path.stem,
+        "model": run.model,
         "ecosystem": deps.ecosystem,
         "dependencies": len(deps.dependencies),
         "ground_truth": len(gt),
@@ -146,7 +147,7 @@ def summarize(rows: list[dict]) -> dict:
 def to_markdown(summary: dict, rows: list[dict], model: str, effort: str) -> str:
     pct = lambda x: "n/a" if x is None else f"{x * 100:.1f}%"  # noqa: E731
     out = [
-        f"# Evaluation results — `{model}` (effort: {effort})",
+        f"# Evaluation results — {', '.join(f'`{m}`' for m in sorted({r['model'] for r in rows}))}",
         "",
         f"Generated {time.strftime('%Y-%m-%d %H:%M')} over {summary['cases']} test manifests.",
         "",
@@ -166,16 +167,16 @@ def to_markdown(summary: dict, rows: list[dict], model: str, effort: str) -> str
         "",
         "## Per case",
         "",
-        "| Case | Deps | Truth | Found | Must-find | False alarms | Claims | Unsupported | Unknown | KEV→P1 | Rubric agree | Fixes OK | Cost | Error |",
-        "|---|---|---|---|---|---|---|---|---|---|---|---|---|---|",
+        "| Case | Model | Deps | Truth | Found | Must-find | False alarms | Claims | Unsupported | Unknown | KEV→P1 | Rubric agree | Fixes OK | Time | Error |",
+        "|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|",
     ]
     for r in rows:
         out.append(
-            f"| {r['case']} | {r['dependencies']} | {r['ground_truth']} | {r['found']} | "
+            f"| {r['case']} | {r['model']} | {r['dependencies']} | {r['ground_truth']} | {r['found']} | "
             f"{r['curated_found']}/{r['curated_total']} | {r['false_alarms']} | {r['claims_total']} | "
             f"{r['claims_unsupported']} | {r['claims_unknown']} | {r['kev_p1']}/{r['kev_total']} | "
             f"{r['priority_agree']}/{r['priority_comparable']} | {r['remediations_verified']}/{r['remediations']} | "
-            f"${r['cost_usd']:.3f} | {(r['error'] or '')[:40]} |"
+            f"{r['seconds']:.0f}s | {(r['error'] or '')[:40]} |"
         )
     return "\n".join(out) + "\n"
 
@@ -185,6 +186,7 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--provider", choices=["anthropic", "gemini"], default=None)
     ap.add_argument("--model", default=None)
+    ap.add_argument("--models", nargs="*", help="fallback list: when one model's daily quota runs out, use the next")
     ap.add_argument("--effort", default=DEFAULT_EFFORT)
     ap.add_argument("--only", nargs="*", help="case name prefixes")
     ap.add_argument("--workers", type=int, default=2)
@@ -197,36 +199,46 @@ def main() -> int:
     if args.only:
         cases = [c for c in cases if any(c.stem.startswith(o) for o in args.only)]
 
-    model_name = make_agent(args.provider, args.model).model
-    rows_dir = args.out / "_rows" / model_name
-    rows_dir.mkdir(parents=True, exist_ok=True)
-    done = {}
+    models = args.models or [make_agent(args.provider, args.model).model]
+    rows_root = args.out / "_rows"
+    done: dict[str, dict] = {}
     if args.resume or args.report_only:
-        for f in rows_dir.glob("*.json"):
+        for f in sorted(rows_root.glob("*/*.json")):
             r = json.loads(f.read_text())
             if not r.get("error"):
-                done[r["case"]] = r
+                r.setdefault("model", f.parent.name)
+                done.setdefault(r["case"], r)
         print(f"resuming: {len(done)} cases already done", flush=True)
+    exhausted: set[str] = set()
 
     def one(p):
         if p.stem in done:
             return done[p.stem]
-        r = evaluate_case(p, args.provider, model_name, args.effort)
-        if not (r["error"] and "RESOURCE_EXHAUSTED" in r["error"]):
-            (rows_dir / f"{p.stem}.json").write_text(json.dumps(r, default=str))
-        print(f"{r['case']:26} recall={r['recall']:.2f} unsupported={r['claims_unsupported']} "
-              f"false_alarms={r['false_alarms']} ${r['cost_usd']:.3f} {r['seconds']}s {r['error'] or ''}", flush=True)
-        return r
+        for m in models:
+            if m in exhausted:
+                continue
+            r = evaluate_case(p, args.provider, m, args.effort)
+            if r["error"] and "RESOURCE_EXHAUSTED" in r["error"]:
+                print(f"  {m}: daily quota used up, switching model", flush=True)
+                exhausted.add(m)
+                continue
+            d = rows_root / m
+            d.mkdir(parents=True, exist_ok=True)
+            (d / f"{p.stem}.json").write_text(json.dumps(r, default=str))
+            print(f"{r['case']:26} [{m}] recall={r['recall']:.2f} unsupported={r['claims_unsupported']} "
+                  f"false_alarms={r['false_alarms']} {r['seconds']}s {r['error'] or ''}", flush=True)
+            return r
+        return None
 
     if args.report_only:
         rows = [done[c.stem] for c in cases if c.stem in done]
     else:
         with ThreadPoolExecutor(args.workers) as pool:
-            rows = list(pool.map(one, cases))
-        rows = [r for r in rows if not (r["error"] and "RESOURCE_EXHAUSTED" in r["error"])]
+            rows = [r for r in pool.map(one, cases) if r is not None]
 
     summary = summarize(rows)
-    model = model_name
+    used = sorted({r["model"] for r in rows})
+    model = used[0] if len(used) == 1 else "gemini-flash-free-tier"
     out = args.out / model
     (out / "runs").mkdir(parents=True, exist_ok=True)
     for r in rows:
@@ -252,7 +264,8 @@ def update_readme(md: str, model: str, completed: int, total: int) -> None:
     progress = "" if completed == total else (
         f" **Progress: {completed} of {total} cases evaluated so far** - the free tier allows ~20 requests "
         "per model per day, so the remaining cases run as the quota resets (`python -m eval.run_eval --resume`).")
-    block = (f"{start}\nModel: `{model}` (Google Gemini free tier).{progress}\n\n{headline}\n\n"
+    models_line = md.split("\n", 1)[0].replace("# Evaluation results — ", "")
+    block = (f"{start}\nModels: {models_line} (Google Gemini free tier, $0 total).{progress}\n\n{headline}\n\n"
              f"Per-case breakdown: [`eval/results/{model}/RESULTS.md`](eval/results/{model}/RESULTS.md). "
              f"Full agent traces and checked reports: [`eval/results/{model}/runs/`](eval/results/{model}/runs/).\n{end}")
     readme.write_text(text.split(start)[0] + block + text.split(end)[1])

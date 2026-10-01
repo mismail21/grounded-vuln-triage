@@ -1,0 +1,581 @@
+{
+  "model": "gemini-3.5-flash-lite",
+  "turns": 3,
+  "seconds": 6.5,
+  "usage": {
+    "input": 9263,
+    "output": 2059,
+    "cache_read": 0,
+    "cache_write": 0
+  },
+  "cost_usd": 0.0,
+  "trace": [
+    {
+      "tool": "osv_lookup",
+      "input": {
+        "packages": [
+          {
+            "name": "idna",
+            "version": "3.10"
+          },
+          {
+            "name": "pyyaml",
+            "version": "5.1"
+          }
+        ]
+      },
+      "seconds": 0.0,
+      "is_error": false
+    },
+    {
+      "tool": "check_upgrade",
+      "input": {
+        "version": "3.15",
+        "package": "idna"
+      },
+      "seconds": 0.0,
+      "is_error": false
+    },
+    {
+      "tool": "check_upgrade",
+      "input": {
+        "version": "5.4",
+        "package": "pyyaml"
+      },
+      "seconds": 0.0,
+      "is_error": false
+    },
+    {
+      "tool": "nvd_lookup",
+      "input": {
+        "cve_ids": [
+          "CVE-2026-45409",
+          "CVE-2019-20477",
+          "CVE-2020-14343",
+          "CVE-2020-1747"
+        ]
+      },
+      "seconds": 0.0,
+      "is_error": false
+    },
+    {
+      "tool": "kev_lookup",
+      "input": {
+        "cve_ids": [
+          "CVE-2026-45409",
+          "CVE-2019-20477",
+          "CVE-2020-14343",
+          "CVE-2020-1747"
+        ]
+      },
+      "seconds": 0.0,
+      "is_error": false
+    },
+    {
+      "tool": "epss_lookup",
+      "input": {
+        "cve_ids": [
+          "CVE-2026-45409",
+          "CVE-2019-20477",
+          "CVE-2020-14343",
+          "CVE-2020-1747"
+        ]
+      },
+      "seconds": 0.24,
+      "is_error": false
+    },
+    {
+      "tool": "submit_report",
+      "input": {
+        "findings": 4,
+        "remediations": 2
+      },
+      "seconds": 0.0,
+      "is_error": false
+    }
+  ],
+  "error": null,
+  "raw_report": {
+    "findings": [
+      {
+        "package": "idna",
+        "installed_version": "3.10",
+        "vuln_id": "CVE-2026-45409",
+        "claims": {
+          "summary": {
+            "value": "Internationalized Domain Names in Applications (IDNA): Specially crafted inputs to idna.encode() can bypass CVE-2024-3651 fix",
+            "source_url": "https://osv.dev/vulnerability/GHSA-65pc-fj4g-8rjx"
+          },
+          "fixed_versions": {
+            "value": [
+              "3.15"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-65pc-fj4g-8rjx"
+          },
+          "cvss_score": {
+            "value": 5.3,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-45409"
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-45409"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.00457,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2026-45409"
+          }
+        },
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "CVSS score is 5.3 (>= 4.0), placing it in P3 (plan a fix)."
+      },
+      {
+        "package": "pyyaml",
+        "installed_version": "5.1",
+        "vuln_id": "CVE-2019-20477",
+        "claims": {
+          "summary": {
+            "value": "Deserialization of Untrusted Data in PyYAML",
+            "source_url": "https://osv.dev/vulnerability/GHSA-3pqx-4fqf-j49f"
+          },
+          "fixed_versions": {
+            "value": [
+              "5.2b1",
+              "5.2"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-3pqx-4fqf-j49f"
+          },
+          "cvss_score": {
+            "value": 9.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2019-20477"
+          },
+          "cvss_severity": {
+            "value": "CRITICAL",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2019-20477"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.05114,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2019-20477"
+          }
+        },
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "CVSS score is 9.8 (>= 7.0), placing it in P2 (fix this sprint)."
+      },
+      {
+        "package": "pyyaml",
+        "installed_version": "5.1",
+        "vuln_id": "CVE-2020-14343",
+        "claims": {
+          "summary": {
+            "value": "Improper Input Validation in PyYAML",
+            "source_url": "https://osv.dev/vulnerability/GHSA-8q59-q68h-6hv4"
+          },
+          "fixed_versions": {
+            "value": [
+              "5.4"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-8q59-q68h-6hv4"
+          },
+          "cvss_score": {
+            "value": 9.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-14343"
+          },
+          "cvss_severity": {
+            "value": "CRITICAL",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-14343"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.05984,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2020-14343"
+          }
+        },
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "CVSS score is 9.8 (>= 7.0), placing it in P2 (fix this sprint)."
+      },
+      {
+        "package": "pyyaml",
+        "installed_version": "5.1",
+        "vuln_id": "CVE-2020-1747",
+        "claims": {
+          "summary": {
+            "value": "Improper Input Validation in PyYAML",
+            "source_url": "https://osv.dev/vulnerability/GHSA-6757-jp84-gxfx"
+          },
+          "fixed_versions": {
+            "value": [
+              "5.3.1"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-6757-jp84-gxfx"
+          },
+          "cvss_score": {
+            "value": 9.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-1747"
+          },
+          "cvss_severity": {
+            "value": "CRITICAL",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-1747"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.05442,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2020-1747"
+          }
+        },
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "CVSS score is 9.8 (>= 7.0), placing it in P2 (fix this sprint)."
+      }
+    ],
+    "remediations": [
+      {
+        "package": "idna",
+        "current_version": "3.10",
+        "recommended_version": "3.15",
+        "resolves": [
+          "CVE-2026-45409"
+        ],
+        "note": "Upgrade to version 3.15 to resolve CVE-2026-45409."
+      },
+      {
+        "package": "pyyaml",
+        "current_version": "5.1",
+        "recommended_version": "5.4",
+        "resolves": [
+          "CVE-2019-20477",
+          "CVE-2020-14343",
+          "CVE-2020-1747"
+        ],
+        "note": "Upgrade to version 5.4 to resolve all vulnerabilities in PyYAML (CVE-2019-20477, CVE-2020-14343, and CVE-2020-1747)."
+      }
+    ],
+    "review_notes": [
+      "flask>=2.0 and numpy had unpinned or range-based versions and could not be queried via OSV directly without exact versions."
+    ]
+  },
+  "checked": {
+    "findings": [
+      {
+        "package": "pyyaml",
+        "installed_version": "5.1",
+        "vuln_id": "CVE-2019-20477",
+        "aliases": [
+          "GHSA-3pqx-4fqf-j49f",
+          "PYSEC-2020-176"
+        ],
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P2",
+        "priority_agrees": true,
+        "rationale": "CVSS score is 9.8 (>= 7.0), placing it in P2 (fix this sprint).",
+        "claims": {
+          "summary": {
+            "value": "Deserialization of Untrusted Data in PyYAML",
+            "source_url": "https://osv.dev/vulnerability/GHSA-3pqx-4fqf-j49f",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "5.2b1",
+              "5.2"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-3pqx-4fqf-j49f",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 9.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2019-20477",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "CRITICAL",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2019-20477",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.05114,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2019-20477",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "pyyaml",
+        "installed_version": "5.1",
+        "vuln_id": "CVE-2020-14343",
+        "aliases": [
+          "GHSA-8q59-q68h-6hv4",
+          "PYSEC-2021-142"
+        ],
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P2",
+        "priority_agrees": true,
+        "rationale": "CVSS score is 9.8 (>= 7.0), placing it in P2 (fix this sprint).",
+        "claims": {
+          "summary": {
+            "value": "Improper Input Validation in PyYAML",
+            "source_url": "https://osv.dev/vulnerability/GHSA-8q59-q68h-6hv4",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "5.4"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-8q59-q68h-6hv4",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 9.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-14343",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "CRITICAL",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-14343",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.05984,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2020-14343",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "pyyaml",
+        "installed_version": "5.1",
+        "vuln_id": "CVE-2020-1747",
+        "aliases": [
+          "GHSA-6757-jp84-gxfx",
+          "PYSEC-2020-96"
+        ],
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P2",
+        "priority_agrees": true,
+        "rationale": "CVSS score is 9.8 (>= 7.0), placing it in P2 (fix this sprint).",
+        "claims": {
+          "summary": {
+            "value": "Improper Input Validation in PyYAML",
+            "source_url": "https://osv.dev/vulnerability/GHSA-6757-jp84-gxfx",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "5.3.1"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-6757-jp84-gxfx",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 9.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-1747",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "CRITICAL",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-1747",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.05442,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2020-1747",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "idna",
+        "installed_version": "3.10",
+        "vuln_id": "CVE-2026-45409",
+        "aliases": [
+          "GHSA-65pc-fj4g-8rjx",
+          "PYSEC-2026-215"
+        ],
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P3",
+        "priority_agrees": true,
+        "rationale": "CVSS score is 5.3 (>= 4.0), placing it in P3 (plan a fix).",
+        "claims": {
+          "summary": {
+            "value": "Internationalized Domain Names in Applications (IDNA): Specially crafted inputs to idna.encode() can bypass CVE-2024-3651 fix",
+            "source_url": "https://osv.dev/vulnerability/GHSA-65pc-fj4g-8rjx",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "3.15"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-65pc-fj4g-8rjx",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 5.3,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-45409",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-45409",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.00457,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2026-45409",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      }
+    ],
+    "rejected_findings": [],
+    "omitted": [],
+    "remediations": [
+      {
+        "package": "idna",
+        "current_version": "3.10",
+        "recommended_version": "3.15",
+        "resolves": [
+          "CVE-2026-45409"
+        ],
+        "note": "Upgrade to version 3.15 to resolve CVE-2026-45409.",
+        "status": "verified",
+        "reason": "",
+        "still_affected_by": [],
+        "remaining_known_vulns": [],
+        "verification_url": "https://osv.dev/list?ecosystem=PyPI&q=idna"
+      },
+      {
+        "package": "pyyaml",
+        "current_version": "5.1",
+        "recommended_version": "5.4",
+        "resolves": [
+          "CVE-2019-20477",
+          "CVE-2020-14343",
+          "CVE-2020-1747"
+        ],
+        "note": "Upgrade to version 5.4 to resolve all vulnerabilities in PyYAML (CVE-2019-20477, CVE-2020-14343, and CVE-2020-1747).",
+        "status": "verified",
+        "reason": "",
+        "still_affected_by": [],
+        "remaining_known_vulns": [],
+        "verification_url": "https://osv.dev/list?ecosystem=PyPI&q=pyyaml"
+      }
+    ],
+    "unresolved_dependencies": [
+      {
+        "dependency": "flask>=2.0",
+        "note": "range '>=2.0' - exact version unknown (pin it or supply a lock file)"
+      },
+      {
+        "dependency": "numpy",
+        "note": "unpinned - exact version unknown"
+      }
+    ],
+    "unqueried_dependencies": [],
+    "review_notes": [
+      "flask>=2.0 and numpy had unpinned or range-based versions and could not be queried via OSV directly without exact versions."
+    ],
+    "errors": [],
+    "stats": {
+      "claims_total": 24,
+      "verified": 24,
+      "unknown": 0,
+      "unsourced": 0,
+      "ungrounded": 0,
+      "mismatch": 0,
+      "findings_reported": 4,
+      "findings_accepted": 4,
+      "findings_rejected": 0,
+      "findings_needing_review": 0,
+      "omitted": 0,
+      "unsupported_claim_rate": 0.0,
+      "unsupported_claims_in_final_report": 0
+    }
+  }
+}

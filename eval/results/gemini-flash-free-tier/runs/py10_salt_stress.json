@@ -1,0 +1,3750 @@
+{
+  "model": "gemini-3.5-flash-lite",
+  "turns": 3,
+  "seconds": 54.9,
+  "usage": {
+    "input": 34216,
+    "output": 16006,
+    "cache_read": 8152,
+    "cache_write": 0
+  },
+  "cost_usd": 0.0,
+  "trace": [
+    {
+      "tool": "osv_lookup",
+      "input": {
+        "packages": [
+          {
+            "name": "salt",
+            "version": "3000.1"
+          }
+        ]
+      },
+      "seconds": 0.01,
+      "is_error": false
+    },
+    {
+      "tool": "nvd_lookup",
+      "input": {
+        "cve_ids": [
+          "CVE-2020-11651",
+          "CVE-2020-11652",
+          "CVE-2020-16846",
+          "CVE-2020-17490",
+          "CVE-2020-25592",
+          "CVE-2020-28243",
+          "CVE-2020-28972",
+          "CVE-2020-35662",
+          "CVE-2021-21996",
+          "CVE-2021-22004",
+          "CVE-2021-25281",
+          "CVE-2021-25282",
+          "CVE-2021-25283",
+          "CVE-2021-25284",
+          "CVE-2021-25315",
+          "CVE-2021-3144",
+          "CVE-2021-3148",
+          "CVE-2021-31607",
+          "CVE-2021-3197",
+          "CVE-2021-33226",
+          "CVE-2022-22934",
+          "CVE-2022-22935",
+          "CVE-2022-22936",
+          "CVE-2022-22941",
+          "CVE-2022-22967",
+          "CVE-2023-20897",
+          "CVE-2023-20898",
+          "CVE-2023-34049",
+          "CVE-2024-22231",
+          "CVE-2024-22232",
+          "CVE-2025-62348"
+        ]
+      },
+      "seconds": 0.02,
+      "is_error": false
+    },
+    {
+      "tool": "kev_lookup",
+      "input": {
+        "cve_ids": [
+          "CVE-2020-11651",
+          "CVE-2020-11652",
+          "CVE-2020-16846",
+          "CVE-2020-17490",
+          "CVE-2020-25592",
+          "CVE-2020-28243",
+          "CVE-2020-28972",
+          "CVE-2020-35662",
+          "CVE-2021-21996",
+          "CVE-2021-22004",
+          "CVE-2021-25281",
+          "CVE-2021-25282",
+          "CVE-2021-25283",
+          "CVE-2021-25284",
+          "CVE-2021-25315",
+          "CVE-2021-3144",
+          "CVE-2021-3148",
+          "CVE-2021-31607",
+          "CVE-2021-3197",
+          "CVE-2021-33226",
+          "CVE-2022-22934",
+          "CVE-2022-22935",
+          "CVE-2022-22936",
+          "CVE-2022-22941",
+          "CVE-2022-22967",
+          "CVE-2023-20897",
+          "CVE-2023-20898",
+          "CVE-2023-34049",
+          "CVE-2024-22231",
+          "CVE-2024-22232",
+          "CVE-2025-62348"
+        ]
+      },
+      "seconds": 0.0,
+      "is_error": false
+    },
+    {
+      "tool": "epss_lookup",
+      "input": {
+        "cve_ids": [
+          "CVE-2020-11651",
+          "CVE-2020-11652",
+          "CVE-2020-16846",
+          "CVE-2020-17490",
+          "CVE-2020-25592",
+          "CVE-2020-28243",
+          "CVE-2020-28972",
+          "CVE-2020-35662",
+          "CVE-2021-21996",
+          "CVE-2021-22004",
+          "CVE-2021-25281",
+          "CVE-2021-25282",
+          "CVE-2021-25283",
+          "CVE-2021-25284",
+          "CVE-2021-25315",
+          "CVE-2021-3144",
+          "CVE-2021-3148",
+          "CVE-2021-31607",
+          "CVE-2021-3197",
+          "CVE-2021-33226",
+          "CVE-2022-22934",
+          "CVE-2022-22935",
+          "CVE-2022-22936",
+          "CVE-2022-22941",
+          "CVE-2022-22967",
+          "CVE-2023-20897",
+          "CVE-2023-20898",
+          "CVE-2023-34049",
+          "CVE-2024-22231",
+          "CVE-2024-22232",
+          "CVE-2025-62348"
+        ]
+      },
+      "seconds": 0.16,
+      "is_error": false
+    },
+    {
+      "tool": "check_upgrade",
+      "input": {
+        "package": "salt",
+        "version": "3006.17"
+      },
+      "seconds": 0.0,
+      "is_error": false
+    },
+    {
+      "tool": "submit_report",
+      "input": {
+        "findings": 31,
+        "remediations": 1
+      },
+      "seconds": 0.0,
+      "is_error": false
+    }
+  ],
+  "error": null,
+  "raw_report": {
+    "findings": [
+      {
+        "package": "salt",
+        "installed_version": "3000.1",
+        "vuln_id": "CVE-2020-11651",
+        "claims": {
+          "summary": {
+            "value": "SaltStack Salt Unauthenticated Remote Code Execution",
+            "source_url": "https://osv.dev/vulnerability/GHSA-pjhf-vpx3-33r3"
+          },
+          "fixed_versions": {
+            "value": [
+              "2019.2.4",
+              "3000.2"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-pjhf-vpx3-33r3"
+          },
+          "cvss_score": {
+            "value": 9.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-11651"
+          },
+          "cvss_severity": {
+            "value": "CRITICAL",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-11651"
+          },
+          "in_kev": {
+            "value": true,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.96614,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2020-11651"
+          }
+        },
+        "priority": "P1",
+        "priority_basis": [
+          "in_kev",
+          "epss",
+          "cvss_score"
+        ],
+        "rationale": "CVE-2020-11651 is listed in CISA KEV and has extremely high EPSS and CVSS scores, requiring immediate remediation."
+      },
+      {
+        "package": "salt",
+        "installed_version": "3000.1",
+        "vuln_id": "CVE-2020-11652",
+        "claims": {
+          "summary": {
+            "value": "SaltStack Salt is vulnerable Arbitrary Directory Access",
+            "source_url": "https://osv.dev/vulnerability/GHSA-vp49-2g4r-m3x3"
+          },
+          "fixed_versions": {
+            "value": [
+              "2019.2.4",
+              "3000.2"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-vp49-2g4r-m3x3"
+          },
+          "cvss_score": {
+            "value": 6.5,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-11652"
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-11652"
+          },
+          "in_kev": {
+            "value": true,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.86178,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2020-11652"
+          }
+        },
+        "priority": "P1",
+        "priority_basis": [
+          "in_kev",
+          "epss"
+        ],
+        "rationale": "CVE-2020-11652 is in CISA KEV and has a high EPSS score, necessitating an immediate fix."
+      },
+      {
+        "package": "salt",
+        "installed_version": "3000.1",
+        "vuln_id": "CVE-2020-16846",
+        "claims": {
+          "summary": {
+            "value": "SaltStack Salt Command Injection in netapi ssh client",
+            "source_url": "https://osv.dev/vulnerability/GHSA-qr38-h96j-2j3w"
+          },
+          "fixed_versions": {
+            "value": [
+              "2015.8.10",
+              "2015.8.13",
+              "2016.3.4",
+              "2016.3.6",
+              "2016.3.8",
+              "2016.11.3",
+              "2016.11.6",
+              "2016.11.10",
+              "2017.7.4",
+              "2017.7.8",
+              "2018.3.5",
+              "2019.2.5",
+              "3000.3",
+              "2019.2.6",
+              "3000.4",
+              "3001.2",
+              "3002.1"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-qr38-h96j-2j3w"
+          },
+          "cvss_score": {
+            "value": 9.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-16846"
+          },
+          "cvss_severity": {
+            "value": "CRITICAL",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-16846"
+          },
+          "in_kev": {
+            "value": true,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.99585,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2020-16846"
+          }
+        },
+        "priority": "P1",
+        "priority_basis": [
+          "in_kev",
+          "epss",
+          "cvss_score"
+        ],
+        "rationale": "CVE-2020-16846 is in CISA KEV with critical CVSS and EPSS scores."
+      },
+      {
+        "package": "salt",
+        "installed_version": "3000.1",
+        "vuln_id": "CVE-2020-17490",
+        "claims": {
+          "summary": {
+            "value": "SaltStack Salt Allows creating certificates with weak file permissions",
+            "source_url": "https://osv.dev/vulnerability/GHSA-3c56-vx6v-q5vh"
+          },
+          "fixed_versions": {
+            "value": [
+              "2015.8.10",
+              "2015.8.13",
+              "2016.3.4",
+              "2016.3.6",
+              "2016.3.8",
+              "2016.11.3",
+              "2016.11.6",
+              "2016.11.10",
+              "2017.7.4",
+              "2017.7.8",
+              "2018.3.5",
+              "2019.2.5",
+              "3000.3",
+              "2019.2.6",
+              "3000.4",
+              "3001.2",
+              "3002.1"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-3c56-vx6v-q5vh"
+          },
+          "cvss_score": {
+            "value": 5.5,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-17490"
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-17490"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.00416,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2020-17490"
+          }
+        },
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "CVE-2020-17490 has a CVSS score between 4.0 and 6.9, placing it in P3."
+      },
+      {
+        "package": "salt",
+        "installed_version": "3000.1",
+        "vuln_id": "CVE-2020-25592",
+        "claims": {
+          "summary": {
+            "value": "SaltStack Salt Improper Validation of eauth credentials and tokens in salt-netapi",
+            "source_url": "https://osv.dev/vulnerability/GHSA-29j3-2446-5j4w"
+          },
+          "fixed_versions": {
+            "value": [
+              "2015.8.10",
+              "2015.8.13",
+              "2016.3.4",
+              "2016.3.6",
+              "2016.3.8",
+              "2016.11.3",
+              "2016.11.6",
+              "2016.11.10",
+              "2017.7.4",
+              "2017.7.8",
+              "2018.3.5",
+              "2019.2.5",
+              "3000.3",
+              "2019.2.7",
+              "3000.5",
+              "3001.3",
+              "3002.1"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-29j3-2446-5j4w"
+          },
+          "cvss_score": {
+            "value": 9.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-25592"
+          },
+          "cvss_severity": {
+            "value": "CRITICAL",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-25592"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.57726,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2020-25592"
+          }
+        },
+        "priority": "P1",
+        "priority_basis": [
+          "epss",
+          "cvss_score"
+        ],
+        "rationale": "CVE-2020-25592 has CVSS >= 9.0 and EPSS >= 0.10."
+      },
+      {
+        "package": "salt",
+        "installed_version": "3000.1",
+        "vuln_id": "CVE-2020-28243",
+        "claims": {
+          "summary": {
+            "value": "SaltStack Salt command injection via a crafted process name",
+            "source_url": "https://osv.dev/vulnerability/GHSA-phhw-3wc9-8q75"
+          },
+          "fixed_versions": {
+            "value": [
+              "2015.8.10",
+              "2015.8.13",
+              "2016.3.4",
+              "2016.3.6",
+              "2016.3.8",
+              "2016.11.3",
+              "2016.11.5",
+              "2016.11.10",
+              "2017.7.8",
+              "2019.2.0rc1",
+              "2019.2.5",
+              "2019.2.8",
+              "3000.6",
+              "3001.4",
+              "3002.5",
+              "3000.7",
+              "3001.5",
+              "3002.3"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-phhw-3wc9-8q75"
+          },
+          "cvss_score": {
+            "value": 7.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-28243"
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-28243"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.04302,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2020-28243"
+          }
+        },
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "CVE-2020-28243 has CVSS >= 7.0."
+      },
+      {
+        "package": "salt",
+        "installed_version": "3000.1",
+        "vuln_id": "CVE-2020-28972",
+        "claims": {
+          "summary": {
+            "value": "SaltStack Salt Improper Certificate Validation",
+            "source_url": "https://osv.dev/vulnerability/GHSA-w589-r335-4f55"
+          },
+          "fixed_versions": {
+            "value": [
+              "2015.8.10",
+              "2015.8.13",
+              "2016.3.4",
+              "2016.3.6",
+              "2016.3.8",
+              "2016.11.3",
+              "2016.11.5",
+              "2016.11.10",
+              "2017.7.8",
+              "2019.2.0rc1",
+              "2019.2.5",
+              "2019.2.8",
+              "3000.6",
+              "3001.4",
+              "3002.5",
+              "3000.7",
+              "3001.5",
+              "3002.3"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-w589-r335-4f55"
+          },
+          "cvss_score": {
+            "value": 5.9,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-28972"
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-28972"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.0309,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2020-28972"
+          }
+        },
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "CVE-2020-28972 has CVSS between 4.0 and 6.9."
+      },
+      {
+        "package": "salt",
+        "installed_version": "3000.1",
+        "vuln_id": "CVE-2020-35662",
+        "claims": {
+          "summary": {
+            "value": "SaltStack Salt Improper SSL Certificate Validation",
+            "source_url": "https://osv.dev/vulnerability/GHSA-qx72-q6w3-qgc7"
+          },
+          "fixed_versions": {
+            "value": [
+              "2015.8.10",
+              "2015.8.13",
+              "2016.3.4",
+              "2016.3.6",
+              "2016.3.8",
+              "2016.11.3",
+              "2016.11.5",
+              "2016.11.10",
+              "2017.7.8",
+              "2019.2.0rc1",
+              "2019.2.5",
+              "2019.2.8",
+              "3000.6",
+              "3001.4",
+              "3002.5",
+              "3000.7",
+              "3001.5",
+              "3002.3"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-qx72-q6w3-qgc7"
+          },
+          "cvss_score": {
+            "value": 7.4,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-35662"
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-35662"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.02978,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2020-35662"
+          }
+        },
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "CVE-2020-35662 has CVSS >= 7.0."
+      },
+      {
+        "package": "salt",
+        "installed_version": "3000.1",
+        "vuln_id": "CVE-2021-21996",
+        "claims": {
+          "summary": {
+            "value": "Exposure of Resource to Wrong Sphere in salt",
+            "source_url": "https://osv.dev/vulnerability/GHSA-pf7h-h2wq-m7pg"
+          },
+          "fixed_versions": {
+            "value": [
+              "3003.3"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-pf7h-h2wq-m7pg"
+          },
+          "cvss_score": {
+            "value": 7.5,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-21996"
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-21996"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.03514,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2021-21996"
+          }
+        },
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "CVE-2021-21996 has CVSS >= 7.0."
+      },
+      {
+        "package": "salt",
+        "installed_version": "3000.1",
+        "vuln_id": "CVE-2021-22004",
+        "claims": {
+          "summary": {
+            "value": "Improper Authentication in SaltStack Salt",
+            "source_url": "https://osv.dev/vulnerability/GHSA-xf37-qcvf-7m57"
+          },
+          "fixed_versions": {
+            "value": [
+              "3003.3"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-xf37-qcvf-7m57"
+          },
+          "cvss_score": {
+            "value": 6.4,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-22004"
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-22004"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.00354,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2021-22004"
+          }
+        },
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "CVE-2021-22004 has CVSS between 4.0 and 6.9."
+      },
+      {
+        "package": "salt",
+        "installed_version": "3000.1",
+        "vuln_id": "CVE-2021-25281",
+        "claims": {
+          "summary": {
+            "value": "SaltStack Salt Improper Authentication vulnerability",
+            "source_url": "https://osv.dev/vulnerability/GHSA-xxw3-765m-f37p"
+          },
+          "fixed_versions": {
+            "value": [
+              "2015.8.10",
+              "2015.8.13",
+              "2016.3.4",
+              "2016.3.6",
+              "2016.3.8",
+              "2016.11.3",
+              "2016.11.5",
+              "2016.11.10",
+              "2017.7.8",
+              "2019.2.0rc1",
+              "2019.2.5",
+              "2019.2.8",
+              "3000.6",
+              "3001.4",
+              "3002.5",
+              "3000.7",
+              "3001.5",
+              "3002.3"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-xxw3-765m-f37p"
+          },
+          "cvss_score": {
+            "value": 9.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-25281"
+          },
+          "cvss_severity": {
+            "value": "CRITICAL",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-25281"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.7313,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2021-25281"
+          }
+        },
+        "priority": "P1",
+        "priority_basis": [
+          "epss",
+          "cvss_score"
+        ],
+        "rationale": "CVE-2021-25281 has CVSS >= 9.0 and EPSS >= 0.10."
+      },
+      {
+        "package": "salt",
+        "installed_version": "3000.1",
+        "vuln_id": "CVE-2021-25282",
+        "claims": {
+          "summary": {
+            "value": "SaltStack Salt Directory Traversal vulnerability",
+            "source_url": "https://osv.dev/vulnerability/GHSA-76x4-x3p6-rpr9"
+          },
+          "fixed_versions": {
+            "value": [
+              "2015.8.10",
+              "2015.8.13",
+              "2016.3.4",
+              "2016.3.6",
+              "2016.3.8",
+              "2016.11.3",
+              "2016.11.5",
+              "2016.11.10",
+              "2017.7.8",
+              "2019.2.0rc1",
+              "2019.2.5",
+              "2019.2.8",
+              "3000.6",
+              "3001.4",
+              "3002.5",
+              "3000.7",
+              "3001.5",
+              "3002.3"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-76x4-x3p6-rpr9"
+          },
+          "cvss_score": {
+            "value": 9.1,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-25282"
+          },
+          "cvss_severity": {
+            "value": "CRITICAL",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-25282"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.92409,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2021-25282"
+          }
+        },
+        "priority": "P1",
+        "priority_basis": [
+          "epss",
+          "cvss_score"
+        ],
+        "rationale": "CVE-2021-25282 has CVSS >= 9.0 and EPSS >= 0.10."
+      },
+      {
+        "package": "salt",
+        "installed_version": "3000.1",
+        "vuln_id": "CVE-2021-25283",
+        "claims": {
+          "summary": {
+            "value": "SaltStack Salt Server Side Template Injection",
+            "source_url": "https://osv.dev/vulnerability/GHSA-xgmh-gfxw-2hvv"
+          },
+          "fixed_versions": {
+            "value": [
+              "2015.8.10",
+              "2015.8.13",
+              "2016.3.4",
+              "2016.3.6",
+              "2016.3.8",
+              "2016.11.3",
+              "2016.11.5",
+              "2016.11.10",
+              "2017.7.8",
+              "2019.2.0rc1",
+              "2019.2.5",
+              "2019.2.8",
+              "3000.6",
+              "3001.4",
+              "3002.5",
+              "3000.7",
+              "3001.5"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-xgmh-gfxw-2hvv"
+          },
+          "cvss_score": {
+            "value": 9.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-25283"
+          },
+          "cvss_severity": {
+            "value": "CRITICAL",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-25283"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.1051,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2021-25283"
+          }
+        },
+        "priority": "P1",
+        "priority_basis": [
+          "epss",
+          "cvss_score"
+        ],
+        "rationale": "CVE-2021-25283 has CVSS >= 9.0 and EPSS >= 0.10."
+      },
+      {
+        "package": "salt",
+        "installed_version": "3000.1",
+        "vuln_id": "CVE-2021-25284",
+        "claims": {
+          "summary": {
+            "value": "SaltStack Salt Cleartext Storage of Sensitive Information via cmdmod",
+            "source_url": "https://osv.dev/vulnerability/GHSA-r55w-xph5-xvx2"
+          },
+          "fixed_versions": {
+            "value": [
+              "2015.8.10",
+              "2015.8.13",
+              "2016.3.4",
+              "2016.3.6",
+              "2016.3.8",
+              "2016.11.3",
+              "2016.11.5",
+              "2016.11.10",
+              "2017.7.8",
+              "2019.2.0rc1",
+              "2019.2.5",
+              "2019.2.8",
+              "3000.6",
+              "3001.4",
+              "3002.5",
+              "3000.7",
+              "3001.5",
+              "3002.3"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-r55w-xph5-xvx2"
+          },
+          "cvss_score": {
+            "value": 4.4,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-25284"
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-25284"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.00543,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2021-25284"
+          }
+        },
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "CVE-2021-25284 has CVSS between 4.0 and 6.9."
+      },
+      {
+        "package": "salt",
+        "installed_version": "3000.1",
+        "vuln_id": "CVE-2021-25315",
+        "claims": {
+          "summary": {
+            "value": "Saltstack Salt Unauthenticated Arbitrary Code Execution",
+            "source_url": "https://osv.dev/vulnerability/GHSA-pmj6-9f8c-8g2m"
+          },
+          "fixed_versions": {
+            "value": [
+              "3002.2"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-pmj6-9f8c-8g2m"
+          },
+          "cvss_score": {
+            "value": 7.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-25315"
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-25315"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.02333,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2021-25315"
+          }
+        },
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "CVE-2021-25315 has CVSS >= 7.0."
+      },
+      {
+        "package": "salt",
+        "installed_version": "3000.1",
+        "vuln_id": "CVE-2021-3144",
+        "claims": {
+          "summary": {
+            "value": "SaltStack Salt eauth tokens can be used once after expiration",
+            "source_url": "https://osv.dev/vulnerability/GHSA-w2hr-3mc8-46gh"
+          },
+          "fixed_versions": {
+            "value": [
+              "2015.8.10",
+              "2015.8.13",
+              "2016.3.4",
+              "2016.3.6",
+              "2016.3.8",
+              "2016.11.3",
+              "2016.11.5",
+              "2016.11.10",
+              "2017.7.8",
+              "2019.2.0rc1",
+              "2019.2.5",
+              "2019.2.8",
+              "3000.6",
+              "3001.4",
+              "3002.5",
+              "3000.7",
+              "3001.5",
+              "3002.3"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-w2hr-3mc8-46gh"
+          },
+          "cvss_score": {
+            "value": 9.1,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-3144"
+          },
+          "cvss_severity": {
+            "value": "CRITICAL",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-3144"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.05239,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2021-3144"
+          }
+        },
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "CVE-2021-3144 has CVSS >= 7.0."
+      },
+      {
+        "package": "salt",
+        "installed_version": "3000.1",
+        "vuln_id": "CVE-2021-3148",
+        "claims": {
+          "summary": {
+            "value": "SaltStack Salt command injection in the Salt-API when using the Salt-SSH client",
+            "source_url": "https://osv.dev/vulnerability/GHSA-ghc2-hx3w-jqmp"
+          },
+          "fixed_versions": {
+            "value": [
+              "2015.8.10",
+              "2015.8.13",
+              "2016.3.4",
+              "2016.3.6",
+              "2016.3.8",
+              "2016.11.3",
+              "2016.11.5",
+              "2016.11.10",
+              "2017.7.8",
+              "2019.2.0rc1",
+              "2019.2.5",
+              "2019.2.8",
+              "3000.6",
+              "3001.4",
+              "3002.5",
+              "3000.7",
+              "3001.5",
+              "3002.3"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-ghc2-hx3w-jqmp"
+          },
+          "cvss_score": {
+            "value": 9.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-3148"
+          },
+          "cvss_severity": {
+            "value": "CRITICAL",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-3148"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.08246,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2021-3148"
+          }
+        },
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "CVE-2021-3148 has CVSS >= 7.0."
+      },
+      {
+        "package": "salt",
+        "installed_version": "3000.1",
+        "vuln_id": "CVE-2021-31607",
+        "claims": {
+          "summary": {
+            "value": "Command Injection in SaltStack Salt",
+            "source_url": "https://osv.dev/vulnerability/GHSA-hcjf-rp5h-g5h3"
+          },
+          "fixed_versions": {
+            "value": [
+              "3003rc1"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-hcjf-rp5h-g5h3"
+          },
+          "cvss_score": {
+            "value": 7.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-31607"
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-31607"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.05922,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2021-31607"
+          }
+        },
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "CVE-2021-31607 has CVSS >= 7.0."
+      },
+      {
+        "package": "salt",
+        "installed_version": "3000.1",
+        "vuln_id": "CVE-2021-3197",
+        "claims": {
+          "summary": {
+            "value": "SaltStack Salt is vulnerable to shell injection via ProxyCommand argument",
+            "source_url": "https://osv.dev/vulnerability/GHSA-8rp6-x3r7-5qw3"
+          },
+          "fixed_versions": {
+            "value": [
+              "2015.8.10",
+              "2015.8.13",
+              "2016.3.4",
+              "2016.3.6",
+              "2016.3.8",
+              "2016.11.3",
+              "2016.11.5",
+              "2016.11.10",
+              "2017.7.8",
+              "2019.2.0rc1",
+              "2019.2.5",
+              "2019.2.8",
+              "3000.6",
+              "3001.4",
+              "3002.5",
+              "3000.7",
+              "3001.5",
+              "3002.3"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-8rp6-x3r7-5qw3"
+          },
+          "cvss_score": {
+            "value": 9.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-3197"
+          },
+          "cvss_severity": {
+            "value": "CRITICAL",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-3197"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.72327,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2021-3197"
+          }
+        },
+        "priority": "P1",
+        "priority_basis": [
+          "epss",
+          "cvss_score"
+        ],
+        "rationale": "CVE-2021-3197 has CVSS >= 9.0 and EPSS >= 0.10."
+      },
+      {
+        "package": "salt",
+        "installed_version": "3000.1",
+        "vuln_id": "CVE-2021-33226",
+        "claims": {
+          "summary": {
+            "value": "Buffer Overflow vulnerability in Saltstack v.3003 and before allows attacker to execute arbitrary code via the func variable in salt/salt/modules/status.py file.",
+            "source_url": "https://osv.dev/vulnerability/PYSEC-2023-47"
+          },
+          "fixed_versions": {
+            "value": [
+              "3003.1"
+            ],
+            "source_url": "https://osv.dev/vulnerability/PYSEC-2023-47"
+          },
+          "cvss_score": {
+            "value": 9.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-33226"
+          },
+          "cvss_severity": {
+            "value": "CRITICAL",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-33226"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.01642,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2021-33226"
+          }
+        },
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "CVE-2021-33226 has CVSS >= 7.0."
+      },
+      {
+        "package": "salt",
+        "installed_version": "3000.1",
+        "vuln_id": "CVE-2022-22934",
+        "claims": {
+          "summary": {
+            "value": "SaltStack Improper Verification of Cryptographic Signature",
+            "source_url": "https://osv.dev/vulnerability/GHSA-2q4g-wfm6-5fpm"
+          },
+          "fixed_versions": {
+            "value": [
+              "3002.8",
+              "3004.1",
+              "3003.4"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-2q4g-wfm6-5fpm"
+          },
+          "cvss_score": {
+            "value": 8.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2022-22934"
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2022-22934"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.00875,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2022-22934"
+          }
+        },
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "CVE-2022-22934 has CVSS >= 7.0."
+      },
+      {
+        "package": "salt",
+        "installed_version": "3000.1",
+        "vuln_id": "CVE-2022-22935",
+        "claims": {
+          "summary": {
+            "value": "SaltStack Salt Improper Authentication via Man in the Middle Attack",
+            "source_url": "https://osv.dev/vulnerability/GHSA-cvcc-5x92-gmhc"
+          },
+          "fixed_versions": {
+            "value": [
+              "3002.8",
+              "3003.4",
+              "3004.1"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-cvcc-5x92-gmhc"
+          },
+          "cvss_score": {
+            "value": 3.7,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2022-22935"
+          },
+          "cvss_severity": {
+            "value": "LOW",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2022-22935"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.01624,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2022-22935"
+          }
+        },
+        "priority": "P4",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "CVE-2022-22935 has CVSS < 4.0."
+      },
+      {
+        "package": "salt",
+        "installed_version": "3000.1",
+        "vuln_id": "CVE-2022-22936",
+        "claims": {
+          "summary": {
+            "value": "SaltStack Salt Authentication Bypass by Capture-replay",
+            "source_url": "https://osv.dev/vulnerability/GHSA-5r3f-3m3j-wcj2"
+          },
+          "fixed_versions": {
+            "value": [
+              "3002.8",
+              "3003.4",
+              "3004.1"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-5r3f-3m3j-wcj2"
+          },
+          "cvss_score": {
+            "value": 8.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2022-22936"
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2022-22936"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.00827,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2022-22936"
+          }
+        },
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "CVE-2022-22936 has CVSS >= 7.0."
+      },
+      {
+        "package": "salt",
+        "installed_version": "3000.1",
+        "vuln_id": "CVE-2022-22941",
+        "claims": {
+          "summary": {
+            "value": "SaltStack Salt Permissions Bypass",
+            "source_url": "https://osv.dev/vulnerability/GHSA-qcr3-hr2f-6557"
+          },
+          "fixed_versions": {
+            "value": [
+              "3002.8",
+              "3003.4",
+              "3004.1"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-qcr3-hr2f-6557"
+          },
+          "cvss_score": {
+            "value": 8.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2022-22941"
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2022-22941"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.01346,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2022-22941"
+          }
+        },
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "CVE-2022-22941 has CVSS >= 7.0."
+      },
+      {
+        "package": "salt",
+        "installed_version": "3000.1",
+        "vuln_id": "CVE-2022-22967",
+        "claims": {
+          "summary": {
+            "value": "Salt's PAM auth fails to reject locked accounts",
+            "source_url": "https://osv.dev/vulnerability/GHSA-fpxm-fprw-6hxj"
+          },
+          "fixed_versions": {
+            "value": [
+              "3002.9",
+              "3003.5",
+              "3004.2"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-fpxm-fprw-6hxj"
+          },
+          "cvss_score": {
+            "value": 8.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2022-22967"
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2022-22967"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.0212,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2022-22967"
+          }
+        },
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "CVE-2022-22967 has CVSS >= 7.0."
+      },
+      {
+        "package": "salt",
+        "installed_version": "3000.1",
+        "vuln_id": "CVE-2023-20897",
+        "claims": {
+          "summary": {
+            "value": "Salt vulnerable to denial of service",
+            "source_url": "https://osv.dev/vulnerability/GHSA-vpjg-wmf8-29h9"
+          },
+          "fixed_versions": {
+            "value": [
+              "3006.2",
+              "3005.2"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-vpjg-wmf8-29h9"
+          },
+          "cvss_score": {
+            "value": 5.3,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-20897"
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-20897"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.01245,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2023-20897"
+          }
+        },
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "CVE-2023-20897 has CVSS between 4.0 and 6.9."
+      },
+      {
+        "package": "salt",
+        "installed_version": "3000.1",
+        "vuln_id": "CVE-2023-20898",
+        "claims": {
+          "summary": {
+            "value": "Salt can cause Git Providers to get wrong data",
+            "source_url": "https://osv.dev/vulnerability/GHSA-qvh6-3j7x-3hq7"
+          },
+          "fixed_versions": {
+            "value": [
+              "3006.2",
+              "3005.2"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-qvh6-3j7x-3hq7"
+          },
+          "cvss_score": {
+            "value": 7.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-20898"
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-20898"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.00318,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2023-20898"
+          }
+        },
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "CVE-2023-20898 has CVSS >= 7.0."
+      },
+      {
+        "package": "salt",
+        "installed_version": "3000.1",
+        "vuln_id": "CVE-2023-34049",
+        "claims": {
+          "summary": {
+            "value": "Salt preflight script could be attacker controlled",
+            "source_url": "https://osv.dev/vulnerability/GHSA-4277-m35q-7c9w"
+          },
+          "fixed_versions": {
+            "value": [
+              "3005.4",
+              "3006.4"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-4277-m35q-7c9w"
+          },
+          "cvss_score": {
+            "value": 6.7,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-34049"
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-34049"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.00187,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2023-34049"
+          }
+        },
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "CVE-2023-34049 has CVSS between 4.0 and 6.9."
+      },
+      {
+        "package": "salt",
+        "installed_version": "3000.1",
+        "vuln_id": "CVE-2024-22231",
+        "claims": {
+          "summary": {
+            "value": "Directory creation by malicious user in saltstack",
+            "source_url": "https://osv.dev/vulnerability/GHSA-q27c-j6j9-53w3"
+          },
+          "fixed_versions": {
+            "value": [
+              "3005.5",
+              "3006.6"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-q27c-j6j9-53w3"
+          },
+          "cvss_score": {
+            "value": 5.0,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-22231"
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-22231"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.00693,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2024-22231"
+          }
+        },
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "CVE-2024-22231 has CVSS between 4.0 and 6.9."
+      },
+      {
+        "package": "salt",
+        "installed_version": "3000.1",
+        "vuln_id": "CVE-2024-22232",
+        "claims": {
+          "summary": {
+            "value": "Path traversal in saltstack",
+            "source_url": "https://osv.dev/vulnerability/GHSA-2qw3-2wv6-p64x"
+          },
+          "fixed_versions": {
+            "value": [
+              "3005.5",
+              "3006.6"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-2qw3-2wv6-p64x"
+          },
+          "cvss_score": {
+            "value": 7.7,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-22232"
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-22232"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.00837,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2024-22232"
+          }
+        },
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "CVE-2024-22232 has CVSS >= 7.0."
+      },
+      {
+        "package": "salt",
+        "installed_version": "3000.1",
+        "vuln_id": "CVE-2025-62348",
+        "claims": {
+          "summary": {
+            "value": "Salt junos Module Vulnerable to Code Injection via Specially Crafted YAML Payload",
+            "source_url": "https://osv.dev/vulnerability/GHSA-77w2-v593-vxvv"
+          },
+          "fixed_versions": {
+            "value": [
+              "3006.17"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-77w2-v593-vxvv"
+          },
+          "cvss_score": {
+            "value": 7.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-62348"
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-62348"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.00203,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2025-62348"
+          }
+        },
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "CVE-2025-62348 has CVSS >= 7.0."
+      }
+    ],
+    "remediations": [
+      {
+        "package": "salt",
+        "current_version": "3000.1",
+        "recommended_version": "3006.17",
+        "resolves": [
+          "CVE-2020-11651",
+          "CVE-2020-11652",
+          "CVE-2020-16846",
+          "CVE-2020-17490",
+          "CVE-2020-25592",
+          "CVE-2020-28243",
+          "CVE-2020-28972",
+          "CVE-2020-35662",
+          "CVE-2021-21996",
+          "CVE-2021-22004",
+          "CVE-2021-25281",
+          "CVE-2021-25282",
+          "CVE-2021-25283",
+          "CVE-2021-25284",
+          "CVE-2021-25315",
+          "CVE-2021-3144",
+          "CVE-2021-3148",
+          "CVE-2021-31607",
+          "CVE-2021-3197",
+          "CVE-2021-33226",
+          "CVE-2022-22934",
+          "CVE-2022-22935",
+          "CVE-2022-22936",
+          "CVE-2022-22941",
+          "CVE-2022-22967",
+          "CVE-2023-20897",
+          "CVE-2023-20898",
+          "CVE-2023-34049",
+          "CVE-2024-22231",
+          "CVE-2024-22232",
+          "CVE-2025-62348"
+        ],
+        "note": "Upgrading salt to 3006.17 resolves all listed vulnerabilities as confirmed by check_upgrade."
+      }
+    ],
+    "review_notes": [
+      "All vulnerabilities returned by osv_lookup for salt 3000.1 were evaluated. Upgrading to 3006.17 successfully clears all identified vulnerabilities."
+    ]
+  },
+  "checked": {
+    "findings": [
+      {
+        "package": "salt",
+        "installed_version": "3000.1",
+        "vuln_id": "CVE-2020-11651",
+        "aliases": [
+          "GHSA-pjhf-vpx3-33r3",
+          "PYSEC-2020-102"
+        ],
+        "priority": "P1",
+        "priority_basis": [
+          "in_kev",
+          "epss",
+          "cvss_score"
+        ],
+        "reference_priority": "P1",
+        "priority_agrees": true,
+        "rationale": "CVE-2020-11651 is listed in CISA KEV and has extremely high EPSS and CVSS scores, requiring immediate remediation.",
+        "claims": {
+          "summary": {
+            "value": "SaltStack Salt Unauthenticated Remote Code Execution",
+            "source_url": "https://osv.dev/vulnerability/GHSA-pjhf-vpx3-33r3",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "2019.2.4",
+              "3000.2"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-pjhf-vpx3-33r3",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 9.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-11651",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "CRITICAL",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-11651",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": true,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.96614,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2020-11651",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "salt",
+        "installed_version": "3000.1",
+        "vuln_id": "CVE-2020-16846",
+        "aliases": [
+          "GHSA-qr38-h96j-2j3w",
+          "PYSEC-2020-104"
+        ],
+        "priority": "P1",
+        "priority_basis": [
+          "in_kev",
+          "epss",
+          "cvss_score"
+        ],
+        "reference_priority": "P1",
+        "priority_agrees": true,
+        "rationale": "CVE-2020-16846 is in CISA KEV with critical CVSS and EPSS scores.",
+        "claims": {
+          "summary": {
+            "value": "SaltStack Salt Command Injection in netapi ssh client",
+            "source_url": "https://osv.dev/vulnerability/GHSA-qr38-h96j-2j3w",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "2015.8.10",
+              "2015.8.13",
+              "2016.3.4",
+              "2016.3.6",
+              "2016.3.8",
+              "2016.11.3",
+              "2016.11.6",
+              "2016.11.10",
+              "2017.7.4",
+              "2017.7.8",
+              "2018.3.5",
+              "2019.2.5",
+              "3000.3",
+              "2019.2.6",
+              "3000.4",
+              "3001.2",
+              "3002.1"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-qr38-h96j-2j3w",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 9.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-16846",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "CRITICAL",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-16846",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": true,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.99585,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2020-16846",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "salt",
+        "installed_version": "3000.1",
+        "vuln_id": "CVE-2020-25592",
+        "aliases": [
+          "GHSA-29j3-2446-5j4w",
+          "PYSEC-2020-106"
+        ],
+        "priority": "P1",
+        "priority_basis": [
+          "epss",
+          "cvss_score"
+        ],
+        "reference_priority": "P1",
+        "priority_agrees": true,
+        "rationale": "CVE-2020-25592 has CVSS >= 9.0 and EPSS >= 0.10.",
+        "claims": {
+          "summary": {
+            "value": "SaltStack Salt Improper Validation of eauth credentials and tokens in salt-netapi",
+            "source_url": "https://osv.dev/vulnerability/GHSA-29j3-2446-5j4w",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "2015.8.10",
+              "2015.8.13",
+              "2016.3.4",
+              "2016.3.6",
+              "2016.3.8",
+              "2016.11.3",
+              "2016.11.6",
+              "2016.11.10",
+              "2017.7.4",
+              "2017.7.8",
+              "2018.3.5",
+              "2019.2.5",
+              "3000.3",
+              "2019.2.7",
+              "3000.5",
+              "3001.3",
+              "3002.1"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-29j3-2446-5j4w",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 9.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-25592",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "CRITICAL",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-25592",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.57726,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2020-25592",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "salt",
+        "installed_version": "3000.1",
+        "vuln_id": "CVE-2021-25281",
+        "aliases": [
+          "GHSA-xxw3-765m-f37p",
+          "PYSEC-2021-50"
+        ],
+        "priority": "P1",
+        "priority_basis": [
+          "epss",
+          "cvss_score"
+        ],
+        "reference_priority": "P1",
+        "priority_agrees": true,
+        "rationale": "CVE-2021-25281 has CVSS >= 9.0 and EPSS >= 0.10.",
+        "claims": {
+          "summary": {
+            "value": "SaltStack Salt Improper Authentication vulnerability",
+            "source_url": "https://osv.dev/vulnerability/GHSA-xxw3-765m-f37p",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "2015.8.10",
+              "2015.8.13",
+              "2016.3.4",
+              "2016.3.6",
+              "2016.3.8",
+              "2016.11.3",
+              "2016.11.5",
+              "2016.11.10",
+              "2017.7.8",
+              "2019.2.0rc1",
+              "2019.2.5",
+              "2019.2.8",
+              "3000.6",
+              "3001.4",
+              "3002.5",
+              "3000.7",
+              "3001.5",
+              "3002.3"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-xxw3-765m-f37p",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 9.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-25281",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "CRITICAL",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-25281",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.7313,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2021-25281",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "salt",
+        "installed_version": "3000.1",
+        "vuln_id": "CVE-2021-25283",
+        "aliases": [
+          "GHSA-xgmh-gfxw-2hvv",
+          "PYSEC-2021-52"
+        ],
+        "priority": "P1",
+        "priority_basis": [
+          "epss",
+          "cvss_score"
+        ],
+        "reference_priority": "P1",
+        "priority_agrees": true,
+        "rationale": "CVE-2021-25283 has CVSS >= 9.0 and EPSS >= 0.10.",
+        "claims": {
+          "summary": {
+            "value": "SaltStack Salt Server Side Template Injection",
+            "source_url": "https://osv.dev/vulnerability/GHSA-xgmh-gfxw-2hvv",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "2015.8.10",
+              "2015.8.13",
+              "2016.3.4",
+              "2016.3.6",
+              "2016.3.8",
+              "2016.11.3",
+              "2016.11.5",
+              "2016.11.10",
+              "2017.7.8",
+              "2019.2.0rc1",
+              "2019.2.5",
+              "2019.2.8",
+              "3000.6",
+              "3001.4",
+              "3002.5",
+              "3000.7",
+              "3001.5"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-xgmh-gfxw-2hvv",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 9.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-25283",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "CRITICAL",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-25283",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.1051,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2021-25283",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "salt",
+        "installed_version": "3000.1",
+        "vuln_id": "CVE-2021-3197",
+        "aliases": [
+          "GHSA-8rp6-x3r7-5qw3",
+          "PYSEC-2021-57"
+        ],
+        "priority": "P1",
+        "priority_basis": [
+          "epss",
+          "cvss_score"
+        ],
+        "reference_priority": "P1",
+        "priority_agrees": true,
+        "rationale": "CVE-2021-3197 has CVSS >= 9.0 and EPSS >= 0.10.",
+        "claims": {
+          "summary": {
+            "value": "SaltStack Salt is vulnerable to shell injection via ProxyCommand argument",
+            "source_url": "https://osv.dev/vulnerability/GHSA-8rp6-x3r7-5qw3",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "2015.8.10",
+              "2015.8.13",
+              "2016.3.4",
+              "2016.3.6",
+              "2016.3.8",
+              "2016.11.3",
+              "2016.11.5",
+              "2016.11.10",
+              "2017.7.8",
+              "2019.2.0rc1",
+              "2019.2.5",
+              "2019.2.8",
+              "3000.6",
+              "3001.4",
+              "3002.5",
+              "3000.7",
+              "3001.5",
+              "3002.3"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-8rp6-x3r7-5qw3",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 9.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-3197",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "CRITICAL",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-3197",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.72327,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2021-3197",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "salt",
+        "installed_version": "3000.1",
+        "vuln_id": "CVE-2021-25282",
+        "aliases": [
+          "GHSA-76x4-x3p6-rpr9",
+          "PYSEC-2021-51"
+        ],
+        "priority": "P1",
+        "priority_basis": [
+          "epss",
+          "cvss_score"
+        ],
+        "reference_priority": "P1",
+        "priority_agrees": true,
+        "rationale": "CVE-2021-25282 has CVSS >= 9.0 and EPSS >= 0.10.",
+        "claims": {
+          "summary": {
+            "value": "SaltStack Salt Directory Traversal vulnerability",
+            "source_url": "https://osv.dev/vulnerability/GHSA-76x4-x3p6-rpr9",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "2015.8.10",
+              "2015.8.13",
+              "2016.3.4",
+              "2016.3.6",
+              "2016.3.8",
+              "2016.11.3",
+              "2016.11.5",
+              "2016.11.10",
+              "2017.7.8",
+              "2019.2.0rc1",
+              "2019.2.5",
+              "2019.2.8",
+              "3000.6",
+              "3001.4",
+              "3002.5",
+              "3000.7",
+              "3001.5",
+              "3002.3"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-76x4-x3p6-rpr9",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 9.1,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-25282",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "CRITICAL",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-25282",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.92409,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2021-25282",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "salt",
+        "installed_version": "3000.1",
+        "vuln_id": "CVE-2020-11652",
+        "aliases": [
+          "GHSA-vp49-2g4r-m3x3",
+          "PYSEC-2020-103"
+        ],
+        "priority": "P1",
+        "priority_basis": [
+          "in_kev",
+          "epss"
+        ],
+        "reference_priority": "P1",
+        "priority_agrees": true,
+        "rationale": "CVE-2020-11652 is in CISA KEV and has a high EPSS score, necessitating an immediate fix.",
+        "claims": {
+          "summary": {
+            "value": "SaltStack Salt is vulnerable Arbitrary Directory Access",
+            "source_url": "https://osv.dev/vulnerability/GHSA-vp49-2g4r-m3x3",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "2019.2.4",
+              "3000.2"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-vp49-2g4r-m3x3",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 6.5,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-11652",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-11652",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": true,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.86178,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2020-11652",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "salt",
+        "installed_version": "3000.1",
+        "vuln_id": "CVE-2021-3148",
+        "aliases": [
+          "GHSA-ghc2-hx3w-jqmp",
+          "PYSEC-2021-55"
+        ],
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P2",
+        "priority_agrees": true,
+        "rationale": "CVE-2021-3148 has CVSS >= 7.0.",
+        "claims": {
+          "summary": {
+            "value": "SaltStack Salt command injection in the Salt-API when using the Salt-SSH client",
+            "source_url": "https://osv.dev/vulnerability/GHSA-ghc2-hx3w-jqmp",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "2015.8.10",
+              "2015.8.13",
+              "2016.3.4",
+              "2016.3.6",
+              "2016.3.8",
+              "2016.11.3",
+              "2016.11.5",
+              "2016.11.10",
+              "2017.7.8",
+              "2019.2.0rc1",
+              "2019.2.5",
+              "2019.2.8",
+              "3000.6",
+              "3001.4",
+              "3002.5",
+              "3000.7",
+              "3001.5",
+              "3002.3"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-ghc2-hx3w-jqmp",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 9.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-3148",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "CRITICAL",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-3148",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.08246,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2021-3148",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "salt",
+        "installed_version": "3000.1",
+        "vuln_id": "CVE-2021-33226",
+        "aliases": [
+          "PYSEC-2023-47"
+        ],
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P2",
+        "priority_agrees": true,
+        "rationale": "CVE-2021-33226 has CVSS >= 7.0.",
+        "claims": {
+          "summary": {
+            "value": "Buffer Overflow vulnerability in Saltstack v.3003 and before allows attacker to execute arbitrary code via the func variable in salt/salt/modules/status.py file.",
+            "source_url": "https://osv.dev/vulnerability/PYSEC-2023-47",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "3003.1"
+            ],
+            "source_url": "https://osv.dev/vulnerability/PYSEC-2023-47",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 9.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-33226",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "CRITICAL",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-33226",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.01642,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2021-33226",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "salt",
+        "installed_version": "3000.1",
+        "vuln_id": "CVE-2021-3144",
+        "aliases": [
+          "GHSA-w2hr-3mc8-46gh",
+          "PYSEC-2021-54"
+        ],
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P2",
+        "priority_agrees": true,
+        "rationale": "CVE-2021-3144 has CVSS >= 7.0.",
+        "claims": {
+          "summary": {
+            "value": "SaltStack Salt eauth tokens can be used once after expiration",
+            "source_url": "https://osv.dev/vulnerability/GHSA-w2hr-3mc8-46gh",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "2015.8.10",
+              "2015.8.13",
+              "2016.3.4",
+              "2016.3.6",
+              "2016.3.8",
+              "2016.11.3",
+              "2016.11.5",
+              "2016.11.10",
+              "2017.7.8",
+              "2019.2.0rc1",
+              "2019.2.5",
+              "2019.2.8",
+              "3000.6",
+              "3001.4",
+              "3002.5",
+              "3000.7",
+              "3001.5",
+              "3002.3"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-w2hr-3mc8-46gh",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 9.1,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-3144",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "CRITICAL",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-3144",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.05239,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2021-3144",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "salt",
+        "installed_version": "3000.1",
+        "vuln_id": "CVE-2022-22934",
+        "aliases": [
+          "GHSA-2q4g-wfm6-5fpm",
+          "PYSEC-2022-171"
+        ],
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P2",
+        "priority_agrees": true,
+        "rationale": "CVE-2022-22934 has CVSS >= 7.0.",
+        "claims": {
+          "summary": {
+            "value": "SaltStack Improper Verification of Cryptographic Signature",
+            "source_url": "https://osv.dev/vulnerability/GHSA-2q4g-wfm6-5fpm",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "3002.8",
+              "3004.1",
+              "3003.4"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-2q4g-wfm6-5fpm",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 8.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2022-22934",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2022-22934",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.00875,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2022-22934",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "salt",
+        "installed_version": "3000.1",
+        "vuln_id": "CVE-2022-22936",
+        "aliases": [
+          "GHSA-5r3f-3m3j-wcj2",
+          "PYSEC-2022-173"
+        ],
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P2",
+        "priority_agrees": true,
+        "rationale": "CVE-2022-22936 has CVSS >= 7.0.",
+        "claims": {
+          "summary": {
+            "value": "SaltStack Salt Authentication Bypass by Capture-replay",
+            "source_url": "https://osv.dev/vulnerability/GHSA-5r3f-3m3j-wcj2",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "3002.8",
+              "3003.4",
+              "3004.1"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-5r3f-3m3j-wcj2",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 8.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2022-22936",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2022-22936",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.00827,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2022-22936",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "salt",
+        "installed_version": "3000.1",
+        "vuln_id": "CVE-2022-22941",
+        "aliases": [
+          "GHSA-qcr3-hr2f-6557",
+          "PYSEC-2022-174"
+        ],
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P2",
+        "priority_agrees": true,
+        "rationale": "CVE-2022-22941 has CVSS >= 7.0.",
+        "claims": {
+          "summary": {
+            "value": "SaltStack Salt Permissions Bypass",
+            "source_url": "https://osv.dev/vulnerability/GHSA-qcr3-hr2f-6557",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "3002.8",
+              "3003.4",
+              "3004.1"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-qcr3-hr2f-6557",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 8.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2022-22941",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2022-22941",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.01346,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2022-22941",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "salt",
+        "installed_version": "3000.1",
+        "vuln_id": "CVE-2022-22967",
+        "aliases": [
+          "GHSA-fpxm-fprw-6hxj",
+          "PYSEC-2022-210"
+        ],
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P2",
+        "priority_agrees": true,
+        "rationale": "CVE-2022-22967 has CVSS >= 7.0.",
+        "claims": {
+          "summary": {
+            "value": "Salt's PAM auth fails to reject locked accounts",
+            "source_url": "https://osv.dev/vulnerability/GHSA-fpxm-fprw-6hxj",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "3002.9",
+              "3003.5",
+              "3004.2"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-fpxm-fprw-6hxj",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 8.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2022-22967",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2022-22967",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.0212,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2022-22967",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "salt",
+        "installed_version": "3000.1",
+        "vuln_id": "CVE-2020-28243",
+        "aliases": [
+          "GHSA-phhw-3wc9-8q75",
+          "PYSEC-2021-73"
+        ],
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P2",
+        "priority_agrees": true,
+        "rationale": "CVE-2020-28243 has CVSS >= 7.0.",
+        "claims": {
+          "summary": {
+            "value": "SaltStack Salt command injection via a crafted process name",
+            "source_url": "https://osv.dev/vulnerability/GHSA-phhw-3wc9-8q75",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "2015.8.10",
+              "2015.8.13",
+              "2016.3.4",
+              "2016.3.6",
+              "2016.3.8",
+              "2016.11.3",
+              "2016.11.5",
+              "2016.11.10",
+              "2017.7.8",
+              "2019.2.0rc1",
+              "2019.2.5",
+              "2019.2.8",
+              "3000.6",
+              "3001.4",
+              "3002.5",
+              "3000.7",
+              "3001.5",
+              "3002.3"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-phhw-3wc9-8q75",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 7.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-28243",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-28243",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.04302,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2020-28243",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "salt",
+        "installed_version": "3000.1",
+        "vuln_id": "CVE-2021-25315",
+        "aliases": [
+          "GHSA-pmj6-9f8c-8g2m",
+          "PYSEC-2021-891"
+        ],
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P2",
+        "priority_agrees": true,
+        "rationale": "CVE-2021-25315 has CVSS >= 7.0.",
+        "claims": {
+          "summary": {
+            "value": "Saltstack Salt Unauthenticated Arbitrary Code Execution",
+            "source_url": "https://osv.dev/vulnerability/GHSA-pmj6-9f8c-8g2m",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "3002.2"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-pmj6-9f8c-8g2m",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 7.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-25315",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-25315",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.02333,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2021-25315",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "salt",
+        "installed_version": "3000.1",
+        "vuln_id": "CVE-2021-31607",
+        "aliases": [
+          "GHSA-hcjf-rp5h-g5h3",
+          "PYSEC-2021-56"
+        ],
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P2",
+        "priority_agrees": true,
+        "rationale": "CVE-2021-31607 has CVSS >= 7.0.",
+        "claims": {
+          "summary": {
+            "value": "Command Injection in SaltStack Salt",
+            "source_url": "https://osv.dev/vulnerability/GHSA-hcjf-rp5h-g5h3",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "3003rc1"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-hcjf-rp5h-g5h3",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 7.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-31607",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-31607",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.05922,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2021-31607",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "salt",
+        "installed_version": "3000.1",
+        "vuln_id": "CVE-2023-20898",
+        "aliases": [
+          "GHSA-qvh6-3j7x-3hq7",
+          "PYSEC-2023-169"
+        ],
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P2",
+        "priority_agrees": true,
+        "rationale": "CVE-2023-20898 has CVSS >= 7.0.",
+        "claims": {
+          "summary": {
+            "value": "Salt can cause Git Providers to get wrong data",
+            "source_url": "https://osv.dev/vulnerability/GHSA-qvh6-3j7x-3hq7",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "3006.2",
+              "3005.2"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-qvh6-3j7x-3hq7",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 7.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-20898",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-20898",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.00318,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2023-20898",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "salt",
+        "installed_version": "3000.1",
+        "vuln_id": "CVE-2025-62348",
+        "aliases": [
+          "GHSA-77w2-v593-vxvv",
+          "PYSEC-2026-1894"
+        ],
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P2",
+        "priority_agrees": true,
+        "rationale": "CVE-2025-62348 has CVSS >= 7.0.",
+        "claims": {
+          "summary": {
+            "value": "Salt junos Module Vulnerable to Code Injection via Specially Crafted YAML Payload",
+            "source_url": "https://osv.dev/vulnerability/GHSA-77w2-v593-vxvv",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "3006.17"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-77w2-v593-vxvv",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 7.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-62348",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-62348",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.00203,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2025-62348",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "salt",
+        "installed_version": "3000.1",
+        "vuln_id": "CVE-2024-22232",
+        "aliases": [
+          "GHSA-2qw3-2wv6-p64x",
+          "PYSEC-2026-1891"
+        ],
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P2",
+        "priority_agrees": true,
+        "rationale": "CVE-2024-22232 has CVSS >= 7.0.",
+        "claims": {
+          "summary": {
+            "value": "Path traversal in saltstack",
+            "source_url": "https://osv.dev/vulnerability/GHSA-2qw3-2wv6-p64x",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "3005.5",
+              "3006.6"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-2qw3-2wv6-p64x",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 7.7,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-22232",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-22232",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.00837,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2024-22232",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "salt",
+        "installed_version": "3000.1",
+        "vuln_id": "CVE-2021-21996",
+        "aliases": [
+          "GHSA-pf7h-h2wq-m7pg",
+          "PYSEC-2021-318"
+        ],
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P2",
+        "priority_agrees": true,
+        "rationale": "CVE-2021-21996 has CVSS >= 7.0.",
+        "claims": {
+          "summary": {
+            "value": "Exposure of Resource to Wrong Sphere in salt",
+            "source_url": "https://osv.dev/vulnerability/GHSA-pf7h-h2wq-m7pg",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "3003.3"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-pf7h-h2wq-m7pg",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 7.5,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-21996",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-21996",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.03514,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2021-21996",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "salt",
+        "installed_version": "3000.1",
+        "vuln_id": "CVE-2020-35662",
+        "aliases": [
+          "GHSA-qx72-q6w3-qgc7",
+          "PYSEC-2021-75"
+        ],
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P2",
+        "priority_agrees": true,
+        "rationale": "CVE-2020-35662 has CVSS >= 7.0.",
+        "claims": {
+          "summary": {
+            "value": "SaltStack Salt Improper SSL Certificate Validation",
+            "source_url": "https://osv.dev/vulnerability/GHSA-qx72-q6w3-qgc7",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "2015.8.10",
+              "2015.8.13",
+              "2016.3.4",
+              "2016.3.6",
+              "2016.3.8",
+              "2016.11.3",
+              "2016.11.5",
+              "2016.11.10",
+              "2017.7.8",
+              "2019.2.0rc1",
+              "2019.2.5",
+              "2019.2.8",
+              "3000.6",
+              "3001.4",
+              "3002.5",
+              "3000.7",
+              "3001.5",
+              "3002.3"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-qx72-q6w3-qgc7",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 7.4,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-35662",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-35662",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.02978,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2020-35662",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "salt",
+        "installed_version": "3000.1",
+        "vuln_id": "CVE-2023-34049",
+        "aliases": [
+          "GHSA-4277-m35q-7c9w",
+          "PYSEC-2026-1892"
+        ],
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P3",
+        "priority_agrees": true,
+        "rationale": "CVE-2023-34049 has CVSS between 4.0 and 6.9.",
+        "claims": {
+          "summary": {
+            "value": "Salt preflight script could be attacker controlled",
+            "source_url": "https://osv.dev/vulnerability/GHSA-4277-m35q-7c9w",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "3005.4",
+              "3006.4"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-4277-m35q-7c9w",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 6.7,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-34049",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-34049",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.00187,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2023-34049",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "salt",
+        "installed_version": "3000.1",
+        "vuln_id": "CVE-2021-22004",
+        "aliases": [
+          "GHSA-xf37-qcvf-7m57",
+          "PYSEC-2021-346"
+        ],
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P3",
+        "priority_agrees": true,
+        "rationale": "CVE-2021-22004 has CVSS between 4.0 and 6.9.",
+        "claims": {
+          "summary": {
+            "value": "Improper Authentication in SaltStack Salt",
+            "source_url": "https://osv.dev/vulnerability/GHSA-xf37-qcvf-7m57",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "3003.3"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-xf37-qcvf-7m57",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 6.4,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-22004",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-22004",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.00354,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2021-22004",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "salt",
+        "installed_version": "3000.1",
+        "vuln_id": "CVE-2020-28972",
+        "aliases": [
+          "GHSA-w589-r335-4f55",
+          "PYSEC-2021-74"
+        ],
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P3",
+        "priority_agrees": true,
+        "rationale": "CVE-2020-28972 has CVSS between 4.0 and 6.9.",
+        "claims": {
+          "summary": {
+            "value": "SaltStack Salt Improper Certificate Validation",
+            "source_url": "https://osv.dev/vulnerability/GHSA-w589-r335-4f55",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "2015.8.10",
+              "2015.8.13",
+              "2016.3.4",
+              "2016.3.6",
+              "2016.3.8",
+              "2016.11.3",
+              "2016.11.5",
+              "2016.11.10",
+              "2017.7.8",
+              "2019.2.0rc1",
+              "2019.2.5",
+              "2019.2.8",
+              "3000.6",
+              "3001.4",
+              "3002.5",
+              "3000.7",
+              "3001.5",
+              "3002.3"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-w589-r335-4f55",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 5.9,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-28972",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-28972",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.0309,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2020-28972",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "salt",
+        "installed_version": "3000.1",
+        "vuln_id": "CVE-2020-17490",
+        "aliases": [
+          "GHSA-3c56-vx6v-q5vh",
+          "PYSEC-2020-105"
+        ],
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P3",
+        "priority_agrees": true,
+        "rationale": "CVE-2020-17490 has a CVSS score between 4.0 and 6.9, placing it in P3.",
+        "claims": {
+          "summary": {
+            "value": "SaltStack Salt Allows creating certificates with weak file permissions",
+            "source_url": "https://osv.dev/vulnerability/GHSA-3c56-vx6v-q5vh",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "2015.8.10",
+              "2015.8.13",
+              "2016.3.4",
+              "2016.3.6",
+              "2016.3.8",
+              "2016.11.3",
+              "2016.11.6",
+              "2016.11.10",
+              "2017.7.4",
+              "2017.7.8",
+              "2018.3.5",
+              "2019.2.5",
+              "3000.3",
+              "2019.2.6",
+              "3000.4",
+              "3001.2",
+              "3002.1"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-3c56-vx6v-q5vh",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 5.5,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-17490",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-17490",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.00416,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2020-17490",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "salt",
+        "installed_version": "3000.1",
+        "vuln_id": "CVE-2023-20897",
+        "aliases": [
+          "GHSA-vpjg-wmf8-29h9",
+          "PYSEC-2023-166"
+        ],
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P3",
+        "priority_agrees": true,
+        "rationale": "CVE-2023-20897 has CVSS between 4.0 and 6.9.",
+        "claims": {
+          "summary": {
+            "value": "Salt vulnerable to denial of service",
+            "source_url": "https://osv.dev/vulnerability/GHSA-vpjg-wmf8-29h9",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "3006.2",
+              "3005.2"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-vpjg-wmf8-29h9",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 5.3,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-20897",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-20897",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.01245,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2023-20897",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "salt",
+        "installed_version": "3000.1",
+        "vuln_id": "CVE-2024-22231",
+        "aliases": [
+          "GHSA-q27c-j6j9-53w3",
+          "PYSEC-2026-1900"
+        ],
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P3",
+        "priority_agrees": true,
+        "rationale": "CVE-2024-22231 has CVSS between 4.0 and 6.9.",
+        "claims": {
+          "summary": {
+            "value": "Directory creation by malicious user in saltstack",
+            "source_url": "https://osv.dev/vulnerability/GHSA-q27c-j6j9-53w3",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "3005.5",
+              "3006.6"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-q27c-j6j9-53w3",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 5.0,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-22231",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-22231",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.00693,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2024-22231",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "salt",
+        "installed_version": "3000.1",
+        "vuln_id": "CVE-2021-25284",
+        "aliases": [
+          "GHSA-r55w-xph5-xvx2",
+          "PYSEC-2021-53"
+        ],
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P3",
+        "priority_agrees": true,
+        "rationale": "CVE-2021-25284 has CVSS between 4.0 and 6.9.",
+        "claims": {
+          "summary": {
+            "value": "SaltStack Salt Cleartext Storage of Sensitive Information via cmdmod",
+            "source_url": "https://osv.dev/vulnerability/GHSA-r55w-xph5-xvx2",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "2015.8.10",
+              "2015.8.13",
+              "2016.3.4",
+              "2016.3.6",
+              "2016.3.8",
+              "2016.11.3",
+              "2016.11.5",
+              "2016.11.10",
+              "2017.7.8",
+              "2019.2.0rc1",
+              "2019.2.5",
+              "2019.2.8",
+              "3000.6",
+              "3001.4",
+              "3002.5",
+              "3000.7",
+              "3001.5",
+              "3002.3"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-r55w-xph5-xvx2",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 4.4,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-25284",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-25284",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.00543,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2021-25284",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "salt",
+        "installed_version": "3000.1",
+        "vuln_id": "CVE-2022-22935",
+        "aliases": [
+          "GHSA-cvcc-5x92-gmhc",
+          "PYSEC-2022-172"
+        ],
+        "priority": "P4",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P4",
+        "priority_agrees": true,
+        "rationale": "CVE-2022-22935 has CVSS < 4.0.",
+        "claims": {
+          "summary": {
+            "value": "SaltStack Salt Improper Authentication via Man in the Middle Attack",
+            "source_url": "https://osv.dev/vulnerability/GHSA-cvcc-5x92-gmhc",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "3002.8",
+              "3003.4",
+              "3004.1"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-cvcc-5x92-gmhc",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 3.7,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2022-22935",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "LOW",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2022-22935",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.01624,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2022-22935",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      }
+    ],
+    "rejected_findings": [],
+    "omitted": [],
+    "remediations": [
+      {
+        "package": "salt",
+        "current_version": "3000.1",
+        "recommended_version": "3006.17",
+        "resolves": [
+          "CVE-2020-11651",
+          "CVE-2020-11652",
+          "CVE-2020-16846",
+          "CVE-2020-17490",
+          "CVE-2020-25592",
+          "CVE-2020-28243",
+          "CVE-2020-28972",
+          "CVE-2020-35662",
+          "CVE-2021-21996",
+          "CVE-2021-22004",
+          "CVE-2021-25281",
+          "CVE-2021-25282",
+          "CVE-2021-25283",
+          "CVE-2021-25284",
+          "CVE-2021-25315",
+          "CVE-2021-3144",
+          "CVE-2021-3148",
+          "CVE-2021-31607",
+          "CVE-2021-3197",
+          "CVE-2021-33226",
+          "CVE-2022-22934",
+          "CVE-2022-22935",
+          "CVE-2022-22936",
+          "CVE-2022-22941",
+          "CVE-2022-22967",
+          "CVE-2023-20897",
+          "CVE-2023-20898",
+          "CVE-2023-34049",
+          "CVE-2024-22231",
+          "CVE-2024-22232",
+          "CVE-2025-62348"
+        ],
+        "note": "Upgrading salt to 3006.17 resolves all listed vulnerabilities as confirmed by check_upgrade.",
+        "status": "verified",
+        "reason": "",
+        "still_affected_by": [],
+        "remaining_known_vulns": [],
+        "verification_url": "https://osv.dev/list?ecosystem=PyPI&q=salt"
+      }
+    ],
+    "unresolved_dependencies": [],
+    "unqueried_dependencies": [],
+    "review_notes": [
+      "All vulnerabilities returned by osv_lookup for salt 3000.1 were evaluated. Upgrading to 3006.17 successfully clears all identified vulnerabilities."
+    ],
+    "errors": [],
+    "stats": {
+      "claims_total": 186,
+      "verified": 186,
+      "unknown": 0,
+      "unsourced": 0,
+      "ungrounded": 0,
+      "mismatch": 0,
+      "findings_reported": 31,
+      "findings_accepted": 31,
+      "findings_rejected": 0,
+      "findings_needing_review": 0,
+      "omitted": 0,
+      "unsupported_claim_rate": 0.0,
+      "unsupported_claims_in_final_report": 0
+    }
+  }
+}

@@ -1,0 +1,1741 @@
+{
+  "model": "gemini-3.5-flash-lite",
+  "turns": 4,
+  "seconds": 22.6,
+  "usage": {
+    "input": 27361,
+    "output": 9555,
+    "cache_read": 12156,
+    "cache_write": 0
+  },
+  "cost_usd": 0.0,
+  "trace": [
+    {
+      "tool": "osv_lookup",
+      "input": {
+        "packages": [
+          {
+            "version": "2.10",
+            "name": "jinja2"
+          },
+          {
+            "version": "2.19.1",
+            "name": "requests"
+          }
+        ]
+      },
+      "seconds": 0.0,
+      "is_error": false
+    },
+    {
+      "tool": "nvd_lookup",
+      "input": {
+        "cve_ids": [
+          "CVE-2019-10906",
+          "CVE-2020-28493",
+          "CVE-2024-22195",
+          "CVE-2024-34064",
+          "CVE-2024-56326",
+          "CVE-2025-27516",
+          "CVE-2018-18074",
+          "CVE-2023-32681",
+          "CVE-2024-35195",
+          "CVE-2024-47081",
+          "CVE-2026-25645"
+        ]
+      },
+      "seconds": 0.0,
+      "is_error": false
+    },
+    {
+      "tool": "kev_lookup",
+      "input": {
+        "cve_ids": [
+          "CVE-2019-10906",
+          "CVE-2020-28493",
+          "CVE-2024-22195",
+          "CVE-2024-34064",
+          "CVE-2024-56326",
+          "CVE-2025-27516",
+          "CVE-2018-18074",
+          "CVE-2023-32681",
+          "CVE-2024-35195",
+          "CVE-2024-47081",
+          "CVE-2026-25645"
+        ]
+      },
+      "seconds": 0.0,
+      "is_error": false
+    },
+    {
+      "tool": "epss_lookup",
+      "input": {
+        "cve_ids": [
+          "CVE-2019-10906",
+          "CVE-2020-28493",
+          "CVE-2024-22195",
+          "CVE-2024-34064",
+          "CVE-2024-56326",
+          "CVE-2025-27516",
+          "CVE-2018-18074",
+          "CVE-2023-32681",
+          "CVE-2024-35195",
+          "CVE-2024-47081",
+          "CVE-2026-25645"
+        ]
+      },
+      "seconds": 0.0,
+      "is_error": false
+    },
+    {
+      "tool": "check_upgrade",
+      "input": {
+        "version": "3.1.6",
+        "package": "jinja2"
+      },
+      "seconds": 0.0,
+      "is_error": false
+    },
+    {
+      "tool": "check_upgrade",
+      "input": {
+        "version": "2.33.0",
+        "package": "requests"
+      },
+      "seconds": 0.0,
+      "is_error": false
+    },
+    {
+      "tool": "submit_report",
+      "input": {
+        "review_notes": [
+          "All vulnerabilities returned by osv_lookup have been fully processed and checked against NVD, KEV, and EPSS sources."
+        ],
+        "findings": [
+          {
+            "priority_basis": [
+              "cvss_score"
+            ],
+            "rationale": "CVSS score is >= 7.0 (8.6), placing it in P2 (fix this sprint).",
+            "priority": "P2",
+            "vuln_id": "CVE-2019-10906",
+            "installed_version": "2.10",
+            "package": "jinja2",
+            "claims": {
+              "epss": {
+                "value": 0.03633,
+                "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2019-10906"
+              },
+              "summary": {
+                "value": "Jinja2 sandbox escape via string formatting",
+                "source_url": "https://osv.dev/vulnerability/GHSA-462w-v97r-4m45"
+              },
+              "fixed_versions": {
+                "value": [
+                  "2.10.1"
+                ],
+                "source_url": "https://osv.dev/vulnerability/GHSA-462w-v97r-4m45"
+              },
+              "in_kev": {
+                "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+                "value": false
+              },
+              "cvss_score": {
+                "value": 8.6,
+                "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2019-10906"
+              },
+              "cvss_severity": {
+                "value": "HIGH",
+                "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2019-10906"
+              }
+            }
+          },
+          {
+            "priority_basis": [
+              "cvss_score"
+            ],
+            "package": "jinja2",
+            "vuln_id": "CVE-2020-28493",
+            "rationale": "CVSS score is >= 4.0 and < 7.0 (5.3), placing it in P3 (plan a fix).",
+            "installed_version": "2.10",
+            "priority": "P3",
+            "claims": {
+              "cvss_severity": {
+                "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-28493",
+                "value": "MEDIUM"
+              },
+              "cvss_score": {
+                "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-28493",
+                "value": 5.3
+              },
+              "in_kev": {
+                "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+                "value": false
+              },
+              "epss": {
+                "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2020-28493",
+                "value": 0.03546
+              },
+              "summary": {
+                "value": "Regular Expression Denial of Service (ReDoS) in Jinja2",
+                "source_url": "https://osv.dev/vulnerability/GHSA-g3rq-g295-4j3m"
+              },
+              "fixed_versions": {
+                "value": [
+                  "2.11.3"
+                ],
+                "source_url": "https://osv.dev/vulnerability/GHSA-g3rq-g295-4j3m"
+              }
+            }
+          },
+          {
+            "package": "jinja2",
+            "installed_version": "2.10",
+            "rationale": "CVSS score is >= 4.0 and < 7.0 (6.1), placing it in P3 (plan a fix).",
+            "vuln_id": "CVE-2024-22195",
+            "priority_basis": [
+              "cvss_score"
+            ],
+            "claims": {
+              "summary": {
+                "value": "Jinja vulnerable to HTML attribute injection when passing user input as keys to xmlattr filter",
+                "source_url": "https://osv.dev/vulnerability/GHSA-h5c8-rqwp-cp95"
+              },
+              "in_kev": {
+                "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+                "value": false
+              },
+              "cvss_severity": {
+                "value": "MEDIUM",
+                "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-22195"
+              },
+              "epss": {
+                "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2024-22195",
+                "value": 0.00892
+              },
+              "cvss_score": {
+                "value": 6.1,
+                "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-22195"
+              },
+              "fixed_versions": {
+                "source_url": "https://osv.dev/vulnerability/GHSA-h5c8-rqwp-cp95",
+                "value": [
+                  "3.1.3"
+                ]
+              }
+            },
+            "priority": "P3"
+          },
+          {
+            "priority_basis": [
+              "cvss_score"
+            ],
+            "rationale": "CVSS score is >= 4.0 and < 7.0 (5.4), placing it in P3 (plan a fix).",
+            "package": "jinja2",
+            "installed_version": "2.10",
+            "claims": {
+              "fixed_versions": {
+                "value": [
+                  "3.1.4"
+                ],
+                "source_url": "https://osv.dev/vulnerability/GHSA-h75v-3vvj-5mfj"
+              },
+              "epss": {
+                "value": 0.00979,
+                "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2024-34064"
+              },
+              "summary": {
+                "value": "Jinja vulnerable to HTML attribute injection when passing user input as keys to xmlattr filter",
+                "source_url": "https://osv.dev/vulnerability/GHSA-h75v-3vvj-5mfj"
+              },
+              "in_kev": {
+                "value": false,
+                "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+              },
+              "cvss_severity": {
+                "value": "MEDIUM",
+                "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-34064"
+              },
+              "cvss_score": {
+                "value": 5.4,
+                "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-34064"
+              }
+            },
+            "vuln_id": "CVE-2024-34064",
+            "priority": "P3"
+          },
+          {
+            "priority_basis": [
+              "cvss_score"
+            ],
+            "vuln_id": "CVE-2024-56326",
+            "rationale": "CVSS score is >= 7.0 (7.8), placing it in P2 (fix this sprint).",
+            "package": "jinja2",
+            "claims": {
+              "fixed_versions": {
+                "source_url": "https://osv.dev/vulnerability/GHSA-q2x7-8rv6-6q7h",
+                "value": [
+                  "3.1.5"
+                ]
+              },
+              "in_kev": {
+                "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+                "value": false
+              },
+              "cvss_score": {
+                "value": 7.8,
+                "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-56326"
+              },
+              "cvss_severity": {
+                "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-56326",
+                "value": "HIGH"
+              },
+              "epss": {
+                "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2024-56326",
+                "value": 0.00522
+              },
+              "summary": {
+                "source_url": "https://osv.dev/vulnerability/GHSA-q2x7-8rv6-6q7h",
+                "value": "Jinja has a sandbox breakout through indirect reference to format method"
+              }
+            },
+            "priority": "P2",
+            "installed_version": "2.10"
+          },
+          {
+            "vuln_id": "CVE-2025-27516",
+            "priority": "P2",
+            "package": "jinja2",
+            "installed_version": "2.10",
+            "rationale": "CVSS score is >= 7.0 (8.8), placing it in P2 (fix this sprint).",
+            "claims": {
+              "in_kev": {
+                "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+                "value": false
+              },
+              "cvss_score": {
+                "value": 8.8,
+                "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-27516"
+              },
+              "cvss_severity": {
+                "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-27516",
+                "value": "HIGH"
+              },
+              "summary": {
+                "source_url": "https://osv.dev/vulnerability/GHSA-cpwx-vrp4-4pq7",
+                "value": "Jinja2 vulnerable to sandbox breakout through attr filter selecting format method"
+              },
+              "fixed_versions": {
+                "source_url": "https://osv.dev/vulnerability/GHSA-cpwx-vrp4-4pq7",
+                "value": [
+                  "3.1.6"
+                ]
+              },
+              "epss": {
+                "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2025-27516",
+                "value": 0.00507
+              }
+            },
+            "priority_basis": [
+              "cvss_score"
+            ]
+          },
+          {
+            "priority": "P2",
+            "claims": {
+              "summary": {
+                "source_url": "https://osv.dev/vulnerability/GHSA-x84v-xcm2-53pg",
+                "value": "Insufficiently Protected Credentials in Requests"
+              },
+              "cvss_severity": {
+                "value": "HIGH",
+                "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2018-18074"
+              },
+              "epss": {
+                "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2018-18074",
+                "value": 0.07443
+              },
+              "fixed_versions": {
+                "value": [
+                  "2.20.0"
+                ],
+                "source_url": "https://osv.dev/vulnerability/GHSA-x84v-xcm2-53pg"
+              },
+              "cvss_score": {
+                "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2018-18074",
+                "value": 7.5
+              },
+              "in_kev": {
+                "value": false,
+                "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+              }
+            },
+            "vuln_id": "CVE-2018-18074",
+            "rationale": "CVSS score is >= 7.0 (7.5), placing it in P2 (fix this sprint).",
+            "package": "requests",
+            "installed_version": "2.19.1",
+            "priority_basis": [
+              "cvss_score"
+            ]
+          },
+          {
+            "priority_basis": [
+              "cvss_score"
+            ],
+            "claims": {
+              "summary": {
+                "value": "Unintended leak of Proxy-Authorization header in requests",
+                "source_url": "https://osv.dev/vulnerability/GHSA-j8r2-6x86-q33q"
+              },
+              "in_kev": {
+                "value": false,
+                "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+              },
+              "cvss_score": {
+                "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-32681",
+                "value": 6.1
+              },
+              "fixed_versions": {
+                "value": [
+                  "2.31.0"
+                ],
+                "source_url": "https://osv.dev/vulnerability/GHSA-j8r2-6x86-q33q"
+              },
+              "epss": {
+                "value": 0.02974,
+                "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2023-32681"
+              },
+              "cvss_severity": {
+                "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-32681",
+                "value": "MEDIUM"
+              }
+            },
+            "vuln_id": "CVE-2023-32681",
+            "package": "requests",
+            "priority": "P3",
+            "installed_version": "2.19.1",
+            "rationale": "CVSS score is >= 4.0 and < 7.0 (6.1), placing it in P3 (plan a fix)."
+          },
+          {
+            "rationale": "CVSS score is >= 4.0 and < 7.0 (5.6), placing it in P3 (plan a fix).",
+            "installed_version": "2.19.1",
+            "claims": {
+              "cvss_score": {
+                "value": 5.6,
+                "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-35195"
+              },
+              "summary": {
+                "value": "Requests `Session` object does not verify requests after making first request with verify=False",
+                "source_url": "https://osv.dev/vulnerability/GHSA-9wx4-h78v-vm56"
+              },
+              "in_kev": {
+                "value": false,
+                "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+              },
+              "epss": {
+                "value": 0.0034,
+                "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2024-35195"
+              },
+              "fixed_versions": {
+                "value": [
+                  "2.32.0"
+                ],
+                "source_url": "https://osv.dev/vulnerability/GHSA-9wx4-h78v-vm56"
+              },
+              "cvss_severity": {
+                "value": "MEDIUM",
+                "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-35195"
+              }
+            },
+            "package": "requests",
+            "vuln_id": "CVE-2024-35195",
+            "priority": "P3",
+            "priority_basis": [
+              "cvss_score"
+            ]
+          },
+          {
+            "rationale": "CVSS score is >= 4.0 and < 7.0 (5.3), placing it in P3 (plan a fix).",
+            "priority": "P3",
+            "claims": {
+              "epss": {
+                "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2024-47081",
+                "value": 0.0098
+              },
+              "cvss_score": {
+                "value": 5.3,
+                "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-47081"
+              },
+              "in_kev": {
+                "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+                "value": false
+              },
+              "fixed_versions": {
+                "source_url": "https://osv.dev/vulnerability/GHSA-9hjg-9r4m-mvj7",
+                "value": [
+                  "2.32.4"
+                ]
+              },
+              "cvss_severity": {
+                "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-47081",
+                "value": "MEDIUM"
+              },
+              "summary": {
+                "value": "Requests vulnerable to .netrc credentials leak via malicious URLs",
+                "source_url": "https://osv.dev/vulnerability/GHSA-9hjg-9r4m-mvj7"
+              }
+            },
+            "installed_version": "2.19.1",
+            "package": "requests",
+            "priority_basis": [
+              "cvss_score"
+            ],
+            "vuln_id": "CVE-2024-47081"
+          },
+          {
+            "package": "requests",
+            "vuln_id": "CVE-2026-25645",
+            "installed_version": "2.19.1",
+            "rationale": "CVSS score is >= 4.0 and < 7.0 (5.5), placing it in P3 (plan a fix).",
+            "priority_basis": [
+              "cvss_score"
+            ],
+            "priority": "P3",
+            "claims": {
+              "cvss_score": {
+                "value": 5.5,
+                "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-25645"
+              },
+              "epss": {
+                "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2026-25645",
+                "value": 0.00185
+              },
+              "cvss_severity": {
+                "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-25645",
+                "value": "MEDIUM"
+              },
+              "in_kev": {
+                "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+                "value": false
+              },
+              "fixed_versions": {
+                "value": [
+                  "2.33.0"
+                ],
+                "source_url": "https://osv.dev/vulnerability/GHSA-gc5v-m9x4-r6x2"
+              },
+              "summary": {
+                "value": "Requests has Insecure Temp File Reuse in its extract_zipped_paths() utility function",
+                "source_url": "https://osv.dev/vulnerability/GHSA-gc5v-m9x4-r6x2"
+              },
+              "kev_lookup": {
+                "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+                "value": false
+              }
+            }
+          }
+        ],
+        "remediations": [
+          {
+            "resolves": [
+              "CVE-2019-10906",
+              "CVE-2020-28493",
+              "CVE-2024-22195",
+              "CVE-2024-34064",
+              "CVE-2024-56326",
+              "CVE-2025-27516"
+            ],
+            "current_version": "2.10",
+            "note": "Upgrading to version 3.1.6 resolves all known vulnerabilities for jinja2.",
+            "recommended_version": "3.1.6",
+            "package": "jinja2"
+          },
+          {
+            "recommended_version": "2.33.0",
+            "package": "requests",
+            "note": "Upgrading to version 2.33.0 resolves all known vulnerabilities for requests.",
+            "current_version": "2.19.1",
+            "resolves": [
+              "CVE-2018-18074",
+              "CVE-2023-32681",
+              "CVE-2024-35195",
+              "CVE-2024-47081",
+              "CVE-2026-25645"
+            ]
+          }
+        ]
+      },
+      "seconds": 0.0,
+      "is_error": true
+    },
+    {
+      "tool": "submit_report",
+      "input": {
+        "findings": 11,
+        "remediations": 2
+      },
+      "seconds": 0.0,
+      "is_error": false
+    }
+  ],
+  "error": null,
+  "raw_report": {
+    "findings": [
+      {
+        "package": "jinja2",
+        "installed_version": "2.10",
+        "vuln_id": "CVE-2019-10906",
+        "claims": {
+          "summary": {
+            "value": "Jinja2 sandbox escape via string formatting",
+            "source_url": "https://osv.dev/vulnerability/GHSA-462w-v97r-4m45"
+          },
+          "fixed_versions": {
+            "value": [
+              "2.10.1"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-462w-v97r-4m45"
+          },
+          "cvss_score": {
+            "value": 8.6,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2019-10906"
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2019-10906"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.03633,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2019-10906"
+          }
+        },
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "CVSS score is >= 7.0 (8.6), placing it in P2 (fix this sprint)."
+      },
+      {
+        "package": "jinja2",
+        "installed_version": "2.10",
+        "vuln_id": "CVE-2020-28493",
+        "claims": {
+          "summary": {
+            "value": "Regular Expression Denial of Service (ReDoS) in Jinja2",
+            "source_url": "https://osv.dev/vulnerability/GHSA-g3rq-g295-4j3m"
+          },
+          "fixed_versions": {
+            "value": [
+              "2.11.3"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-g3rq-g295-4j3m"
+          },
+          "cvss_score": {
+            "value": 5.3,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-28493"
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-28493"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.03546,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2020-28493"
+          }
+        },
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "CVSS score is >= 4.0 and < 7.0 (5.3), placing it in P3 (plan a fix)."
+      },
+      {
+        "package": "jinja2",
+        "installed_version": "2.10",
+        "vuln_id": "CVE-2024-22195",
+        "claims": {
+          "summary": {
+            "value": "Jinja vulnerable to HTML attribute injection when passing user input as keys to xmlattr filter",
+            "source_url": "https://osv.dev/vulnerability/GHSA-h5c8-rqwp-cp95"
+          },
+          "fixed_versions": {
+            "value": [
+              "3.1.3"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-h5c8-rqwp-cp95"
+          },
+          "cvss_score": {
+            "value": 6.1,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-22195"
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-22195"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.00892,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2024-22195"
+          }
+        },
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "CVSS score is >= 4.0 and < 7.0 (6.1), placing it in P3 (plan a fix)."
+      },
+      {
+        "package": "jinja2",
+        "installed_version": "2.10",
+        "vuln_id": "CVE-2024-34064",
+        "claims": {
+          "summary": {
+            "value": "Jinja vulnerable to HTML attribute injection when passing user input as keys to xmlattr filter",
+            "source_url": "https://osv.dev/vulnerability/GHSA-h75v-3vvj-5mfj"
+          },
+          "fixed_versions": {
+            "value": [
+              "3.1.4"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-h75v-3vvj-5mfj"
+          },
+          "cvss_score": {
+            "value": 5.4,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-34064"
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-34064"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.00979,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2024-34064"
+          }
+        },
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "CVSS score is >= 4.0 and < 7.0 (5.4), placing it in P3 (plan a fix)."
+      },
+      {
+        "package": "jinja2",
+        "installed_version": "2.10",
+        "vuln_id": "CVE-2024-56326",
+        "claims": {
+          "summary": {
+            "value": "Jinja has a sandbox breakout through indirect reference to format method",
+            "source_url": "https://osv.dev/vulnerability/GHSA-q2x7-8rv6-6q7h"
+          },
+          "fixed_versions": {
+            "value": [
+              "3.1.5"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-q2x7-8rv6-6q7h"
+          },
+          "cvss_score": {
+            "value": 7.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-56326"
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-56326"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.00522,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2024-56326"
+          }
+        },
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "CVSS score is >= 7.0 (7.8), placing it in P2 (fix this sprint)."
+      },
+      {
+        "package": "jinja2",
+        "installed_version": "2.10",
+        "vuln_id": "CVE-2025-27516",
+        "claims": {
+          "summary": {
+            "value": "Jinja2 vulnerable to sandbox breakout through attr filter selecting format method",
+            "source_url": "https://osv.dev/vulnerability/GHSA-cpwx-vrp4-4pq7"
+          },
+          "fixed_versions": {
+            "value": [
+              "3.1.6"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-cpwx-vrp4-4pq7"
+          },
+          "cvss_score": {
+            "value": 8.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-27516"
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-27516"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.00507,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2025-27516"
+          }
+        },
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "CVSS score is >= 7.0 (8.8), placing it in P2 (fix this sprint)."
+      },
+      {
+        "package": "requests",
+        "installed_version": "2.19.1",
+        "vuln_id": "CVE-2018-18074",
+        "claims": {
+          "summary": {
+            "value": "Insufficiently Protected Credentials in Requests",
+            "source_url": "https://osv.dev/vulnerability/GHSA-x84v-xcm2-53pg"
+          },
+          "fixed_versions": {
+            "value": [
+              "2.20.0"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-x84v-xcm2-53pg"
+          },
+          "cvss_score": {
+            "value": 7.5,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2018-18074"
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2018-18074"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.07443,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2018-18074"
+          }
+        },
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "CVSS score is >= 7.0 (7.5), placing it in P2 (fix this sprint)."
+      },
+      {
+        "package": "requests",
+        "installed_version": "2.19.1",
+        "vuln_id": "CVE-2023-32681",
+        "claims": {
+          "summary": {
+            "value": "Unintended leak of Proxy-Authorization header in requests",
+            "source_url": "https://osv.dev/vulnerability/GHSA-j8r2-6x86-q33q"
+          },
+          "fixed_versions": {
+            "value": [
+              "2.31.0"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-j8r2-6x86-q33q"
+          },
+          "cvss_score": {
+            "value": 6.1,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-32681"
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-32681"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.02974,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2023-32681"
+          }
+        },
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "CVSS score is >= 4.0 and < 7.0 (6.1), placing it in P3 (plan a fix)."
+      },
+      {
+        "package": "requests",
+        "installed_version": "2.19.1",
+        "vuln_id": "CVE-2024-35195",
+        "claims": {
+          "summary": {
+            "value": "Requests `Session` object does not verify requests after making first request with verify=False",
+            "source_url": "https://osv.dev/vulnerability/GHSA-9wx4-h78v-vm56"
+          },
+          "fixed_versions": {
+            "value": [
+              "2.32.0"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-9wx4-h78v-vm56"
+          },
+          "cvss_score": {
+            "value": 5.6,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-35195"
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-35195"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.0034,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2024-35195"
+          }
+        },
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "CVSS score is >= 4.0 and < 7.0 (5.6), placing it in P3 (plan a fix)."
+      },
+      {
+        "package": "requests",
+        "installed_version": "2.19.1",
+        "vuln_id": "CVE-2024-47081",
+        "claims": {
+          "summary": {
+            "value": "Requests vulnerable to .netrc credentials leak via malicious URLs",
+            "source_url": "https://osv.dev/vulnerability/GHSA-9hjg-9r4m-mvj7"
+          },
+          "fixed_versions": {
+            "value": [
+              "2.32.4"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-9hjg-9r4m-mvj7"
+          },
+          "cvss_score": {
+            "value": 5.3,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-47081"
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-47081"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.0098,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2024-47081"
+          }
+        },
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "CVSS score is >= 4.0 and < 7.0 (5.3), placing it in P3 (plan a fix)."
+      },
+      {
+        "package": "requests",
+        "installed_version": "2.19.1",
+        "vuln_id": "CVE-2026-25645",
+        "claims": {
+          "summary": {
+            "value": "Requests has Insecure Temp File Reuse in its extract_zipped_paths() utility function",
+            "source_url": "https://osv.dev/vulnerability/GHSA-gc5v-m9x4-r6x2"
+          },
+          "fixed_versions": {
+            "value": [
+              "2.33.0"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-gc5v-m9x4-r6x2"
+          },
+          "cvss_score": {
+            "value": 5.5,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-25645"
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-25645"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.00185,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2026-25645"
+          }
+        },
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "CVSS score is >= 4.0 and < 7.0 (5.5), placing it in P3 (plan a fix)."
+      }
+    ],
+    "remediations": [
+      {
+        "package": "jinja2",
+        "current_version": "2.10",
+        "recommended_version": "3.1.6",
+        "resolves": [
+          "CVE-2019-10906",
+          "CVE-2020-28493",
+          "CVE-2024-22195",
+          "CVE-2024-34064",
+          "CVE-2024-56326",
+          "CVE-2025-27516"
+        ],
+        "note": "Upgrading to version 3.1.6 resolves all known vulnerabilities for jinja2."
+      },
+      {
+        "package": "requests",
+        "current_version": "2.19.1",
+        "recommended_version": "2.33.0",
+        "resolves": [
+          "CVE-2018-18074",
+          "CVE-2023-32681",
+          "CVE-2024-35195",
+          "CVE-2024-47081",
+          "CVE-2026-25645"
+        ],
+        "note": "Upgrading to version 2.33.0 resolves all known vulnerabilities for requests."
+      }
+    ],
+    "review_notes": [
+      "All vulnerabilities returned by osv_lookup have been fully processed and checked against NVD, KEV, and EPSS sources."
+    ]
+  },
+  "checked": {
+    "findings": [
+      {
+        "package": "jinja2",
+        "installed_version": "2.10",
+        "vuln_id": "CVE-2025-27516",
+        "aliases": [
+          "GHSA-cpwx-vrp4-4pq7",
+          "PYSEC-2026-1471"
+        ],
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P2",
+        "priority_agrees": true,
+        "rationale": "CVSS score is >= 7.0 (8.8), placing it in P2 (fix this sprint).",
+        "claims": {
+          "summary": {
+            "value": "Jinja2 vulnerable to sandbox breakout through attr filter selecting format method",
+            "source_url": "https://osv.dev/vulnerability/GHSA-cpwx-vrp4-4pq7",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "3.1.6"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-cpwx-vrp4-4pq7",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 8.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-27516",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-27516",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.00507,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2025-27516",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "jinja2",
+        "installed_version": "2.10",
+        "vuln_id": "CVE-2019-10906",
+        "aliases": [
+          "GHSA-462w-v97r-4m45",
+          "PYSEC-2019-217"
+        ],
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P2",
+        "priority_agrees": true,
+        "rationale": "CVSS score is >= 7.0 (8.6), placing it in P2 (fix this sprint).",
+        "claims": {
+          "summary": {
+            "value": "Jinja2 sandbox escape via string formatting",
+            "source_url": "https://osv.dev/vulnerability/GHSA-462w-v97r-4m45",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "2.10.1"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-462w-v97r-4m45",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 8.6,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2019-10906",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2019-10906",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.03633,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2019-10906",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "jinja2",
+        "installed_version": "2.10",
+        "vuln_id": "CVE-2024-56326",
+        "aliases": [
+          "GHSA-q2x7-8rv6-6q7h",
+          "PYSEC-2026-1475"
+        ],
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P2",
+        "priority_agrees": true,
+        "rationale": "CVSS score is >= 7.0 (7.8), placing it in P2 (fix this sprint).",
+        "claims": {
+          "summary": {
+            "value": "Jinja has a sandbox breakout through indirect reference to format method",
+            "source_url": "https://osv.dev/vulnerability/GHSA-q2x7-8rv6-6q7h",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "3.1.5"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-q2x7-8rv6-6q7h",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 7.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-56326",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-56326",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.00522,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2024-56326",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "requests",
+        "installed_version": "2.19.1",
+        "vuln_id": "CVE-2018-18074",
+        "aliases": [
+          "GHSA-x84v-xcm2-53pg",
+          "PYSEC-2018-28"
+        ],
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P2",
+        "priority_agrees": true,
+        "rationale": "CVSS score is >= 7.0 (7.5), placing it in P2 (fix this sprint).",
+        "claims": {
+          "summary": {
+            "value": "Insufficiently Protected Credentials in Requests",
+            "source_url": "https://osv.dev/vulnerability/GHSA-x84v-xcm2-53pg",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "2.20.0"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-x84v-xcm2-53pg",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 7.5,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2018-18074",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2018-18074",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.07443,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2018-18074",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "jinja2",
+        "installed_version": "2.10",
+        "vuln_id": "CVE-2024-22195",
+        "aliases": [
+          "GHSA-h5c8-rqwp-cp95",
+          "PYSEC-2026-1473"
+        ],
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P3",
+        "priority_agrees": true,
+        "rationale": "CVSS score is >= 4.0 and < 7.0 (6.1), placing it in P3 (plan a fix).",
+        "claims": {
+          "summary": {
+            "value": "Jinja vulnerable to HTML attribute injection when passing user input as keys to xmlattr filter",
+            "source_url": "https://osv.dev/vulnerability/GHSA-h5c8-rqwp-cp95",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "3.1.3"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-h5c8-rqwp-cp95",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 6.1,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-22195",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-22195",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.00892,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2024-22195",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "requests",
+        "installed_version": "2.19.1",
+        "vuln_id": "CVE-2023-32681",
+        "aliases": [
+          "GHSA-j8r2-6x86-q33q",
+          "PYSEC-2023-74"
+        ],
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P3",
+        "priority_agrees": true,
+        "rationale": "CVSS score is >= 4.0 and < 7.0 (6.1), placing it in P3 (plan a fix).",
+        "claims": {
+          "summary": {
+            "value": "Unintended leak of Proxy-Authorization header in requests",
+            "source_url": "https://osv.dev/vulnerability/GHSA-j8r2-6x86-q33q",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "2.31.0"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-j8r2-6x86-q33q",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 6.1,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-32681",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-32681",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.02974,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2023-32681",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "requests",
+        "installed_version": "2.19.1",
+        "vuln_id": "CVE-2024-35195",
+        "aliases": [
+          "GHSA-9wx4-h78v-vm56",
+          "PYSEC-2026-1873"
+        ],
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P3",
+        "priority_agrees": true,
+        "rationale": "CVSS score is >= 4.0 and < 7.0 (5.6), placing it in P3 (plan a fix).",
+        "claims": {
+          "summary": {
+            "value": "Requests `Session` object does not verify requests after making first request with verify=False",
+            "source_url": "https://osv.dev/vulnerability/GHSA-9wx4-h78v-vm56",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "2.32.0"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-9wx4-h78v-vm56",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 5.6,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-35195",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-35195",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.0034,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2024-35195",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "requests",
+        "installed_version": "2.19.1",
+        "vuln_id": "CVE-2026-25645",
+        "aliases": [
+          "GHSA-gc5v-m9x4-r6x2",
+          "PYSEC-2026-2275"
+        ],
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P3",
+        "priority_agrees": true,
+        "rationale": "CVSS score is >= 4.0 and < 7.0 (5.5), placing it in P3 (plan a fix).",
+        "claims": {
+          "summary": {
+            "value": "Requests has Insecure Temp File Reuse in its extract_zipped_paths() utility function",
+            "source_url": "https://osv.dev/vulnerability/GHSA-gc5v-m9x4-r6x2",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "2.33.0"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-gc5v-m9x4-r6x2",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 5.5,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-25645",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-25645",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.00185,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2026-25645",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "jinja2",
+        "installed_version": "2.10",
+        "vuln_id": "CVE-2024-34064",
+        "aliases": [
+          "GHSA-h75v-3vvj-5mfj",
+          "PYSEC-2026-1474"
+        ],
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P3",
+        "priority_agrees": true,
+        "rationale": "CVSS score is >= 4.0 and < 7.0 (5.4), placing it in P3 (plan a fix).",
+        "claims": {
+          "summary": {
+            "value": "Jinja vulnerable to HTML attribute injection when passing user input as keys to xmlattr filter",
+            "source_url": "https://osv.dev/vulnerability/GHSA-h75v-3vvj-5mfj",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "3.1.4"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-h75v-3vvj-5mfj",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 5.4,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-34064",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-34064",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.00979,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2024-34064",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "jinja2",
+        "installed_version": "2.10",
+        "vuln_id": "CVE-2020-28493",
+        "aliases": [
+          "GHSA-g3rq-g295-4j3m",
+          "PYSEC-2021-66",
+          "SNYK-PYTHON-JINJA2-1012994"
+        ],
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P3",
+        "priority_agrees": true,
+        "rationale": "CVSS score is >= 4.0 and < 7.0 (5.3), placing it in P3 (plan a fix).",
+        "claims": {
+          "summary": {
+            "value": "Regular Expression Denial of Service (ReDoS) in Jinja2",
+            "source_url": "https://osv.dev/vulnerability/GHSA-g3rq-g295-4j3m",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "2.11.3"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-g3rq-g295-4j3m",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 5.3,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-28493",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2020-28493",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.03546,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2020-28493",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "requests",
+        "installed_version": "2.19.1",
+        "vuln_id": "CVE-2024-47081",
+        "aliases": [
+          "GHSA-9hjg-9r4m-mvj7",
+          "PYSEC-2026-1872"
+        ],
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P3",
+        "priority_agrees": true,
+        "rationale": "CVSS score is >= 4.0 and < 7.0 (5.3), placing it in P3 (plan a fix).",
+        "claims": {
+          "summary": {
+            "value": "Requests vulnerable to .netrc credentials leak via malicious URLs",
+            "source_url": "https://osv.dev/vulnerability/GHSA-9hjg-9r4m-mvj7",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "2.32.4"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-9hjg-9r4m-mvj7",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 5.3,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-47081",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2024-47081",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.0098,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2024-47081",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      }
+    ],
+    "rejected_findings": [],
+    "omitted": [],
+    "remediations": [
+      {
+        "package": "jinja2",
+        "current_version": "2.10",
+        "recommended_version": "3.1.6",
+        "resolves": [
+          "CVE-2019-10906",
+          "CVE-2020-28493",
+          "CVE-2024-22195",
+          "CVE-2024-34064",
+          "CVE-2024-56326",
+          "CVE-2025-27516"
+        ],
+        "note": "Upgrading to version 3.1.6 resolves all known vulnerabilities for jinja2.",
+        "status": "verified",
+        "reason": "",
+        "still_affected_by": [],
+        "remaining_known_vulns": [],
+        "verification_url": "https://osv.dev/list?ecosystem=PyPI&q=jinja2"
+      },
+      {
+        "package": "requests",
+        "current_version": "2.19.1",
+        "recommended_version": "2.33.0",
+        "resolves": [
+          "CVE-2018-18074",
+          "CVE-2023-32681",
+          "CVE-2024-35195",
+          "CVE-2024-47081",
+          "CVE-2026-25645"
+        ],
+        "note": "Upgrading to version 2.33.0 resolves all known vulnerabilities for requests.",
+        "status": "verified",
+        "reason": "",
+        "still_affected_by": [],
+        "remaining_known_vulns": [],
+        "verification_url": "https://osv.dev/list?ecosystem=PyPI&q=requests"
+      }
+    ],
+    "unresolved_dependencies": [],
+    "unqueried_dependencies": [],
+    "review_notes": [
+      "All vulnerabilities returned by osv_lookup have been fully processed and checked against NVD, KEV, and EPSS sources."
+    ],
+    "errors": [],
+    "stats": {
+      "claims_total": 66,
+      "verified": 66,
+      "unknown": 0,
+      "unsourced": 0,
+      "ungrounded": 0,
+      "mismatch": 0,
+      "findings_reported": 11,
+      "findings_accepted": 11,
+      "findings_rejected": 0,
+      "findings_needing_review": 0,
+      "omitted": 0,
+      "unsupported_claim_rate": 0.0,
+      "unsupported_claims_in_final_report": 0
+    }
+  }
+}

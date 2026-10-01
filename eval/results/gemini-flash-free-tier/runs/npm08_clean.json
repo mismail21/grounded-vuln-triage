@@ -1,0 +1,79 @@
+{
+  "model": "gemini-3.7-flash",
+  "turns": 2,
+  "seconds": 127.3,
+  "usage": {
+    "input": 4028,
+    "output": 288,
+    "cache_read": 0,
+    "cache_write": 0
+  },
+  "cost_usd": 0.0,
+  "trace": [
+    {
+      "tool": "osv_lookup",
+      "input": {
+        "packages": [
+          {
+            "version": "18.3.1",
+            "name": "react"
+          },
+          {
+            "version": "1.3.0",
+            "name": "left-pad"
+          },
+          {
+            "version": "4.1.2",
+            "name": "chalk"
+          }
+        ]
+      },
+      "seconds": 0.0,
+      "is_error": false
+    },
+    {
+      "tool": "submit_report",
+      "input": {
+        "findings": 0,
+        "remediations": 0
+      },
+      "seconds": 0.0,
+      "is_error": false
+    }
+  ],
+  "error": null,
+  "raw_report": {
+    "findings": [],
+    "remediations": [],
+    "review_notes": [
+      "No known vulnerabilities were found for react@18.3.1, left-pad@1.3.0, or chalk@4.1.2 in OSV."
+    ]
+  },
+  "checked": {
+    "findings": [],
+    "rejected_findings": [],
+    "omitted": [],
+    "remediations": [],
+    "unresolved_dependencies": [],
+    "unqueried_dependencies": [],
+    "review_notes": [
+      "No known vulnerabilities were found for react@18.3.1, left-pad@1.3.0, or chalk@4.1.2 in OSV."
+    ],
+    "errors": [],
+    "stats": {
+      "claims_total": 0,
+      "verified": 0,
+      "unknown": 0,
+      "unsourced": 0,
+      "ungrounded": 0,
+      "mismatch": 0,
+      "findings_reported": 0,
+      "findings_accepted": 0,
+      "findings_rejected": 0,
+      "findings_needing_review": 0,
+      "omitted": 0,
+      "unsupported_claim_rate": 0.0,
+      "unsupported_claims_in_final_report": 0
+    }
+  }
+}

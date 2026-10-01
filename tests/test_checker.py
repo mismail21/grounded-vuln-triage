@@ -49,6 +49,16 @@ def test_honest_report_is_fully_verified(fake_sources):
     assert out["findings"][0]["priority_agrees"] is True
 
 
+def test_priority_deviation_goes_to_review(fake_sources):
+    deps, ledger = _setup()
+    f = good_finding(priority="P3", rationale="Only used in a test fixture.")  # rubric says P1 (KEV)
+    out = check_report({"findings": [f], "remediations": []}, ledger, deps)
+    fd = out["findings"][0]
+    assert fd["status"] == "needs_review" and fd["priority_agrees"] is False
+    assert "differs from rubric (P1)" in fd["review_reasons"][-1]
+    assert out["stats"]["verified"] == 6  # the facts themselves are still fine
+
+
 def test_osv_alias_can_be_used_as_vuln_id(fake_sources):
     deps, ledger = _setup()
     f = good_finding(vuln_id="PYSEC-2020-1")

@@ -1,0 +1,2294 @@
+{
+  "model": "gemini-3.8-flash",
+  "turns": 3,
+  "seconds": 422.4,
+  "usage": {
+    "input": 19399,
+    "output": 25286,
+    "cache_read": 0,
+    "cache_write": 0
+  },
+  "cost_usd": 0.0,
+  "trace": [
+    {
+      "tool": "osv_lookup",
+      "input": {
+        "packages": [
+          {
+            "version": "0.53.0",
+            "name": "mongo-express"
+          },
+          {
+            "name": "handlebars",
+            "version": "4.0.11"
+          }
+        ]
+      },
+      "seconds": 0.0,
+      "is_error": false
+    },
+    {
+      "tool": "nvd_lookup",
+      "input": {
+        "cve_ids": [
+          "CVE-2019-10758",
+          "CVE-2021-21422",
+          "CVE-2021-23372",
+          "CVE-2023-52555",
+          "CVE-2019-19919",
+          "CVE-2019-20920",
+          "CVE-2019-20922",
+          "CVE-2021-23369",
+          "CVE-2021-23383",
+          "CVE-2026-33916",
+          "CVE-2026-33937",
+          "CVE-2026-33938",
+          "CVE-2026-33939",
+          "CVE-2026-33940",
+          "CVE-2026-33941"
+        ]
+      },
+      "seconds": 0.0,
+      "is_error": false
+    },
+    {
+      "tool": "kev_lookup",
+      "input": {
+        "cve_ids": [
+          "CVE-2019-10758",
+          "CVE-2021-21422",
+          "CVE-2021-23372",
+          "CVE-2023-52555",
+          "CVE-2019-19919",
+          "CVE-2019-20920",
+          "CVE-2019-20922",
+          "CVE-2021-23369",
+          "CVE-2021-23383",
+          "CVE-2026-33916",
+          "CVE-2026-33937",
+          "CVE-2026-33938",
+          "CVE-2026-33939",
+          "CVE-2026-33940",
+          "CVE-2026-33941"
+        ]
+      },
+      "seconds": 0.0,
+      "is_error": false
+    },
+    {
+      "tool": "epss_lookup",
+      "input": {
+        "cve_ids": [
+          "CVE-2019-10758",
+          "CVE-2021-21422",
+          "CVE-2021-23372",
+          "CVE-2023-52555",
+          "CVE-2019-19919",
+          "CVE-2019-20920",
+          "CVE-2019-20922",
+          "CVE-2021-23369",
+          "CVE-2021-23383",
+          "CVE-2026-33916",
+          "CVE-2026-33937",
+          "CVE-2026-33938",
+          "CVE-2026-33939",
+          "CVE-2026-33940",
+          "CVE-2026-33941"
+        ]
+      },
+      "seconds": 0.0,
+      "is_error": false
+    },
+    {
+      "tool": "check_upgrade",
+      "input": {
+        "package": "mongo-express",
+        "version": "1.0.0-alpha.4"
+      },
+      "seconds": 0.0,
+      "is_error": false
+    },
+    {
+      "tool": "check_upgrade",
+      "input": {
+        "version": "0.54.0",
+        "package": "mongo-express"
+      },
+      "seconds": 0.0,
+      "is_error": false
+    },
+    {
+      "tool": "check_upgrade",
+      "input": {
+        "package": "handlebars",
+        "version": "4.7.9"
+      },
+      "seconds": 0.0,
+      "is_error": false
+    },
+    {
+      "tool": "submit_report",
+      "input": {
+        "findings": 21,
+        "remediations": 2
+      },
+      "seconds": 0.0,
+      "is_error": false
+    }
+  ],
+  "error": null,
+  "raw_report": {
+    "findings": [
+      {
+        "package": "mongo-express",
+        "installed_version": "0.53.0",
+        "vuln_id": "CVE-2019-10758",
+        "claims": {
+          "summary": {
+            "value": "Remote Code Execution Vulnerability in NPM mongo-express",
+            "source_url": "https://osv.dev/vulnerability/GHSA-h47j-hc6x-h3qq"
+          },
+          "fixed_versions": {
+            "value": [
+              "0.54.0"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-h47j-hc6x-h3qq"
+          },
+          "cvss_score": {
+            "value": 9.9,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2019-10758"
+          },
+          "cvss_severity": {
+            "value": "CRITICAL",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2019-10758"
+          },
+          "in_kev": {
+            "value": true,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.84726,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2019-10758"
+          }
+        },
+        "priority": "P1",
+        "priority_basis": [
+          "in_kev",
+          "epss",
+          "cvss_score"
+        ],
+        "rationale": "Active exploitation listed in CISA KEV, high EPSS of 0.847, and critical CVSS score of 9.9 require immediate remediation."
+      },
+      {
+        "package": "mongo-express",
+        "installed_version": "0.53.0",
+        "vuln_id": "CVE-2021-21422",
+        "claims": {
+          "summary": {
+            "value": "Cross-site scripting",
+            "source_url": "https://osv.dev/vulnerability/GHSA-7p8h-86p5-wv3p"
+          },
+          "fixed_versions": {
+            "value": [
+              "1.0.0-alpha.4"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-7p8h-86p5-wv3p"
+          },
+          "cvss_score": {
+            "value": 6.1,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-21422"
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-21422"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.0157,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2021-21422"
+          }
+        },
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "Medium severity CVSS score of 6.1 with low EPSS and not listed in KEV warrants a planned fix."
+      },
+      {
+        "package": "mongo-express",
+        "installed_version": "0.53.0",
+        "vuln_id": "CVE-2021-23372",
+        "claims": {
+          "summary": {
+            "value": "Denial of Service (DoS) in mongo-express",
+            "source_url": "https://osv.dev/vulnerability/GHSA-m2r3-8492-vx59"
+          },
+          "fixed_versions": {
+            "value": [],
+            "source_url": "https://osv.dev/vulnerability/GHSA-m2r3-8492-vx59"
+          },
+          "cvss_score": {
+            "value": 7.5,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-23372"
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-23372"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.00878,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2021-23372"
+          }
+        },
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "High severity CVSS score of 7.5 qualifies for P2 (fix this sprint)."
+      },
+      {
+        "package": "mongo-express",
+        "installed_version": "0.53.0",
+        "vuln_id": "CVE-2023-52555",
+        "claims": {
+          "summary": {
+            "value": "mongo-express Cross-site Request Forgery vulnerability",
+            "source_url": "https://osv.dev/vulnerability/GHSA-fffg-cwc9-xvj7"
+          },
+          "fixed_versions": {
+            "value": [],
+            "source_url": "https://osv.dev/vulnerability/GHSA-fffg-cwc9-xvj7"
+          },
+          "cvss_score": {
+            "value": 6.1,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-52555"
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-52555"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.00206,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2023-52555"
+          }
+        },
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "Medium severity CVSS score of 6.1 with low EPSS and no KEV listing qualifies for P3."
+      },
+      {
+        "package": "handlebars",
+        "installed_version": "4.0.11",
+        "vuln_id": "CVE-2019-19919",
+        "claims": {
+          "summary": {
+            "value": "Prototype Pollution in handlebars",
+            "source_url": "https://osv.dev/vulnerability/GHSA-w457-6q6x-cgp9"
+          },
+          "fixed_versions": {
+            "value": [
+              "4.3.0",
+              "3.0.8"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-w457-6q6x-cgp9"
+          },
+          "cvss_score": {
+            "value": 9.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2019-19919"
+          },
+          "cvss_severity": {
+            "value": "CRITICAL",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2019-19919"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.07066,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2019-19919"
+          }
+        },
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "Although the CVSS score is 9.8 (normally P2), handlebars is a devDependency not exposed to production runtime, so priority is downgraded to P3."
+      },
+      {
+        "package": "handlebars",
+        "installed_version": "4.0.11",
+        "vuln_id": "CVE-2019-20920",
+        "claims": {
+          "summary": {
+            "value": "Arbitrary Code Execution in Handlebars",
+            "source_url": "https://osv.dev/vulnerability/GHSA-3cqr-58rm-57f8"
+          },
+          "fixed_versions": {
+            "value": [
+              "3.0.8",
+              "4.5.3"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-3cqr-58rm-57f8"
+          },
+          "cvss_score": {
+            "value": 8.1,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2019-20920"
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2019-20920"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.03193,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2019-20920"
+          }
+        },
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "High CVSS score of 8.1 downgraded from P2 to P3 as handlebars is a devDependency not present in production."
+      },
+      {
+        "package": "handlebars",
+        "installed_version": "4.0.11",
+        "vuln_id": "CVE-2019-20922",
+        "claims": {
+          "summary": {
+            "value": "Regular Expression Denial of Service in Handlebars",
+            "source_url": "https://osv.dev/vulnerability/GHSA-62gr-4qp9-h98f"
+          },
+          "fixed_versions": {
+            "value": [
+              "4.4.5"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-62gr-4qp9-h98f"
+          },
+          "cvss_score": {
+            "value": 7.5,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2019-20922"
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2019-20922"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.03691,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2019-20922"
+          }
+        },
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "High CVSS score of 7.5 downgraded from P2 to P3 because handlebars is a devDependency."
+      },
+      {
+        "package": "handlebars",
+        "installed_version": "4.0.11",
+        "vuln_id": "CVE-2021-23369",
+        "claims": {
+          "summary": {
+            "value": "Remote code execution in handlebars when compiling templates",
+            "source_url": "https://osv.dev/vulnerability/GHSA-f2jv-r9rf-7988"
+          },
+          "fixed_versions": {
+            "value": [
+              "4.7.7"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-f2jv-r9rf-7988"
+          },
+          "cvss_score": {
+            "value": 9.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-23369"
+          },
+          "cvss_severity": {
+            "value": "CRITICAL",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-23369"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.07028,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2021-23369"
+          }
+        },
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "Critical CVSS score of 9.8 downgraded from P2 to P3 as handlebars is a devDependency."
+      },
+      {
+        "package": "handlebars",
+        "installed_version": "4.0.11",
+        "vuln_id": "CVE-2021-23383",
+        "claims": {
+          "summary": {
+            "value": "Prototype Pollution in handlebars",
+            "source_url": "https://osv.dev/vulnerability/GHSA-765h-qjxv-5f44"
+          },
+          "fixed_versions": {
+            "value": [
+              "4.7.7"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-765h-qjxv-5f44"
+          },
+          "cvss_score": {
+            "value": 9.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-23383"
+          },
+          "cvss_severity": {
+            "value": "CRITICAL",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-23383"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.04506,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2021-23383"
+          }
+        },
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "Critical CVSS score of 9.8 downgraded from P2 to P3 because handlebars is a devDependency."
+      },
+      {
+        "package": "handlebars",
+        "installed_version": "4.0.11",
+        "vuln_id": "CVE-2026-33916",
+        "claims": {
+          "summary": {
+            "value": "Handlebars.js has Prototype Pollution Leading to XSS through Partial Template Injection",
+            "source_url": "https://osv.dev/vulnerability/GHSA-2qvq-rjwj-gvw9"
+          },
+          "fixed_versions": {
+            "value": [
+              "4.7.9"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-2qvq-rjwj-gvw9"
+          },
+          "cvss_score": {
+            "value": 4.7,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-33916"
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-33916"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.00382,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2026-33916"
+          }
+        },
+        "priority": "P4",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "CVSS score is 4.7 (normally P3), downgraded to P4 due to development-only context."
+      },
+      {
+        "package": "handlebars",
+        "installed_version": "4.0.11",
+        "vuln_id": "CVE-2026-33937",
+        "claims": {
+          "summary": {
+            "value": "Handlebars.js has JavaScript Injection via AST Type Confusion",
+            "source_url": "https://osv.dev/vulnerability/GHSA-2w6w-674q-4c4q"
+          },
+          "fixed_versions": {
+            "value": [
+              "4.7.9"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-2w6w-674q-4c4q"
+          },
+          "cvss_score": {
+            "value": 9.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-33937"
+          },
+          "cvss_severity": {
+            "value": "CRITICAL",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-33937"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.01736,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2026-33937"
+          }
+        },
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "Critical CVSS score of 9.8 downgraded from P2 to P3 as handlebars is a devDependency."
+      },
+      {
+        "package": "handlebars",
+        "installed_version": "4.0.11",
+        "vuln_id": "CVE-2026-33938",
+        "claims": {
+          "summary": {
+            "value": "Handlebars.js has JavaScript Injection via AST Type Confusion by tampering @partial-block",
+            "source_url": "https://osv.dev/vulnerability/GHSA-3mfm-83xf-c92r"
+          },
+          "fixed_versions": {
+            "value": [
+              "4.7.9"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-3mfm-83xf-c92r"
+          },
+          "cvss_score": {
+            "value": 8.1,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-33938"
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-33938"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.00843,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2026-33938"
+          }
+        },
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "High CVSS score of 8.1 downgraded from P2 to P3 because handlebars is a devDependency."
+      },
+      {
+        "package": "handlebars",
+        "installed_version": "4.0.11",
+        "vuln_id": "CVE-2026-33939",
+        "claims": {
+          "summary": {
+            "value": "Handlebars.js has Denial of Service via Malformed Decorator Syntax in Template Compilation",
+            "source_url": "https://osv.dev/vulnerability/GHSA-9cx6-37pm-9jff"
+          },
+          "fixed_versions": {
+            "value": [
+              "4.7.9"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-9cx6-37pm-9jff"
+          },
+          "cvss_score": {
+            "value": 7.5,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-33939"
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-33939"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.00757,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2026-33939"
+          }
+        },
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "High CVSS score of 7.5 downgraded from P2 to P3 because handlebars is a devDependency."
+      },
+      {
+        "package": "handlebars",
+        "installed_version": "4.0.11",
+        "vuln_id": "CVE-2026-33940",
+        "claims": {
+          "summary": {
+            "value": "Handlebars.js has JavaScript Injection via AST Type Confusion when passing an object as dynamic partial",
+            "source_url": "https://osv.dev/vulnerability/GHSA-xhpv-hc6g-r9c6"
+          },
+          "fixed_versions": {
+            "value": [
+              "4.7.9"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-xhpv-hc6g-r9c6"
+          },
+          "cvss_score": {
+            "value": 8.1,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-33940"
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-33940"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.00791,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2026-33940"
+          }
+        },
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "High CVSS score of 8.1 downgraded from P2 to P3 because handlebars is a devDependency."
+      },
+      {
+        "package": "handlebars",
+        "installed_version": "4.0.11",
+        "vuln_id": "CVE-2026-33941",
+        "claims": {
+          "summary": {
+            "value": "Handlebars.js has JavaScript Injection in CLI Precompiler via Unescaped Names and Options",
+            "source_url": "https://osv.dev/vulnerability/GHSA-xjpj-3mr7-gcpf"
+          },
+          "fixed_versions": {
+            "value": [
+              "4.7.9"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-xjpj-3mr7-gcpf"
+          },
+          "cvss_score": {
+            "value": 8.2,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-33941"
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-33941"
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          },
+          "epss": {
+            "value": 0.0022,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2026-33941"
+          }
+        },
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "rationale": "High CVSS score of 8.2 downgraded from P2 to P3 because handlebars is a devDependency."
+      },
+      {
+        "package": "handlebars",
+        "installed_version": "4.0.11",
+        "vuln_id": "GHSA-2cf5-4w76-r9qv",
+        "claims": {
+          "summary": {
+            "value": "Arbitrary Code Execution in handlebars",
+            "source_url": "https://osv.dev/vulnerability/GHSA-2cf5-4w76-r9qv"
+          },
+          "fixed_versions": {
+            "value": [
+              "3.0.8",
+              "4.5.2"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-2cf5-4w76-r9qv"
+          },
+          "cvss_score": {
+            "value": null,
+            "source_url": null
+          },
+          "cvss_severity": {
+            "value": null,
+            "source_url": null
+          },
+          "in_kev": {
+            "value": null,
+            "source_url": null
+          },
+          "epss": {
+            "value": null,
+            "source_url": null
+          }
+        },
+        "priority": "P4",
+        "priority_basis": [
+          "summary"
+        ],
+        "rationale": "No CVE ID or CVSS/EPSS metrics available; given development-only context, assigned P4 pending human review."
+      },
+      {
+        "package": "handlebars",
+        "installed_version": "4.0.11",
+        "vuln_id": "GHSA-442j-39wm-28r2",
+        "claims": {
+          "summary": {
+            "value": "Handlebars.js has a Property Access Validation Bypass in container.lookup",
+            "source_url": "https://osv.dev/vulnerability/GHSA-442j-39wm-28r2"
+          },
+          "fixed_versions": {
+            "value": [
+              "4.7.9"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-442j-39wm-28r2"
+          },
+          "cvss_score": {
+            "value": null,
+            "source_url": null
+          },
+          "cvss_severity": {
+            "value": null,
+            "source_url": null
+          },
+          "in_kev": {
+            "value": null,
+            "source_url": null
+          },
+          "epss": {
+            "value": null,
+            "source_url": null
+          }
+        },
+        "priority": "P4",
+        "priority_basis": [
+          "summary"
+        ],
+        "rationale": "No CVE ID or CVSS/EPSS metrics available; assigned P4 due to lack of metrics and devDependency context, flagged for human review."
+      },
+      {
+        "package": "handlebars",
+        "installed_version": "4.0.11",
+        "vuln_id": "GHSA-f52g-6jhx-586p",
+        "claims": {
+          "summary": {
+            "value": "Denial of Service in handlebars",
+            "source_url": "https://osv.dev/vulnerability/GHSA-f52g-6jhx-586p"
+          },
+          "fixed_versions": {
+            "value": [
+              "4.4.5"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-f52g-6jhx-586p"
+          },
+          "cvss_score": {
+            "value": null,
+            "source_url": null
+          },
+          "cvss_severity": {
+            "value": null,
+            "source_url": null
+          },
+          "in_kev": {
+            "value": null,
+            "source_url": null
+          },
+          "epss": {
+            "value": null,
+            "source_url": null
+          }
+        },
+        "priority": "P4",
+        "priority_basis": [
+          "summary"
+        ],
+        "rationale": "No CVE ID or CVSS/EPSS metrics available; assigned P4 due to lack of metrics and devDependency context, flagged for human review."
+      },
+      {
+        "package": "handlebars",
+        "installed_version": "4.0.11",
+        "vuln_id": "GHSA-g9r4-xpmj-mj65",
+        "claims": {
+          "summary": {
+            "value": "Prototype Pollution in handlebars",
+            "source_url": "https://osv.dev/vulnerability/GHSA-g9r4-xpmj-mj65"
+          },
+          "fixed_versions": {
+            "value": [
+              "3.0.8",
+              "4.5.3"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-g9r4-xpmj-mj65"
+          },
+          "cvss_score": {
+            "value": null,
+            "source_url": null
+          },
+          "cvss_severity": {
+            "value": null,
+            "source_url": null
+          },
+          "in_kev": {
+            "value": null,
+            "source_url": null
+          },
+          "epss": {
+            "value": null,
+            "source_url": null
+          }
+        },
+        "priority": "P4",
+        "priority_basis": [
+          "summary"
+        ],
+        "rationale": "No CVE ID or CVSS/EPSS metrics available; assigned P4 due to lack of metrics and devDependency context, flagged for human review."
+      },
+      {
+        "package": "handlebars",
+        "installed_version": "4.0.11",
+        "vuln_id": "GHSA-q2c6-c6pm-g3gh",
+        "claims": {
+          "summary": {
+            "value": "Arbitrary Code Execution in handlebars",
+            "source_url": "https://osv.dev/vulnerability/GHSA-q2c6-c6pm-g3gh"
+          },
+          "fixed_versions": {
+            "value": [
+              "3.0.8",
+              "4.5.3"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-q2c6-c6pm-g3gh"
+          },
+          "cvss_score": {
+            "value": null,
+            "source_url": null
+          },
+          "cvss_severity": {
+            "value": null,
+            "source_url": null
+          },
+          "in_kev": {
+            "value": null,
+            "source_url": null
+          },
+          "epss": {
+            "value": null,
+            "source_url": null
+          }
+        },
+        "priority": "P4",
+        "priority_basis": [
+          "summary"
+        ],
+        "rationale": "No CVE ID or CVSS/EPSS metrics available; assigned P4 due to lack of metrics and devDependency context, flagged for human review."
+      },
+      {
+        "package": "handlebars",
+        "installed_version": "4.0.11",
+        "vuln_id": "GHSA-q42p-pg8m-cqh6",
+        "claims": {
+          "summary": {
+            "value": "Prototype Pollution in handlebars",
+            "source_url": "https://osv.dev/vulnerability/GHSA-q42p-pg8m-cqh6"
+          },
+          "fixed_versions": {
+            "value": [
+              "4.1.2",
+              "4.0.14",
+              "3.0.7"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-q42p-pg8m-cqh6"
+          },
+          "cvss_score": {
+            "value": null,
+            "source_url": null
+          },
+          "cvss_severity": {
+            "value": null,
+            "source_url": null
+          },
+          "in_kev": {
+            "value": null,
+            "source_url": null
+          },
+          "epss": {
+            "value": null,
+            "source_url": null
+          }
+        },
+        "priority": "P4",
+        "priority_basis": [
+          "summary"
+        ],
+        "rationale": "No CVE ID or CVSS/EPSS metrics available; assigned P4 due to lack of metrics and devDependency context, flagged for human review."
+      }
+    ],
+    "remediations": [
+      {
+        "package": "mongo-express",
+        "current_version": "0.53.0",
+        "recommended_version": "1.0.0-alpha.4",
+        "resolves": [
+          "CVE-2019-10758",
+          "CVE-2021-21422",
+          "CVE-2021-23372"
+        ],
+        "note": "Upgrading to 1.0.0-alpha.4 resolves CVE-2019-10758, CVE-2021-21422, and CVE-2021-23372. However, CVE-2023-52555 still affects this version as no fixed version is currently available."
+      },
+      {
+        "package": "handlebars",
+        "current_version": "4.0.11",
+        "recommended_version": "4.7.9",
+        "resolves": [
+          "CVE-2019-19919",
+          "CVE-2019-20920",
+          "CVE-2019-20922",
+          "CVE-2021-23369",
+          "CVE-2021-23383",
+          "CVE-2026-33916",
+          "CVE-2026-33937",
+          "CVE-2026-33938",
+          "CVE-2026-33939",
+          "CVE-2026-33940",
+          "CVE-2026-33941",
+          "GHSA-2cf5-4w76-r9qv",
+          "GHSA-442j-39wm-28r2",
+          "GHSA-f52g-6jhx-586p",
+          "GHSA-g9r4-xpmj-mj65",
+          "GHSA-q2c6-c6pm-g3gh",
+          "GHSA-q42p-pg8m-cqh6"
+        ],
+        "note": "Upgrading to 4.7.9 resolves all 17 known vulnerabilities affecting version 4.0.11."
+      }
+    ],
+    "review_notes": [
+      "Vulnerabilities GHSA-2cf5-4w76-r9qv, GHSA-442j-39wm-28r2, GHSA-f52g-6jhx-586p, GHSA-g9r4-xpmj-mj65, GHSA-q2c6-c6pm-g3gh, and GHSA-q42p-pg8m-cqh6 have no CVE IDs, so CVSS scores, KEV status, and EPSS scores could not be queried and are reported as null. They require human review.",
+      "mongo-express has no known release resolving CVE-2023-52555 (CSRF vulnerability). Upgrading to 1.0.0-alpha.4 resolves CVE-2019-10758, CVE-2021-21422, and CVE-2021-23372, but CVE-2023-52555 remains unresolved; human review is recommended for compensating controls or alternative solutions.",
+      "handlebars is designated as a devDependency. Its vulnerabilities were downgraded by one priority level (P2 to P3, P3 to P4) as development dependencies do not execute in production runtime."
+    ]
+  },
+  "checked": {
+    "findings": [
+      {
+        "package": "mongo-express",
+        "installed_version": "0.53.0",
+        "vuln_id": "CVE-2019-10758",
+        "aliases": [
+          "GHSA-h47j-hc6x-h3qq",
+          "SNYK-JS-MONGOEXPRESS-473215"
+        ],
+        "priority": "P1",
+        "priority_basis": [
+          "in_kev",
+          "epss",
+          "cvss_score"
+        ],
+        "reference_priority": "P1",
+        "priority_agrees": true,
+        "rationale": "Active exploitation listed in CISA KEV, high EPSS of 0.847, and critical CVSS score of 9.9 require immediate remediation.",
+        "claims": {
+          "summary": {
+            "value": "Remote Code Execution Vulnerability in NPM mongo-express",
+            "source_url": "https://osv.dev/vulnerability/GHSA-h47j-hc6x-h3qq",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "0.54.0"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-h47j-hc6x-h3qq",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 9.9,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2019-10758",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "CRITICAL",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2019-10758",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": true,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.84726,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2019-10758",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "mongo-express",
+        "installed_version": "0.53.0",
+        "vuln_id": "CVE-2021-23372",
+        "aliases": [
+          "GHSA-m2r3-8492-vx59"
+        ],
+        "priority": "P2",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P2",
+        "priority_agrees": true,
+        "rationale": "High severity CVSS score of 7.5 qualifies for P2 (fix this sprint).",
+        "claims": {
+          "summary": {
+            "value": "Denial of Service (DoS) in mongo-express",
+            "source_url": "https://osv.dev/vulnerability/GHSA-m2r3-8492-vx59",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [],
+            "source_url": "https://osv.dev/vulnerability/GHSA-m2r3-8492-vx59",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 7.5,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-23372",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-23372",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.00878,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2021-23372",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "handlebars",
+        "installed_version": "4.0.11",
+        "vuln_id": "CVE-2019-19919",
+        "aliases": [
+          "GHSA-w457-6q6x-cgp9"
+        ],
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P2",
+        "priority_agrees": false,
+        "rationale": "Although the CVSS score is 9.8 (normally P2), handlebars is a devDependency not exposed to production runtime, so priority is downgraded to P3.",
+        "claims": {
+          "summary": {
+            "value": "Prototype Pollution in handlebars",
+            "source_url": "https://osv.dev/vulnerability/GHSA-w457-6q6x-cgp9",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "4.3.0",
+              "3.0.8"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-w457-6q6x-cgp9",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 9.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2019-19919",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "CRITICAL",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2019-19919",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.07066,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2019-19919",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "handlebars",
+        "installed_version": "4.0.11",
+        "vuln_id": "CVE-2021-23369",
+        "aliases": [
+          "GHSA-f2jv-r9rf-7988"
+        ],
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P2",
+        "priority_agrees": false,
+        "rationale": "Critical CVSS score of 9.8 downgraded from P2 to P3 as handlebars is a devDependency.",
+        "claims": {
+          "summary": {
+            "value": "Remote code execution in handlebars when compiling templates",
+            "source_url": "https://osv.dev/vulnerability/GHSA-f2jv-r9rf-7988",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "4.7.7"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-f2jv-r9rf-7988",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 9.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-23369",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "CRITICAL",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-23369",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.07028,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2021-23369",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "handlebars",
+        "installed_version": "4.0.11",
+        "vuln_id": "CVE-2021-23383",
+        "aliases": [
+          "GHSA-765h-qjxv-5f44"
+        ],
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P2",
+        "priority_agrees": false,
+        "rationale": "Critical CVSS score of 9.8 downgraded from P2 to P3 because handlebars is a devDependency.",
+        "claims": {
+          "summary": {
+            "value": "Prototype Pollution in handlebars",
+            "source_url": "https://osv.dev/vulnerability/GHSA-765h-qjxv-5f44",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "4.7.7"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-765h-qjxv-5f44",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 9.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-23383",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "CRITICAL",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-23383",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.04506,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2021-23383",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "handlebars",
+        "installed_version": "4.0.11",
+        "vuln_id": "CVE-2026-33937",
+        "aliases": [
+          "GHSA-2w6w-674q-4c4q"
+        ],
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P2",
+        "priority_agrees": false,
+        "rationale": "Critical CVSS score of 9.8 downgraded from P2 to P3 as handlebars is a devDependency.",
+        "claims": {
+          "summary": {
+            "value": "Handlebars.js has JavaScript Injection via AST Type Confusion",
+            "source_url": "https://osv.dev/vulnerability/GHSA-2w6w-674q-4c4q",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "4.7.9"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-2w6w-674q-4c4q",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 9.8,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-33937",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "CRITICAL",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-33937",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.01736,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2026-33937",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "handlebars",
+        "installed_version": "4.0.11",
+        "vuln_id": "CVE-2026-33941",
+        "aliases": [
+          "GHSA-xjpj-3mr7-gcpf"
+        ],
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P2",
+        "priority_agrees": false,
+        "rationale": "High CVSS score of 8.2 downgraded from P2 to P3 because handlebars is a devDependency.",
+        "claims": {
+          "summary": {
+            "value": "Handlebars.js has JavaScript Injection in CLI Precompiler via Unescaped Names and Options",
+            "source_url": "https://osv.dev/vulnerability/GHSA-xjpj-3mr7-gcpf",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "4.7.9"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-xjpj-3mr7-gcpf",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 8.2,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-33941",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-33941",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.0022,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2026-33941",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "handlebars",
+        "installed_version": "4.0.11",
+        "vuln_id": "CVE-2019-20920",
+        "aliases": [
+          "GHSA-3cqr-58rm-57f8",
+          "SNYK-JS-HANDLEBARS-534478"
+        ],
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P2",
+        "priority_agrees": false,
+        "rationale": "High CVSS score of 8.1 downgraded from P2 to P3 as handlebars is a devDependency not present in production.",
+        "claims": {
+          "summary": {
+            "value": "Arbitrary Code Execution in Handlebars",
+            "source_url": "https://osv.dev/vulnerability/GHSA-3cqr-58rm-57f8",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "3.0.8",
+              "4.5.3"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-3cqr-58rm-57f8",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 8.1,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2019-20920",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2019-20920",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.03193,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2019-20920",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "handlebars",
+        "installed_version": "4.0.11",
+        "vuln_id": "CVE-2026-33938",
+        "aliases": [
+          "GHSA-3mfm-83xf-c92r"
+        ],
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P2",
+        "priority_agrees": false,
+        "rationale": "High CVSS score of 8.1 downgraded from P2 to P3 because handlebars is a devDependency.",
+        "claims": {
+          "summary": {
+            "value": "Handlebars.js has JavaScript Injection via AST Type Confusion by tampering @partial-block",
+            "source_url": "https://osv.dev/vulnerability/GHSA-3mfm-83xf-c92r",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "4.7.9"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-3mfm-83xf-c92r",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 8.1,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-33938",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-33938",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.00843,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2026-33938",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "handlebars",
+        "installed_version": "4.0.11",
+        "vuln_id": "CVE-2026-33940",
+        "aliases": [
+          "GHSA-xhpv-hc6g-r9c6"
+        ],
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P2",
+        "priority_agrees": false,
+        "rationale": "High CVSS score of 8.1 downgraded from P2 to P3 because handlebars is a devDependency.",
+        "claims": {
+          "summary": {
+            "value": "Handlebars.js has JavaScript Injection via AST Type Confusion when passing an object as dynamic partial",
+            "source_url": "https://osv.dev/vulnerability/GHSA-xhpv-hc6g-r9c6",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "4.7.9"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-xhpv-hc6g-r9c6",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 8.1,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-33940",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-33940",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.00791,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2026-33940",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "handlebars",
+        "installed_version": "4.0.11",
+        "vuln_id": "CVE-2019-20922",
+        "aliases": [
+          "GHSA-62gr-4qp9-h98f",
+          "SNYK-JS-HANDLEBARS-480388"
+        ],
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P2",
+        "priority_agrees": false,
+        "rationale": "High CVSS score of 7.5 downgraded from P2 to P3 because handlebars is a devDependency.",
+        "claims": {
+          "summary": {
+            "value": "Regular Expression Denial of Service in Handlebars",
+            "source_url": "https://osv.dev/vulnerability/GHSA-62gr-4qp9-h98f",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "4.4.5"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-62gr-4qp9-h98f",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 7.5,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2019-20922",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2019-20922",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.03691,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2019-20922",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "handlebars",
+        "installed_version": "4.0.11",
+        "vuln_id": "CVE-2026-33939",
+        "aliases": [
+          "GHSA-9cx6-37pm-9jff"
+        ],
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P2",
+        "priority_agrees": false,
+        "rationale": "High CVSS score of 7.5 downgraded from P2 to P3 because handlebars is a devDependency.",
+        "claims": {
+          "summary": {
+            "value": "Handlebars.js has Denial of Service via Malformed Decorator Syntax in Template Compilation",
+            "source_url": "https://osv.dev/vulnerability/GHSA-9cx6-37pm-9jff",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "4.7.9"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-9cx6-37pm-9jff",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 7.5,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-33939",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "HIGH",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-33939",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.00757,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2026-33939",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "mongo-express",
+        "installed_version": "0.53.0",
+        "vuln_id": "CVE-2021-21422",
+        "aliases": [
+          "GHSA-7p8h-86p5-wv3p"
+        ],
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P3",
+        "priority_agrees": true,
+        "rationale": "Medium severity CVSS score of 6.1 with low EPSS and not listed in KEV warrants a planned fix.",
+        "claims": {
+          "summary": {
+            "value": "Cross-site scripting",
+            "source_url": "https://osv.dev/vulnerability/GHSA-7p8h-86p5-wv3p",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "1.0.0-alpha.4"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-7p8h-86p5-wv3p",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 6.1,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-21422",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2021-21422",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.0157,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2021-21422",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "mongo-express",
+        "installed_version": "0.53.0",
+        "vuln_id": "CVE-2023-52555",
+        "aliases": [
+          "GHSA-fffg-cwc9-xvj7"
+        ],
+        "priority": "P3",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P3",
+        "priority_agrees": true,
+        "rationale": "Medium severity CVSS score of 6.1 with low EPSS and no KEV listing qualifies for P3.",
+        "claims": {
+          "summary": {
+            "value": "mongo-express Cross-site Request Forgery vulnerability",
+            "source_url": "https://osv.dev/vulnerability/GHSA-fffg-cwc9-xvj7",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [],
+            "source_url": "https://osv.dev/vulnerability/GHSA-fffg-cwc9-xvj7",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 6.1,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-52555",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2023-52555",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.00206,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2023-52555",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "handlebars",
+        "installed_version": "4.0.11",
+        "vuln_id": "CVE-2026-33916",
+        "aliases": [
+          "GHSA-2qvq-rjwj-gvw9"
+        ],
+        "priority": "P4",
+        "priority_basis": [
+          "cvss_score"
+        ],
+        "reference_priority": "P3",
+        "priority_agrees": false,
+        "rationale": "CVSS score is 4.7 (normally P3), downgraded to P4 due to development-only context.",
+        "claims": {
+          "summary": {
+            "value": "Handlebars.js has Prototype Pollution Leading to XSS through Partial Template Injection",
+            "source_url": "https://osv.dev/vulnerability/GHSA-2qvq-rjwj-gvw9",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "4.7.9"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-2qvq-rjwj-gvw9",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": 4.7,
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-33916",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_severity": {
+            "value": "MEDIUM",
+            "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-33916",
+            "status": "verified",
+            "reason": ""
+          },
+          "in_kev": {
+            "value": false,
+            "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+            "status": "verified",
+            "reason": ""
+          },
+          "epss": {
+            "value": 0.00382,
+            "source_url": "https://api.first.org/data/v1/epss?cve=CVE-2026-33916",
+            "status": "verified",
+            "reason": ""
+          }
+        },
+        "status": "verified",
+        "review_reasons": []
+      },
+      {
+        "package": "handlebars",
+        "installed_version": "4.0.11",
+        "vuln_id": "GHSA-2cf5-4w76-r9qv",
+        "aliases": [],
+        "priority": "P4",
+        "priority_basis": [
+          "summary"
+        ],
+        "reference_priority": null,
+        "priority_agrees": false,
+        "rationale": "No CVE ID or CVSS/EPSS metrics available; given development-only context, assigned P4 pending human review.",
+        "claims": {
+          "summary": {
+            "value": "Arbitrary Code Execution in handlebars",
+            "source_url": "https://osv.dev/vulnerability/GHSA-2cf5-4w76-r9qv",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "3.0.8",
+              "4.5.2"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-2cf5-4w76-r9qv",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": null,
+            "source_url": null,
+            "status": "unknown",
+            "reason": "agent could not determine this from any source"
+          },
+          "cvss_severity": {
+            "value": null,
+            "source_url": null,
+            "status": "unknown",
+            "reason": "agent could not determine this from any source"
+          },
+          "in_kev": {
+            "value": null,
+            "source_url": null,
+            "status": "unknown",
+            "reason": "agent could not determine this from any source"
+          },
+          "epss": {
+            "value": null,
+            "source_url": null,
+            "status": "unknown",
+            "reason": "agent could not determine this from any source"
+          }
+        },
+        "status": "needs_review",
+        "review_reasons": [
+          "cvss_score: unknown - agent could not determine this from any source",
+          "cvss_severity: unknown - agent could not determine this from any source",
+          "in_kev: unknown - agent could not determine this from any source",
+          "epss: unknown - agent could not determine this from any source"
+        ]
+      },
+      {
+        "package": "handlebars",
+        "installed_version": "4.0.11",
+        "vuln_id": "GHSA-442j-39wm-28r2",
+        "aliases": [],
+        "priority": "P4",
+        "priority_basis": [
+          "summary"
+        ],
+        "reference_priority": null,
+        "priority_agrees": false,
+        "rationale": "No CVE ID or CVSS/EPSS metrics available; assigned P4 due to lack of metrics and devDependency context, flagged for human review.",
+        "claims": {
+          "summary": {
+            "value": "Handlebars.js has a Property Access Validation Bypass in container.lookup",
+            "source_url": "https://osv.dev/vulnerability/GHSA-442j-39wm-28r2",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "4.7.9"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-442j-39wm-28r2",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": null,
+            "source_url": null,
+            "status": "unknown",
+            "reason": "agent could not determine this from any source"
+          },
+          "cvss_severity": {
+            "value": null,
+            "source_url": null,
+            "status": "unknown",
+            "reason": "agent could not determine this from any source"
+          },
+          "in_kev": {
+            "value": null,
+            "source_url": null,
+            "status": "unknown",
+            "reason": "agent could not determine this from any source"
+          },
+          "epss": {
+            "value": null,
+            "source_url": null,
+            "status": "unknown",
+            "reason": "agent could not determine this from any source"
+          }
+        },
+        "status": "needs_review",
+        "review_reasons": [
+          "cvss_score: unknown - agent could not determine this from any source",
+          "cvss_severity: unknown - agent could not determine this from any source",
+          "in_kev: unknown - agent could not determine this from any source",
+          "epss: unknown - agent could not determine this from any source"
+        ]
+      },
+      {
+        "package": "handlebars",
+        "installed_version": "4.0.11",
+        "vuln_id": "GHSA-f52g-6jhx-586p",
+        "aliases": [],
+        "priority": "P4",
+        "priority_basis": [
+          "summary"
+        ],
+        "reference_priority": null,
+        "priority_agrees": false,
+        "rationale": "No CVE ID or CVSS/EPSS metrics available; assigned P4 due to lack of metrics and devDependency context, flagged for human review.",
+        "claims": {
+          "summary": {
+            "value": "Denial of Service in handlebars",
+            "source_url": "https://osv.dev/vulnerability/GHSA-f52g-6jhx-586p",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "4.4.5"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-f52g-6jhx-586p",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": null,
+            "source_url": null,
+            "status": "unknown",
+            "reason": "agent could not determine this from any source"
+          },
+          "cvss_severity": {
+            "value": null,
+            "source_url": null,
+            "status": "unknown",
+            "reason": "agent could not determine this from any source"
+          },
+          "in_kev": {
+            "value": null,
+            "source_url": null,
+            "status": "unknown",
+            "reason": "agent could not determine this from any source"
+          },
+          "epss": {
+            "value": null,
+            "source_url": null,
+            "status": "unknown",
+            "reason": "agent could not determine this from any source"
+          }
+        },
+        "status": "needs_review",
+        "review_reasons": [
+          "cvss_score: unknown - agent could not determine this from any source",
+          "cvss_severity: unknown - agent could not determine this from any source",
+          "in_kev: unknown - agent could not determine this from any source",
+          "epss: unknown - agent could not determine this from any source"
+        ]
+      },
+      {
+        "package": "handlebars",
+        "installed_version": "4.0.11",
+        "vuln_id": "GHSA-g9r4-xpmj-mj65",
+        "aliases": [],
+        "priority": "P4",
+        "priority_basis": [
+          "summary"
+        ],
+        "reference_priority": null,
+        "priority_agrees": false,
+        "rationale": "No CVE ID or CVSS/EPSS metrics available; assigned P4 due to lack of metrics and devDependency context, flagged for human review.",
+        "claims": {
+          "summary": {
+            "value": "Prototype Pollution in handlebars",
+            "source_url": "https://osv.dev/vulnerability/GHSA-g9r4-xpmj-mj65",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "3.0.8",
+              "4.5.3"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-g9r4-xpmj-mj65",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": null,
+            "source_url": null,
+            "status": "unknown",
+            "reason": "agent could not determine this from any source"
+          },
+          "cvss_severity": {
+            "value": null,
+            "source_url": null,
+            "status": "unknown",
+            "reason": "agent could not determine this from any source"
+          },
+          "in_kev": {
+            "value": null,
+            "source_url": null,
+            "status": "unknown",
+            "reason": "agent could not determine this from any source"
+          },
+          "epss": {
+            "value": null,
+            "source_url": null,
+            "status": "unknown",
+            "reason": "agent could not determine this from any source"
+          }
+        },
+        "status": "needs_review",
+        "review_reasons": [
+          "cvss_score: unknown - agent could not determine this from any source",
+          "cvss_severity: unknown - agent could not determine this from any source",
+          "in_kev: unknown - agent could not determine this from any source",
+          "epss: unknown - agent could not determine this from any source"
+        ]
+      },
+      {
+        "package": "handlebars",
+        "installed_version": "4.0.11",
+        "vuln_id": "GHSA-q2c6-c6pm-g3gh",
+        "aliases": [],
+        "priority": "P4",
+        "priority_basis": [
+          "summary"
+        ],
+        "reference_priority": null,
+        "priority_agrees": false,
+        "rationale": "No CVE ID or CVSS/EPSS metrics available; assigned P4 due to lack of metrics and devDependency context, flagged for human review.",
+        "claims": {
+          "summary": {
+            "value": "Arbitrary Code Execution in handlebars",
+            "source_url": "https://osv.dev/vulnerability/GHSA-q2c6-c6pm-g3gh",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "3.0.8",
+              "4.5.3"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-q2c6-c6pm-g3gh",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": null,
+            "source_url": null,
+            "status": "unknown",
+            "reason": "agent could not determine this from any source"
+          },
+          "cvss_severity": {
+            "value": null,
+            "source_url": null,
+            "status": "unknown",
+            "reason": "agent could not determine this from any source"
+          },
+          "in_kev": {
+            "value": null,
+            "source_url": null,
+            "status": "unknown",
+            "reason": "agent could not determine this from any source"
+          },
+          "epss": {
+            "value": null,
+            "source_url": null,
+            "status": "unknown",
+            "reason": "agent could not determine this from any source"
+          }
+        },
+        "status": "needs_review",
+        "review_reasons": [
+          "cvss_score: unknown - agent could not determine this from any source",
+          "cvss_severity: unknown - agent could not determine this from any source",
+          "in_kev: unknown - agent could not determine this from any source",
+          "epss: unknown - agent could not determine this from any source"
+        ]
+      },
+      {
+        "package": "handlebars",
+        "installed_version": "4.0.11",
+        "vuln_id": "GHSA-q42p-pg8m-cqh6",
+        "aliases": [],
+        "priority": "P4",
+        "priority_basis": [
+          "summary"
+        ],
+        "reference_priority": null,
+        "priority_agrees": false,
+        "rationale": "No CVE ID or CVSS/EPSS metrics available; assigned P4 due to lack of metrics and devDependency context, flagged for human review.",
+        "claims": {
+          "summary": {
+            "value": "Prototype Pollution in handlebars",
+            "source_url": "https://osv.dev/vulnerability/GHSA-q42p-pg8m-cqh6",
+            "status": "verified",
+            "reason": ""
+          },
+          "fixed_versions": {
+            "value": [
+              "4.1.2",
+              "4.0.14",
+              "3.0.7"
+            ],
+            "source_url": "https://osv.dev/vulnerability/GHSA-q42p-pg8m-cqh6",
+            "status": "verified",
+            "reason": ""
+          },
+          "cvss_score": {
+            "value": null,
+            "source_url": null,
+            "status": "unknown",
+            "reason": "agent could not determine this from any source"
+          },
+          "cvss_severity": {
+            "value": null,
+            "source_url": null,
+            "status": "unknown",
+            "reason": "agent could not determine this from any source"
+          },
+          "in_kev": {
+            "value": null,
+            "source_url": null,
+            "status": "unknown",
+            "reason": "agent could not determine this from any source"
+          },
+          "epss": {
+            "value": null,
+            "source_url": null,
+            "status": "unknown",
+            "reason": "agent could not determine this from any source"
+          }
+        },
+        "status": "needs_review",
+        "review_reasons": [
+          "cvss_score: unknown - agent could not determine this from any source",
+          "cvss_severity: unknown - agent could not determine this from any source",
+          "in_kev: unknown - agent could not determine this from any source",
+          "epss: unknown - agent could not determine this from any source"
+        ]
+      }
+    ],
+    "rejected_findings": [],
+    "omitted": [],
+    "remediations": [
+      {
+        "package": "mongo-express",
+        "current_version": "0.53.0",
+        "recommended_version": "1.0.0-alpha.4",
+        "resolves": [
+          "CVE-2019-10758",
+          "CVE-2021-21422",
+          "CVE-2021-23372"
+        ],
+        "note": "Upgrading to 1.0.0-alpha.4 resolves CVE-2019-10758, CVE-2021-21422, and CVE-2021-23372. However, CVE-2023-52555 still affects this version as no fixed version is currently available.",
+        "status": "partial",
+        "reason": "OSV says mongo-express@1.0.0-alpha.4 is still affected by CVE-2023-52555",
+        "still_affected_by": [
+          "CVE-2023-52555"
+        ],
+        "remaining_known_vulns": [
+          "CVE-2023-52555"
+        ],
+        "verification_url": "https://osv.dev/list?ecosystem=npm&q=mongo-express"
+      },
+      {
+        "package": "handlebars",
+        "current_version": "4.0.11",
+        "recommended_version": "4.7.9",
+        "resolves": [
+          "CVE-2019-19919",
+          "CVE-2019-20920",
+          "CVE-2019-20922",
+          "CVE-2021-23369",
+          "CVE-2021-23383",
+          "CVE-2026-33916",
+          "CVE-2026-33937",
+          "CVE-2026-33938",
+          "CVE-2026-33939",
+          "CVE-2026-33940",
+          "CVE-2026-33941",
+          "GHSA-2cf5-4w76-r9qv",
+          "GHSA-442j-39wm-28r2",
+          "GHSA-f52g-6jhx-586p",
+          "GHSA-g9r4-xpmj-mj65",
+          "GHSA-q2c6-c6pm-g3gh",
+          "GHSA-q42p-pg8m-cqh6"
+        ],
+        "note": "Upgrading to 4.7.9 resolves all 17 known vulnerabilities affecting version 4.0.11.",
+        "status": "verified",
+        "reason": "",
+        "still_affected_by": [],
+        "remaining_known_vulns": [],
+        "verification_url": "https://osv.dev/list?ecosystem=npm&q=handlebars"
+      }
+    ],
+    "unresolved_dependencies": [],
+    "unqueried_dependencies": [],
+    "review_notes": [
+      "Vulnerabilities GHSA-2cf5-4w76-r9qv, GHSA-442j-39wm-28r2, GHSA-f52g-6jhx-586p, GHSA-g9r4-xpmj-mj65, GHSA-q2c6-c6pm-g3gh, and GHSA-q42p-pg8m-cqh6 have no CVE IDs, so CVSS scores, KEV status, and EPSS scores could not be queried and are reported as null. They require human review.",
+      "mongo-express has no known release resolving CVE-2023-52555 (CSRF vulnerability). Upgrading to 1.0.0-alpha.4 resolves CVE-2019-10758, CVE-2021-21422, and CVE-2021-23372, but CVE-2023-52555 remains unresolved; human review is recommended for compensating controls or alternative solutions.",
+      "handlebars is designated as a devDependency. Its vulnerabilities were downgraded by one priority level (P2 to P3, P3 to P4) as development dependencies do not execute in production runtime."
+    ],
+    "errors": [],
+    "stats": {
+      "claims_total": 126,
+      "verified": 102,
+      "unknown": 24,
+      "unsourced": 0,
+      "ungrounded": 0,
+      "mismatch": 0,
+      "findings_reported": 21,
+      "findings_accepted": 21,
+      "findings_rejected": 0,
+      "findings_needing_review": 6,
+      "omitted": 0,
+      "unsupported_claim_rate": 0.0,
+      "unsupported_claims_in_final_report": 0
+    }
+  }
+}

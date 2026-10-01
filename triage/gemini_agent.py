@@ -109,8 +109,8 @@ class GeminiTriageAgent(TriageAgent):
                 wait = 5 * (attempt + 1)
                 self.on_event({"type": "network_retry", "error": type(e).__name__})
             except errors.APIError as e:
-                if e.code not in (429, 500, 503) or attempt == 7:
-                    raise
+                if e.code not in (429, 500, 503) or attempt == 7 or "PerDay" in str(e):
+                    raise  # a daily quota won't recover by waiting
                 m = re.search(r"retry in ([\d.]+)s", str(e))
                 wait = float(m.group(1)) + 1 if m else 15 * (attempt + 1)
                 self.on_event({"type": "rate_limited", "wait": round(wait)})
