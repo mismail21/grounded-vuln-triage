@@ -2,7 +2,13 @@ import json
 
 import pytest
 
-from triage.parsers import detect_format, parse_manifest, parse_package_json, parse_requirements
+from triage.parsers import (
+    detect_format,
+    normalize_pypi_name,
+    parse_manifest,
+    parse_package_json,
+    parse_requirements,
+)
 
 
 def test_requirements_pins_ranges_and_noise():
@@ -58,3 +64,15 @@ def test_detect_format():
 def test_bad_package_json():
     with pytest.raises(ValueError):
         parse_package_json("[]")
+
+
+@pytest.mark.parametrize(
+    ("name", "expected"),
+    [
+        ("", ""),
+        ("Café__Tools.Δ", "café-tools-δ"),
+    ],
+)
+def test_normalize_pypi_name_handles_empty_and_unicode_input(name, expected):
+    """The public normalizer must not lose non-ASCII names at input boundaries."""
+    assert normalize_pypi_name(name) == expected
